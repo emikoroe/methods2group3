@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Group Analysis}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Summary of the Dataset}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{Initial Model}{7}{0}{1}
+\beamer@sectionintoc {2}{Individual Analysis}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Regression Trees}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Resampling Inference or something}{10}{0}{2}
+\beamer@subsectionintoc {2}{3}{Not sure what Yiding decided on}{12}{0}{2}
+\beamer@subsectionintoc {2}{4}{Model Selection}{14}{0}{2}

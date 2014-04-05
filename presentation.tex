@@ -1,0 +1,344 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%  PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{xcolor}
+\usepackage{tabu}  % Even fancier than tabulary
+\usepackage{multirow}
+\usepackage{textcomp}
+%  Text style for code snippets inline in text:
+\newcommand{\codeInline}[1]{\texttt{#1}}
+
+%	Text style for emphasis stronger than \emph:
+%		(Note, this doesn't toggle the way \emph does.
+%			(Note, this can be done, didn't seem worth the trouble.))
+\newcommand{\strong}[1]{{\bfseries{#1}}}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Group3:Data Analysis]{Group 3: Data Analysis} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author[Emily, Nick, Liza and Yiding]{Nick Cummings, Liza Nicoll, Emily Ramos, and Yiding Zhang} % Your name
+\institute[UMASS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of Massachusetts, Amherst \\ % Your institution for the title page
+\medskip
+%\textit{} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{Group Analysis} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\subsection{Introduction} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\frametitle{Introduction}
+
+Describe dataset
+\begin{itemize}
+\item introduce the dataset, give the reason data was originally collected
+\item describe sample used
+\item basically introduce the project and discuss the usefulness of and applications for this data
+
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Summary of the Dataset}
+
+%------------------------------------------------
+
+\begin{frame}{Variable(s) 1}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.5\textwidth} % Left column and width
+Describe variables here, analyze plot.\\
+
+Plot relationships between a handful of variables and discuss (use a variety of types of plots to illustrate data):\\
+\begin{itemize}
+  \item  chest, hip, waist, wrist, Bitrochanteric, shoulder  distributions of these
+  \item  weight v height by gender
+  \item  pairs plot? Others?
+\end{itemize}
+These can be done on the next three slides or all on one, up to you guys. I just put in the slides to make it easier. Also, change whatever titles, etc. you want.
+
+\column{.5\textwidth} % Right column and width
+Insert a plot or two.
+
+
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Variable(s) 2}
+\begin{columns}[c] 
+
+\column{.45\textwidth} 
+Describe variables here, analyze plot. By the way, xtable() is a option in R to output a latex table. It can be a great tool in showing summary analyses.
+
+\column{.5\textwidth} 
+Insert a plot or two
+
+
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Variable(s) 3}
+\begin{columns}[c] 
+
+\column{.45\textwidth} 
+Describe variables here. And analyze plot
+
+\column{.5\textwidth} 
+Insert a plot or two
+
+
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Initial Model}
+
+%------------------------------------------------
+
+\begin{frame}{Multiple Linear Regression Model}
+
+Text describing why this model
+
+\begin{block}{Model}
+Present predictive model for weight (2) in paper
+
+-fit this model and discuss results
+
+-discuss potential uses for models of this data (finding ideal weight based on skeletal measurements?) and potential problems for applying to whole population (all participants were physically fit)
+\end{block}
+
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\section{Individual Analysis}
+
+%------------------------------------------------
+
+\subsection{Regression Trees}
+
+%------------------------------------------------
+
+\begin{frame}{Liza}
+This doesn't have to be the order of the individual analysis part. I am just giving each person two slides to start with. We can move it around so it flows better after all the info is here. \\
+
+Try to keep your analysis to two slides, as we are all presenting stuff. Also, note that your Labs are seperate PDFs that you create and turn in seperately.
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Liza}
+
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Resampling Inference or something}
+
+%------------------------------------------------
+
+\begin{frame}{Nick}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Nick}
+
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Not sure what Yiding decided on}
+
+%------------------------------------------------
+
+\begin{frame}{Yiding}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Yiding}
+
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Model Selection}
+
+%------------------------------------------------
+\begin{frame}{Emily}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Emily}
+
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
