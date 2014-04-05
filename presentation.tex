@@ -15,7 +15,7 @@
 %  PACKAGES AND THEMES
 %----------------------------------------------------------------------------------------
 
-\documentclass{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[table]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
 %% maxwidth is the original width if it is less than linewidth
 %% otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -65,8 +65,6 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
-
-\mode<presentation> {
 
 % The Beamer class comes with a number of default slide themes
 % which change the colors and layouts of slides. Below this is a list
@@ -123,21 +121,16 @@
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
 %\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
-}
+
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{xcolor}
 \usepackage{tabu}  % Even fancier than tabulary
 \usepackage{multirow}
-\usepackage{textcomp}
-%  Text style for code snippets inline in text:
+\usepackage{textcomp} %  Text style for code snippets inline in text:
 \newcommand{\codeInline}[1]{\texttt{#1}}
-
-%	Text style for emphasis stronger than \emph:
-%		(Note, this doesn't toggle the way \emph does.
-%			(Note, this can be done, didn't seem worth the trouble.))
-\newcommand{\strong}[1]{{\bfseries{#1}}}
+%\usepackage{Sweave}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -176,15 +169,16 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 
 \subsection{Introduction} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
-\begin{frame}
-\frametitle{Introduction}
+\begin{frame}{Introduction}
+
+
+
 
 Describe dataset
 \begin{itemize}
 \item introduce the dataset, give the reason data was originally collected
 \item describe sample used
 \item basically introduce the project and discuss the usefulness of and applications for this data
-
 \end{itemize}
 \end{frame}
 
@@ -194,58 +188,99 @@ Describe dataset
 
 %------------------------------------------------
 
-\begin{frame}{Variable(s) 1}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.5\textwidth} % Left column and width
-Describe variables here, analyze plot.\\
-
-Plot relationships between a handful of variables and discuss (use a variety of types of plots to illustrate data):\\
-\begin{itemize}
-  \item  chest, hip, waist, wrist, Bitrochanteric, shoulder  distributions of these
-  \item  weight v height by gender
-  \item  pairs plot? Others?
-\end{itemize}
-These can be done on the next three slides or all on one, up to you guys. I just put in the slides to make it easier. Also, change whatever titles, etc. you want.
-
-\column{.5\textwidth} % Right column and width
-Insert a plot or two.
+\begin{frame}{Weight}
+     \begin{columns}[t] % contents are top vertically aligned
+     \begin{column}[T]{5cm} % each column can also be its own environment
+   
+{\fontsize{0.275cm}{1em}\selectfont 
+Weight was measured for 507 physically active individuals - 247 men and 260 women. The distribution ranged from 42 kilograms to 116.4 kilograms. The mean weight and quartiles was signifigantly higher for men than women. We observe several outliers in the upper end of the range for both men and women. This may be due to the fact that the population sampled included a number of highly physicaly fit individuals with higher than average muscle mass.}
 
 
+     \end{column}
+     \begin{column}[T]{5cm} % alternative top-align that's better for graphics
 
-\end{columns}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/weight_plot} 
+
+\end{knitrout}
+
+
+     \end{column}
+     \end{columns}
 \end{frame}
 
 %------------------------------------------------
 
-\begin{frame}{Variable(s) 2}
-\begin{columns}[c] 
+\begin{frame}{Bitrochanteric Diameter and Hip Girth}
+     \begin{columns}[t] % contents are top vertically aligned
+     \begin{column}[T]{5cm} % each column can also be its own environment
+   
+{\fontsize{0.275cm}{1em}\selectfont 
+Bitrochanteric diameter is the distance between the outer points of the hips and hip girth is the circumference of the hip area measured at the level of the bitrochanteric diameter. The density distributions for both measures are normally distributed (though hip girth is skewed slightly right) and very similar in distribution for both men and women. A scatter plot of hip girth vs. weight suggests that weight increases linerally with increase in hip girth.}
 
-\column{.45\textwidth} 
-Describe variables here, analyze plot. By the way, xtable() is a option in R to output a latex table. It can be a great tool in showing summary analyses.
-
-\column{.5\textwidth} 
-Insert a plot or two
+\end{column}
+\begin{column}[T]{5cm} % alternative top-align that's better for graphics
 
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/hip_plots} 
 
-\end{columns}
+\end{knitrout}
+
+
+     \end{column}
+     \end{columns}
+
 \end{frame}
 
 %------------------------------------------------
 
-\begin{frame}{Variable(s) 3}
-\begin{columns}[c] 
+\begin{frame}{Chest and Shoulder}
+     \begin{columns}[t] % contents are top vertically aligned
+     \begin{column}[T]{5cm} % each column can also be its own environment
+   
+{\fontsize{0.275cm}{1em}\selectfont 
+Chest girth was measured at the nipple line in males and just above breast tissue in females at mid-expiration and shoulder girth was measured over deltoid muscles in both males and females. The density distributions for the two variables are quite similar. Women have narrower, though slightly skeewed, distribution with a much lower mean than that of the men. The scatterplots are also similar in that the regression lines for men and women are nearly identical, indicating that weight increases linearly with increase in shoulder girth, independant of gender.}
 
-\column{.45\textwidth} 
-Describe variables here. And analyze plot
-
-\column{.5\textwidth} 
-Insert a plot or two
+\end{column}
+\begin{column}[T]{7cm} % alternative top-align that's better for graphics
 
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/chest_plots} 
 
-\end{columns}
+\end{knitrout}
+
+
+     \end{column}
+     \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Wrist and Navel}
+     \begin{columns}[t] % contents are top vertically aligned
+     \begin{column}[T]{5cm} % each column can also be its own environment
+   
+{\fontsize{0.275cm}{1em}\selectfont 
+Wrist minimum girth is an average of right and left girths and navel (or abdominal) girth was measured at umbilicus and the iliac crest, using the iliac crest as a landmark. Wrist girth is bimodally distributed, but when divided into male and female, the distributions are normal with some outliers at the high end of the range for females. The distributions for navel girth is normal and remarkably similar for males and females. The scatterplot of navel girth against weight shows a linear relationship with weight increasing with increased naval girth.}
+
+\end{column}
+\begin{column}[T]{6cm} % alternative top-align that's better for graphics
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/navel_plots} 
+
+\end{knitrout}
+
+
+     \end{column}
+     \end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -300,6 +335,7 @@ Try to keep your analysis to two slides, as we are all presenting stuff. Also, n
 %------------------------------------------------
 
 \begin{frame}{Nick}
+
 
 \end{frame}
 
