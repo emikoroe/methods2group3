@@ -1,0 +1,85 @@
+
+<<>>=
+library(RCurl)
+library(ggplot2)
+body1<-getURL("http://www.amstat.org/publications/jse/datasets/body.dat.txt",ssl.verifypeer=FALSE)
+body<-read.table(text=body1)
+names(body)<-c("biac.diam","pelvic.bredth" ,"bitro.diam","chest.dep",   
+              "chest.diam","elbow.diam","wrist.diam","knee.diam",    
+              "ankle.diam","shoulder","chest","waist" ,       
+              "navel", "hip","thigh","bicep",        
+              "forearm","knee","calf","ankle.min" ,   
+              "wrist.min","age","weight","height",       
+              "gender" )
+@            
+
+\begin{frame}{Weight}
+
+Weight was measured for 507 physically active individuals - 247 men and 260 women. The distribution ranged from 42 kilograms to 116.4 kilograms. The mean weight and quartiles was signifigantly higher for men than women. We observe several outliers in the upper end of the range for both men and women. This may be due to the fact that the population sampled included a number of highly physicaly fit individuals with higher than average muscle mass.
+
+<<>>=
+print(qplot( as.factor(gender),weight, data=body, geom=c("boxplot"), main="Weight by Gender",xlab="Gender", ylab="Weight (kg)") + scale_x_discrete(labels=c("female","male"))+ theme_bw())
+@
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Bitrochanteric Diameter and Hip Girth}
+\begin{columns}[c]
+
+\column{.45\textwidth}
+Bitrochanteric diameter is the distance between the outer points of the hips and hip girth is the circumference of the hip area measured at the level of the bitrochanteric diameter. The density distributions for both measures are normally distributed (though hip girth is skewed slightly right) and very similar in distribution for both men and women. A scatter plot of hip girth vs. weight suggests that weight increases linerally with increase in hip girth.
+
+\column{.5\textwidth}
+<<>>=
+print( qplot(bitro.diam, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Bitrochanteric Diameter", xlab="Bitrochanteric Diameter",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw() )
+
+qplot(hip, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Hip Girth", xlab="Hip Girth", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
+
+qplot(hip,weight, data=body,colour = factor(gender),main="Hip Girth and Weight", xlab="Hip Girth (cm)",ylab="Weight (kg)")  + theme_bw()
+@
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Chest and Shoulder}
+\begin{columns}[c]
+
+\column{.45\textwidth}
+Chest girth was measured at the nipple line in males and just above breast tissue in females at mid-expiration and shoulder girth was measured over deltoid muscles in both males and females. The density distributions for the two variables are quite similar. Women have narrower, though slightly skeewed, distribution with a much lower mean than that of the men. The scatterplots are also similar in that the regression lines for men and women are nearly identical, indicating that weight increases linearly with increase in shoulder girth, independant of gender.
+
+\column{.5\textwidth}
+<<>>=
+qplot(chest, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Chest Girth", xlab="Chest Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
+
+qplot(chest, weight, data=body,colour = factor(gender),main="Chest Girth and Weight", xlab="Chest Girth (cm)",ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
+
+qplot(shoulder, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Shoulder Girth", xlab="Shoulder Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female","male")) + theme_bw()
+
+qplot(shoulder, weight, data=body,colour = factor(gender),main="Shoulder Girth and Weight", xlab="Shoulder Girth (cm)", ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
+@
+
+
+%------------------------------------------------
+
+\begin{frame}{Wrist and Navel}
+\begin{columns}[c]
+
+\column{.45\textwidth}
+Wrist minimum girth is an average of right and left girths and navel (or abdominal) girth was measured at umbilicus and the iliac crest, using the iliac crest as a landmark. Wrist girth is bimodally distributed, but when divided into male and female, the distributions are normal with some outliers at the high end of the range for females. The distributions for navel girth is normal and remarkably similar for males and females. The scatterplot of navel girth against weight shows a linear relationship with weight increasing with increased naval girth.
+
+\column{.5\textwidth}
+<<>>=
+ggplot(body, aes(x=factor(gender), y=wrist.min, fill=factor(gender))) + geom_boxplot() +scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) +  xlab("Gender") +ylab("Wrist Girth (cm)") +ggtitle("Distribution of Minimum Wrist Girth")+ theme_bw()
+
+qplot(navel, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Navel Girth", xlab="Navel Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
+
+qplot(navel, weight, data=body,colour = factor(gender),main="Navel Girth and Weight", xlab="Navel Girth (cm)",ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
+@
+
+\end{columns}
+\end{frame}
