@@ -165,11 +165,41 @@ Wrist minimum girth is an average of right and left girths and navel (or abdomin
 
 %------------------------------------------------
 
+The initial model we are interested in fitting is of the form:\\
+
+weight$_i = \beta_0 + \beta_1$ shoulder$_{i} + \beta_2$ chest$_{i} + \beta_3$ waist$_{i} + \beta_4$ navel$_{i}$ + \beta_5$ hip$_{i} + \beta_6$ thigh$_{i} + \beta_7$ bicep$_{i} + \beta_8$ forearm$_{i} + \beta_9$ knee$_{i} + \beta_{10}$ calf$_{i} + \beta_{11}$ ankle.min$_{i} + \beta_{12}$ wrist.min$_{i} + \beta_{13}$ height$_{i}$ \\
+
 Text describing why this model, Where we got the model\\
 
-Present predictive model for weight in paper\\
--fit this model and discuss results \\
--discuss potential uses for models of this data (finding ideal weight based on skeletal measurements?) and potential problems for applying to whole population (all participants were physically fit)
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{mlr1} \hlkwb{<-} \hlkwd{lm}\hlstd{(weight} \hlopt{~} \hlstd{shoulder} \hlopt{+} \hlstd{chest} \hlopt{+} \hlstd{waist} \hlopt{+} \hlstd{navel} \hlopt{+} \hlstd{hip} \hlopt{+} \hlstd{thigh} \hlopt{+} \hlstd{bicep} \hlopt{+}
+    \hlstd{forearm} \hlopt{+} \hlstd{knee} \hlopt{+} \hlstd{calf} \hlopt{+} \hlstd{ankle.min} \hlopt{+} \hlstd{wrist.min} \hlopt{+} \hlstd{height,} \hlkwc{data} \hlstd{= body)}
+\hlstd{mlr1}
+\end{alltt}
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = weight ~ shoulder + chest + waist + navel + hip + 
+##     thigh + bicep + forearm + knee + calf + ankle.min + wrist.min + 
+##     height, data = body)
+## 
+## Coefficients:
+## (Intercept)     shoulder        chest        waist        navel  
+##   -1.20e+02     7.81e-02     1.98e-01     3.40e-01     1.17e-03  
+##         hip        thigh        bicep      forearm         knee  
+##    2.40e-01     3.14e-01     5.47e-02     5.32e-01     3.01e-01  
+##        calf    ankle.min    wrist.min       height  
+##    4.04e-01    -9.63e-03    -1.18e-01     3.28e-01
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+Interpret the model\\
+
+Discuss potential uses for models of this data (finding ideal weight based on skeletal measurements?) and potential problems for applying to whole population (all participants were physically fit)
 
 %------------------------------------------------
 

@@ -134,11 +134,20 @@ grid.arrange(n1, n2,ncol=2)
 
 %------------------------------------------------
 
+The initial model we are interested in fitting is of the form:\\
+
+weight$_i = \beta_0 + \beta_1$ shoulder$_{i} + \beta_2$ chest$_{i} + \beta_3$ waist$_{i} + \beta_4$ navel$_{i}$ + \beta_5$ hip$_{i} + \beta_6$ thigh$_{i} + \beta_7$ bicep$_{i} + \beta_8$ forearm$_{i} + \beta_9$ knee$_{i} + \beta_{10}$ calf$_{i} + \beta_{11}$ ankle.min$_{i} + \beta_{12}$ wrist.min$_{i} + \beta_{13}$ height$_{i}$ \\
+
 Text describing why this model, Where we got the model\\
 
-Present predictive model for weight in paper\\
--fit this model and discuss results \\
--discuss potential uses for models of this data (finding ideal weight based on skeletal measurements?) and potential problems for applying to whole population (all participants were physically fit)
+<<>>=
+mlr1 <- lm(weight ~ shoulder + chest + waist + navel + hip + thigh + bicep + forearm + knee + calf + ankle.min + wrist.min + height, data=body)
+mlr1
+@
+
+Interpret the model\\
+
+Discuss potential uses for models of this data (finding ideal weight based on skeletal measurements?) and potential problems for applying to whole population (all participants were physically fit)
 
 %------------------------------------------------
 
