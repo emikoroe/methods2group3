@@ -1,0 +1,164 @@
+
+\documentclass[11pt]{article}
+
+% margins, size, formatting
+
+\oddsidemargin=0in
+\evensidemargin=0in
+\topmargin=0in
+\textwidth=6.5in
+\textheight=9.5in
+\parindent = 0 in
+%\pagestyle{plain}
+\pagestyle{plain}
+
+\usepackage{amsmath,amssymb,amsthm, amsfonts}
+\usepackage{array}
+\usepackage{fancyhdr}
+%\pagestyle{plain}
+\pagestyle{fancy}
+\usepackage[bottom=0.5in]{geometry}
+%\usepackage{listings}
+%\usepackage{inconsolata}
+
+\lhead{\textbf{Group 3: Data Analysis\\ Spring 2014}}
+\rhead{\textbf{Nick Cummings, Liza Nicoll \\ Emily Ramos and Yiding Zhang}}
+\cfoot{}
+
+\begin{document}
+
+\section{Group Analysis} 
+
+%------------------------------------------------
+
+\subsection{Introduction}
+
+<<Body data, echo=FALSE, message=FALSE, warning=FALSE>>=
+#Put in any packages needed here
+library(ggplot2)
+#library(xtable)
+library(RCurl)
+library(gridExtra)
+#Here is the dataset
+body1<-getURL("http://www.amstat.org/publications/jse/datasets/body.dat.txt",ssl.verifypeer=FALSE)
+body<-read.table(text=body1)
+names(body)<-c("biac.diam","pelvic.bredth" ,"bitro.diam","chest.dep",   
+              "chest.diam","elbow.diam","wrist.diam","knee.diam",    
+              "ankle.diam","shoulder","chest","waist" ,       
+              "navel", "hip","thigh","bicep",        
+              "forearm","knee","calf","ankle.min" ,   
+              "wrist.min","age","weight","height",       
+              "gender" )
+@
+
+
+
+%------------------------------------------------
+
+\subsection{Summary of the Dataset}
+
+%------------------------------------------------
+
+\textbf{Weight}\\
+   
+Weight was measured for 507 physically active individuals - 247 men and 260 women. The distribution ranged from 42 kilograms to 116.4 kilograms. The mean weight and quartiles was signifigantly higher for men than women. We observe several outliers in the upper end of the range for both men and women. This may be due to the fact that the population sampled included a number of highly physicaly fit individuals with higher than average muscle mass.
+
+<<weight plot, echo=FALSE, fig.height=4>>=
+print(qplot( as.factor(gender),weight, data=body, geom=c("boxplot"), main="Weight by Gender",xlab="Gender", ylab="Weight (kg)") + scale_x_discrete(labels=c("female","male"))+ theme_bw())
+@
+
+%------------------------------------------------
+
+\textbf{Bitrochanteric Diameter and Hip Girth}\\
+ 
+Bitrochanteric diameter is the distance between the outer points of the hips and hip girth is the circumference of the hip area measured at the level of the bitrochanteric diameter. The density distributions for both measures are normally distributed (though hip girth is skewed slightly right) and very similar in distribution for both men and women. A scatter plot of hip girth vs. weight suggests that weight increases linerally with increase in hip girth.
+
+<<hip plots, echo=FALSE, fig.height=3>>=
+p1 <- qplot(bitro.diam, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Bitrochanteric Diam.", xlab="Bitrochanteric Diameter",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
+
+p2 <- qplot(hip, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Hip Girth", xlab="Hip Girth", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
+
+p3 <- qplot(hip,weight, data=body,colour = factor(gender),main="Hip Girth and Weight", xlab="Hip Girth (cm)",ylab="Weight (kg)")  + theme_bw()
+
+grid.arrange(p1, p2,ncol=2)
+@
+
+
+<<hipgirth plot, echo=FALSE, fig.height=3>>=
+ print(p3)  
+@
+
+%------------------------------------------------
+
+\textbf{Chest and Shoulder}\\
+   
+Chest girth was measured at the nipple line in males and just above breast tissue in females at mid-expiration and shoulder girth was measured over deltoid muscles in both males and females. The density distributions for the two variables are quite similar. Women have narrower, though slightly skeewed, distribution with a much lower mean than that of the men. The scatterplots are also similar in that the regression lines for men and women are nearly identical, indicating that weight increases linearly with increase in shoulder girth, independant of gender.
+
+<<chest plots, echo=FALSE, fig.height=4.5>>=
+ch1 <- qplot(chest, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Chest Girth", xlab="Chest Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
+
+ch2 <- qplot(chest, weight, data=body,colour = factor(gender),main="Chest Girth and Weight", xlab="Chest Girth (cm)",ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
+
+sh1 <- qplot(shoulder, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Shoulder Girth", xlab="Shoulder Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female","male")) + theme_bw()
+
+sh2 <- qplot(shoulder, weight, data=body,colour = factor(gender),main="Shoulder Girth and Weight", xlab="Shoulder Girth (cm)", ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
+
+grid.arrange(ch1, ch2, sh1, sh2,  ncol=2)
+
+@
+
+%------------------------------------------------
+
+\textbf{Wrist and Navel}\\
+   
+Wrist minimum girth is an average of right and left girths and navel (or abdominal) girth was measured at umbilicus and the iliac crest, using the iliac crest as a landmark. Wrist girth is bimodally distributed, but when divided into male and female, the distributions are normal with some outliers at the high end of the range for females. The distributions for navel girth is normal and remarkably similar for males and females. The scatterplot of navel girth against weight shows a linear relationship with weight increasing with increased naval girth.
+
+<<navel plots, echo=FALSE, fig.height = 3>>=
+n1 <- ggplot(body, aes(x=factor(gender), y=wrist.min, fill=factor(gender))) + geom_boxplot() +scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) +  xlab("Gender") +ylab("Wrist Girth (cm)") +ggtitle("Distribution of Min. Wrist Girth")+ theme_bw()
+
+n2 <- qplot(navel, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Navel Girth", xlab="Navel Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
+
+n3 <- qplot(navel, weight, data=body,colour = factor(gender),main="Navel Girth and Weight", xlab="Navel Girth (cm)",ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
+
+grid.arrange(n1, n2,ncol=2)
+
+@
+
+<<navelgirth plot, fig.height=3, echo=FALSE>>=
+ print(n3)
+@
+
+%------------------------------------------------
+
+\subsection{Initial Multiple Linear Regression Model}
+
+%------------------------------------------------
+
+Text describing why this model, Where we got the model\\
+
+Present predictive model for weight in paper\\
+-fit this model and discuss results \\
+-discuss potential uses for models of this data (finding ideal weight based on skeletal measurements?) and potential problems for applying to whole population (all participants were physically fit)
+
+%------------------------------------------------
+
+\section{Individual Analysis}
+
+%------------------------------------------------
+
+\subsection{Regression Trees}
+
+%------------------------------------------------
+
+\subsection{Resampling Inference or something}
+
+%------------------------------------------------
+
+\subsection{Not sure what Yiding decided on}
+
+%------------------------------------------------
+
+\subsection{Model Selection}
+
+
+\end{document}
