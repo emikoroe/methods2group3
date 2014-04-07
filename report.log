@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  6 APR 2014 15:29
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  7 APR 2014 17:05
 entering extended mode
 **report.tex
 ("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\report.tex"
@@ -275,31 +275,48 @@ LaTeX Font Info:    ... okay on input line 78.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-Package color Info: Redefining color shadecolor on input line 102.
-<figure/weight_plot.pdf, id=1, 505.89pt x 289.08pt>
-File: figure/weight_plot.pdf Graphic file (type pdf)
 
-<use figure/weight_plot.pdf>
-Package pdftex.def Info: figure/weight_plot.pdf used on input line 103.
-(pdftex.def)             Requested size: 430.00462pt x 245.72356pt.
+! LaTeX Error: There's no line here to end.
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 
+     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
-Package color Info: Redefining color shadecolor on input line 115.
-<figure/hip_plots.pdf, id=2, 505.89pt x 216.81pt>
-File: figure/hip_plots.pdf Graphic file (type pdf)
- <use figure/hip_plots.pdf>
-Package pdftex.def Info: figure/hip_plots.pdf used on input line 116.
-(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
-Package color Info: Redefining color shadecolor on input line 123.
 
-<figure/hipgirth_plot.pdf, id=3, 505.89pt x 216.81pt>
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 25.2842pt.
@@ -308,117 +325,203 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
- <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/weight_plot.pdf>
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 119.
+<figure/weight_plot.pdf, id=8, 505.89pt x 289.08pt>
+File: figure/weight_plot.pdf Graphic file (type pdf)
+
+<use figure/weight_plot.pdf>
+Package pdftex.def Info: figure/weight_plot.pdf used on input line 120.
+(pdftex.def)             Requested size: 430.00462pt x 245.72356pt.
+ [2 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/weight_plot.p
+df>]
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 134.
+<figure/hip_plots.pdf, id=17, 505.89pt x 216.81pt>
+File: figure/hip_plots.pdf Graphic file (type pdf)
+ <use figure/hip_plots.pdf>
+Package pdftex.def Info: figure/hip_plots.pdf used on input line 135.
+(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
+Package color Info: Redefining color shadecolor on input line 142.
+
+<figure/hipgirth_plot.pdf, id=18, 505.89pt x 216.81pt>
 File: figure/hipgirth_plot.pdf Graphic file (type pdf)
 
 <use figure/hipgirth_plot.pdf>
-Package pdftex.def Info: figure/hipgirth_plot.pdf used on input line 124.
+Package pdftex.def Info: figure/hipgirth_plot.pdf used on input line 143.
 (pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+ [3 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/hip_plots.pdf
+> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/hipgirth_plot.p
+df>]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
-Package color Info: Redefining color shadecolor on input line 136.
-<figure/chest_plots.pdf, id=16, 505.89pt x 325.215pt>
+Package color Info: Redefining color shadecolor on input line 157.
+<figure/chest_plots.pdf, id=37, 505.89pt x 325.215pt>
 File: figure/chest_plots.pdf Graphic file (type pdf)
 
 <use figure/chest_plots.pdf>
-Package pdftex.def Info: figure/chest_plots.pdf used on input line 137.
+Package pdftex.def Info: figure/chest_plots.pdf used on input line 158.
 (pdftex.def)             Requested size: 430.00462pt x 276.43901pt.
- [2 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/hip_plots.pdf
-> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/hipgirth_plot.p
+ [4 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/chest_plots.p
 df>]
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
-Package color Info: Redefining color shadecolor on input line 149.
-<figure/navel_plots.pdf, id=35, 505.89pt x 216.81pt>
+Package color Info: Redefining color shadecolor on input line 172.
+<figure/navel_plots.pdf, id=51, 505.89pt x 216.81pt>
 File: figure/navel_plots.pdf Graphic file (type pdf)
 
 <use figure/navel_plots.pdf>
-Package pdftex.def Info: figure/navel_plots.pdf used on input line 150.
+Package pdftex.def Info: figure/navel_plots.pdf used on input line 173.
 (pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
-Package color Info: Redefining color shadecolor on input line 156.
+Package color Info: Redefining color shadecolor on input line 179.
 
-<figure/navelgirth_plot.pdf, id=36, 505.89pt x 216.81pt>
+<figure/navelgirth_plot.pdf, id=52, 505.89pt x 216.81pt>
 File: figure/navelgirth_plot.pdf Graphic file (type pdf)
 
 <use figure/navelgirth_plot.pdf>
-Package pdftex.def Info: figure/navelgirth_plot.pdf used on input line 157.
+Package pdftex.def Info: figure/navelgirth_plot.pdf used on input line 180.
 (pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
- [3 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/chest_plots.p
-df> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/navel_plots.p
-df>]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+ [5 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/navel_plots.p
+df> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/navelgirth_pl
+ot.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 170.
+Package color Info: Redefining color shadecolor on input line 192.
+<figure/unnamed-chunk-1.pdf, id=74, 505.89pt x 325.215pt>
+File: figure/unnamed-chunk-1.pdf Graphic file (type pdf)
+
+<use figure/unnamed-chunk-1.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-1.pdf used on input line 193.
+(pdftex.def)             Requested size: 430.00462pt x 276.43901pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 210.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 170.
+LaTeX Font Info:    Try loading font information for U+msb on input line 210.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+
+ []
+
+
+Overfull \hbox (10.97675pt too wide) in paragraph at lines 212--213
+[]\OT1/cmr/m/n/10.95 As we know, the ma-jor-ity of a per-sons body weight ac-cu
+-mu-lates in the mid-dle of body(beneath
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+[6 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/unnamed-chunk-
+1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.170 ...waist$_{i} + \beta_4$ navel$_{i}$ + \beta
-                                                  _5$ hip$_{i} + \beta_6$ th...
+l.233 ...m$_{i} + \beta_4$ wrist.min$_{i}$ + \beta
+                                                  _5$ ankle.min$_{i} + \beta...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 238.
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
-Package color Info: Redefining color shadecolor on input line 175.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 177.
 
-Overfull \hbox (6.89565pt too wide) in paragraph at lines 177--177
-[][]\OT1/cmtt/m/n/10.95 mlr1[] []<-[] []lm[][](weight[] []~[] []shoulder[] []+[
-] []chest[] []+[] []waist[] []+[] []navel[] []+[] []hip[] []+[] []thigh[] []+[]
- []bicep[] []+[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
-[4 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/navelgirth_plo
-t.pdf>] [5] ("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\report.aux"
-) ) 
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+[9] ("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\report.aux") ) 
 Here is how much of TeX's memory you used:
- 2921 strings out of 493921
- 38176 string characters out of 3144876
- 102456 words of memory out of 3000000
- 6172 multiletter control sequences out of 15000+200000
- 9974 words of font info for 38 fonts, out of 3000000 for 9000
+ 2927 strings out of 493921
+ 38323 string characters out of 3144876
+ 103456 words of memory out of 3000000
+ 6176 multiletter control sequences out of 15000+200000
+ 10320 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,12n,43p,576b,334s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (5 pages, 289148 bytes).
+ 27i,11n,43p,968b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on report.pdf (9 pages, 339514 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
