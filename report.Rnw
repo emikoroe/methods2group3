@@ -157,7 +157,7 @@ grid.arrange(n1, n2,ncol=2)
 
 Since our dataset contains information on \textit{mostly} individuals in their 20s and 30s, we should check how age and weight intereact in our data before conducting analysis on weight. The mean age is 30, the youngest subject is 18 and the oldes subject is 67. The first plot shows that age is unevenly distributed, i.e left skewed. Most of the subjects are physically active young individuals. Since we have this skewness of data, we seperate the data into two subsets- young and middle age to see how weight interacts in these subsets. The weight of young and middle age groups are generally normally distributed and are remarkably similar. This shows that, although our ages are skewed, we can apply this analysis to physically active individuals of all ages.
 
-<<echo=FALSE,fig.height=4.5>>=
+<<echo=FALSE,fig.height=3>>=
 age1 <- qplot(age, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Age", xlab="Age",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
 for(i in 1:nrow(body))
 {

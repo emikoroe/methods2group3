@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  7 APR 2014 17:05
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  7 APR 2014 17:09
 entering extended mode
 **report.tex
 ("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\report.tex"
@@ -400,12 +400,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--188
  []
 
 Package color Info: Redefining color shadecolor on input line 192.
-<figure/unnamed-chunk-1.pdf, id=74, 505.89pt x 325.215pt>
+<figure/unnamed-chunk-1.pdf, id=74, 505.89pt x 216.81pt>
 File: figure/unnamed-chunk-1.pdf Graphic file (type pdf)
 
 <use figure/unnamed-chunk-1.pdf>
 Package pdftex.def Info: figure/unnamed-chunk-1.pdf used on input line 193.
-(pdftex.def)             Requested size: 430.00462pt x 276.43901pt.
+(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
 LaTeX Font Info:    Try loading font information for U+msa on input line 210.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -431,8 +431,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
-[6 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/unnamed-chunk-
-1.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
@@ -442,7 +441,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-
+[6 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/figure/unnamed-chunk-
+1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
@@ -491,12 +491,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
@@ -505,11 +505,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 Here is how much of TeX's memory you used:
  2927 strings out of 493921
  38323 string characters out of 3144876
- 103456 words of memory out of 3000000
+ 105456 words of memory out of 3000000
  6176 multiletter control sequences out of 15000+200000
  10320 words of font info for 39 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,11n,43p,968b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,11n,43p,968b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progr
@@ -519,7 +519,7 @@ les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (9 pages, 339514 bytes).
+Output written on report.pdf (9 pages, 339256 bytes).
 PDF statistics:
  128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
