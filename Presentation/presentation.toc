@@ -1,10 +1,10 @@
 \beamer@endinputifotherversion {3.26pt}
-\beamer@sectionintoc {1}{Group Analysis}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Introduction}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Summary of the Dataset}{4}{0}{1}
-\beamer@subsectionintoc {1}{3}{Initial Model}{8}{0}{1}
-\beamer@sectionintoc {2}{Individual Analysis}{9}{0}{2}
-\beamer@subsectionintoc {2}{1}{Regression Trees}{9}{0}{2}
-\beamer@subsectionintoc {2}{2}{Resampling Inference or something}{11}{0}{2}
-\beamer@subsectionintoc {2}{3}{Not sure what Yiding decided on}{13}{0}{2}
-\beamer@subsectionintoc {2}{4}{Model Selection}{15}{0}{2}
+\beamer@sectionintoc {1}{Group Analysis}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Summary of the Dataset}{5}{0}{1}
+\beamer@subsectionintoc {1}{3}{Initial Model}{9}{0}{1}
+\beamer@sectionintoc {2}{Individual Analysis}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Regression Trees}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Resampling Inference or something}{12}{0}{2}
+\beamer@subsectionintoc {2}{3}{Not sure what Yiding decided on}{14}{0}{2}
+\beamer@subsectionintoc {2}{4}{Model Selection}{16}{0}{2}

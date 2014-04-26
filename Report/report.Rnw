@@ -27,6 +27,7 @@
 \cfoot{}
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 \section{Introduction} %Emily
 
@@ -243,11 +244,78 @@ The sample of this data poses a potential problem to the application of the regr
 
 %------------------------------------------------
 
-\subsection{Regression Trees} %Liza
+\subsection{Using Regression Trees to Explore \\
+Differences in Males and Female Body Measurements} %Liza
+
+As we have shown in previous sections, males and females differ significantly in terms of weight and body measurements. However, the regression presented for predicting weight did not include a term for gender, citing that doing so would not add significantly to the model. My hypothesis is that separate models for males and females would be more appropriate based on the systematic differences in body shape and size between the genders. Using recursive partitioning, or regression tree analysis, I plan to explore what the most important variables are in predicting weight for the two genders both together and separately to see if there are differences in the way the data is divided based on the different body measurements sampled.
+
+<<RT1, echo=FALSE, message=FALSE, warning=FALSE>>=
+library(rpart)
+library(rpart.plot)
+tmf<-rpart(weight ~ ., data = body, method = "anova")
+bodyf<-subset(body,gender==0)
+bodym<-subset(body,gender==1)
+set.seed(101)
+tf <- rpart(weight ~ ., data = bodyf, method="anova")
+tm <- rpart(weight ~ ., data = bodym, method="anova")
+@
+
+\begin{figure}
+\begin{center}
+<<wdt,fig=TRUE,echo=FALSE, width=8,height=3>>=
+qplot(weight, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Weight", xlab="Weight (kg)", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
+@
+\end{center}
+\vspace{-20pt}
+\caption{Desnsity distribution of Weight for males and females}
+\label{fig:one}
+\end{figure}
+
+<<wt,fig=TRUE,echo=FALSE, width=8,height=4>>=
+prp(tmf, extra=101, main="Regression Tree - Weight",box.col="yellow") 
+@
+
+\subsection{Tree 1: Males and Females} 
+To explore whether gender is an important dividing variable for the entire dataset, I first grew a regression tree with all of the data. As shown in the regression tree above, a split was not produced based on gender of the subjects. Variables used in this tree are waist girth, chest girth, hip girth, knee girth and knee diameter. \\
+
+
+
+\pagebreak
+
+\subsection{Tree 2: Males} 
+Even though the full dataset did not utilize gender to partition the data, it might be informative to see if we obtain different trees by subsetting the data by gender. Next, I produced a regression tree with weight as the dependent variable for males only using all available body measurement variables. The CP tables showed us that at 5 splits we obtain a minimum relative error, therefore we were able to prune the tree to a reasonable size to avoid overfitting the data (Figure 2a). The final variables used to produce the pruned tree were hip girth and shoulder girth.
+
+<<prunem, echo=FALSE, message=FALSE, warning=FALSE>>=
+ptm<-prune(tm, cp=tm$cptable[which.min(tm$cptable[,"xerror"]),"CP"])
+printcp(ptm)
+@
+
+\begin{figure}
+<<mtrees, echo=FALSE, fig=TRUE, width=6,height=3>>=
+par(mfrow=c(1,2))
+prp(ptm, extra=101, main="Pruned Tree, Weight (Male)",box.col=5)
+prp(tf, extra=101, main="Regression Tree, Weight (Female",box.col="pink")
+@
+\caption{a. Pruned regression tree for male weight. b. Regression tree for female weight.}
+\label{fig:two}
+\end{figure}
+
+\pagebreak
+
+\subsection{Tree 3: Females} 
+The regression tree for the female subset (Figure 2b) does not reach a minimum relative error before the final node and therefore did not need pruning. The variables used to produce this tree vary significantly in number and type from the male tree. They are: hip girth, knee girth, calf girth, chest girth, and waist girth. In fact, the only variable the female tree and the pruned male tree have in common is shoulder girth.
+
+<<rsqf, echo=FALSE, message=FALSE, warning=FALSE>>=
+rsq.rpart(tf)
+@
+
+\subsection{Conclusion}
+While regression trees are not intended to produce a model for prediction, they can be quite useful in elucidating the most important variables for partitioning data. Here we found that these variables differed significantly between men and women, perhaps suggesting that separate models for predicting weight would be more appropriate and potentially more accurate than one general model for both genders. Further analysis would be needed to test this hypothesis, specifically model fitting and selction for subsets of the data by gender. One could then show whether these separate models have better predictive power than one combined model.
+\pagebreak
 
 %------------------------------------------------
 
-\subsection{Resampling Inference and Bootstrapping} %Nick
+\subsection{Resampling Inference and  Bootstrapping} %Nick
 
 %------------------------------------------------
 

@@ -99,6 +99,7 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 \date{\today} % Date, can be changed to a custom date
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 \begin{frame}
 \titlepage % Print the title page as the first slide
