@@ -1,35 +1,37 @@
 \beamer@endinputifotherversion {3.26pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
-\headcommand {\slideentry {0}{0}{2}{3/3}{}{0}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{Group Analysis}{3}{Group Analysis}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Introduction}}\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\slideentry {1}{1}{1}{3/3}{Introduction}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\sectionentry {1}{Group Analysis}{4}{Group Analysis}{0}}
-\headcommand {\beamer@sectionpages {1}{3}}
-\headcommand {\beamer@subsectionpages {1}{3}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Introduction}}\headcommand {\beamer@subsectionpages {4}{3}}
-\headcommand {\slideentry {1}{1}{1}{4/4}{Introduction}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{4}{Summary of the Dataset}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {1}{2}{1}{4/4}{Summary of the Dataset}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{5}{Summary of the Dataset}}\headcommand {\beamer@subsectionpages {4}{4}}
-\headcommand {\slideentry {1}{2}{1}{5/5}{Summary of the Dataset}{0}}
+\headcommand {\slideentry {1}{2}{2}{5/5}{Summary of the Dataset}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {1}{2}{2}{6/6}{Summary of the Dataset}{0}}
+\headcommand {\slideentry {1}{2}{3}{6/6}{Summary of the Dataset}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {1}{2}{3}{7/7}{Summary of the Dataset}{0}}
+\headcommand {\slideentry {1}{2}{4}{7/7}{Summary of the Dataset}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {1}{2}{4}{8/8}{Summary of the Dataset}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{8}{Initial Model}}\headcommand {\beamer@subsectionpages {4}{7}}
+\headcommand {\slideentry {1}{3}{1}{8/8}{Initial Model}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{9}{Initial Model}}\headcommand {\beamer@subsectionpages {5}{8}}
-\headcommand {\slideentry {1}{3}{1}{9/9}{Initial Model}{0}}
+\headcommand {\sectionentry {2}{Individual Analysis}{9}{Individual Analysis}{0}}
+\headcommand {\beamer@sectionpages {3}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{9}{Regression Trees}}\headcommand {\beamer@subsectionpages {9}{8}}
+\headcommand {\slideentry {2}{1}{1}{9/9}{Regression Trees}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\sectionentry {2}{Individual Analysis}{10}{Individual Analysis}{0}}
-\headcommand {\beamer@sectionpages {4}{9}}
-\headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{10}{Regression Trees}}\headcommand {\beamer@subsectionpages {10}{9}}
-\headcommand {\slideentry {2}{1}{1}{10/10}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{1}{2}{10/10}{Regression Trees}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {2}{1}{2}{11/11}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{1}{3}{11/11}{Regression Trees}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{12}{Resampling Inference or something}}\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{12}{Resampling Inference or something}}\headcommand {\beamer@subsectionpages {9}{11}}
 \headcommand {\slideentry {2}{2}{1}{12/12}{Resampling Inference or something}{0}}
 \headcommand {\beamer@framepages {12}{12}}
 \headcommand {\slideentry {2}{2}{2}{13/13}{Resampling Inference or something}{0}}
@@ -46,6 +48,6 @@
 \headcommand {\beamer@framepages {17}{17}}
 \headcommand {\beamer@partpages {1}{17}}
 \headcommand {\beamer@subsectionpages {16}{17}}
-\headcommand {\beamer@sectionpages {10}{17}}
+\headcommand {\beamer@sectionpages {9}{17}}
 \headcommand {\beamer@documentpages {17}}
-\headcommand {\def \inserttotalframenumber {16}}
+\headcommand {\def \inserttotalframenumber {17}}

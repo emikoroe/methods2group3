@@ -99,7 +99,7 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 \date{\today} % Date, can be changed to a custom date
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+%\SweaveOpts{concordance=TRUE}
 
 \begin{frame}
 \titlepage % Print the title page as the first slide
@@ -291,19 +291,78 @@ Present predictive model for weight (2) in paper
 
 %------------------------------------------------
 
-\begin{frame}{Liza}
-This doesn't have to be the order of the individual analysis part. I am just giving each person two slides to start with. We can move it around so it flows better after all the info is here. \\
+\begin{frame}{Differences between Males and Females (Liza)}
+    \begin{columns}[t] % contents are top vertically aligned
+     \begin{column}[T]{5cm} % each column can also be its own environment
+   
+\begin{itemize}
+  \item Are there significant differences in the body measurements most useful for predicting weight in males and females?
+  \item Is one regression formula appropriate for predicting weight for both genders?
+  \item Can we use regression trees to help explore these questions?
+\end{itemize}
 
-Try to keep your analysis to two slides, as we are all presenting stuff. Also, note that your Labs are seperate PDFs that you create and turn in seperately.
+\end{column}
+\begin{column}[T]{7cm} % alternative top-align that's better for graphics
+
+
+<<gender plots, echo=FALSE>>=
+mf1 <- qplot(weight, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Weight", xlab="Weight (kg)", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
+
+mf2 <- qplot(waist, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Waist Girth", xlab="Waist Girth", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
+
+mf3 <- qplot(chest, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Chest Girth", xlab="Chest Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
+
+mf4 <- qplot(hip, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Hip Girth", xlab="Hip Girth", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
+
+grid.arrange(mf1, mf2, mf3, mf4,  ncol=2)
+@
+
+     \end{column}
+     \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Regression Trees}
+
+%this is the set-up for plotting regression trees
+<<RT1, echo=FALSE, message=FALSE, warning=FALSE>>=
+library(rpart)
+library(rpart.plot)
+tmf<-rpart(weight ~ ., data = body, method = "anova")
+bodyf<-subset(body,gender==0)
+bodym<-subset(body,gender==1)
+set.seed(101)
+tf <- rpart(weight ~ ., data = bodyf, method="anova")
+tm <- rpart(weight ~ ., data = bodym, method="anova")
+ptm<-prune(tm, cp=tm$cptable[which.min(tm$cptable[,"xerror"]),"CP"])
+@
+
+%here are the two regression trees. should be side-by-side with some text below.
+<<mf plots, echo=FALSE, fig.height=3.5>>=
+par(mfrow=c(1,2))
+prp(ptm, extra=101, main="Pruned Tree, Weight (Male)",box.col=5)
+prp(tf, extra=101, main="Regression Tree, Weight (Female)",box.col="pink")
+@
+
+\begin{itemize}
+  \item Variables used in male tree: hip & shoulder girths
+  \item Variable used in female tree: hip, knee, chest, waist and calf girths
+\end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
 
-\begin{frame}{Liza}
+\begin{frame}{Conclusions (Liza)}
+
+\begin{itemize}
+    \item Regression trees are useful for exploring data and provide a useful alternative to parametric regression methods, though are not intended for making predictions.
+  \item Results here suggest that separate models for males and females might be appropriate.
+  \item Model fitting and selection exercises could test this hypothesis.
+\end{itemize}
 
 \end{frame}
-
 %------------------------------------------------
 
 \subsection{Resampling Inference or something}

@@ -15,7 +15,56 @@
 %  PACKAGES AND THEMES
 %----------------------------------------------------------------------------------------
 
-\documentclass[table]{beamer}
+\documentclass[table]{beamer}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 
 % The Beamer class comes with a number of default slide themes
 % which change the colors and layouts of slides. Below this is a list
@@ -97,9 +146,10 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 %\textit{} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 
 \begin{document}
-\input{presentation-concordance}
+%\SweaveOpts{concordance=TRUE}
 
 \begin{frame}
 \titlepage % Print the title page as the first slide
@@ -121,6 +171,8 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 \subsection{Introduction} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
 
 \begin{frame}{Introduction}
+
+
 
 
 Describe dataset
@@ -148,6 +200,12 @@ Weight was measured for 507 physically active individuals - 247 men and 260 wome
      \end{column}
      \begin{column}[T]{5cm} % alternative top-align that's better for graphics
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/weight_plot} 
+
+\end{knitrout}
+
 
      \end{column}
      \end{columns}
@@ -165,6 +223,12 @@ Bitrochanteric diameter is the distance between the outer points of the hips and
 \end{column}
 \begin{column}[T]{5cm} % alternative top-align that's better for graphics
 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/hip_plots} 
+
+\end{knitrout}
 
 
      \end{column}
@@ -185,6 +249,12 @@ Chest girth was measured at the nipple line in males and just above breast tissu
 \begin{column}[T]{7cm} % alternative top-align that's better for graphics
 
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/chest_plots} 
+
+\end{knitrout}
+
 
      \end{column}
      \end{columns}
@@ -202,6 +272,12 @@ Wrist minimum girth is an average of right and left girths and navel (or abdomin
 \end{column}
 \begin{column}[T]{6cm} % alternative top-align that's better for graphics
 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/navel_plots} 
+
+\end{knitrout}
 
 
      \end{column}
@@ -240,19 +316,65 @@ Present predictive model for weight (2) in paper
 
 %------------------------------------------------
 
-\begin{frame}{Liza}
-This doesn't have to be the order of the individual analysis part. I am just giving each person two slides to start with. We can move it around so it flows better after all the info is here. \\
+\begin{frame}{Differences between Males and Females (Liza)}
+    \begin{columns}[t] % contents are top vertically aligned
+     \begin{column}[T]{5cm} % each column can also be its own environment
+   
+\begin{itemize}
+  \item Are there significant differences in the body measurements most useful for predicting weight in males and females?
+  \item Is one regression formula appropriate for predicting weight for both genders?
+  \item Can we use regression trees to help explore these questions?
+\end{itemize}
 
-Try to keep your analysis to two slides, as we are all presenting stuff. Also, note that your Labs are seperate PDFs that you create and turn in seperately.
+\end{column}
+\begin{column}[T]{7cm} % alternative top-align that's better for graphics
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/gender_plots} 
+
+\end{knitrout}
+
+
+     \end{column}
+     \end{columns}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Regression Trees}
+
+%this is the set-up for plotting regression trees
+
+
+
+%here are the two regression trees. should be side-by-side with some text below.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/mf_plots} 
+
+\end{knitrout}
+
+
+\begin{itemize}
+  \item Variables used in male tree: hip & shoulder girths
+  \item Variable used in female tree: hip, knee, chest, waist and calf girths
+\end{itemize}
 
 \end{frame}
 
 %------------------------------------------------
 
-\begin{frame}{Liza}
+\begin{frame}{Conclusions (Liza)}
+
+\begin{itemize}
+    \item Regression trees are useful for exploring data and provide a useful alternative to parametric regression methods, though are not intended for making predictions.
+  \item Results here suggest that separate models for males and females might be appropriate.
+  \item Model fitting and selection exercises could test this hypothesis.
+\end{itemize}
 
 \end{frame}
-
 %------------------------------------------------
 
 \subsection{Resampling Inference or something}
