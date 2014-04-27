@@ -43,9 +43,11 @@ This analysis will include our group analysis: summary of the dataset, our hypot
 <<Body data, echo=FALSE, message=FALSE, warning=FALSE>>=
 #Put in any packages needed here
 library(ggplot2)
+library(car)
 library(RCurl)
 library(gridExtra)
-library(GGally)
+library(leaps)
+library(MASS)
 #Here is the dataset
 body1<-getURL("http://www.amstat.org/publications/jse/datasets/body.dat.txt",ssl.verifypeer=FALSE)
 body<-read.table(text=body1)
@@ -186,7 +188,7 @@ prp(tf, extra=101, main="Regression Tree, Weight (Female",box.col="pink")
 The regression tree for the female subset (Figure 2b) does not reach a minimum relative error before the final node and therefore did not need pruning. The variables used to produce this tree vary significantly in number and type from the male tree. They are: hip girth, knee girth, calf girth, chest girth, and waist girth. In fact, the only variable the female tree and the pruned male tree have in common is shoulder girth.
 
 <<rsqf, echo=FALSE, message=FALSE, warning=FALSE, fig.height=3.7>>=
-rsq.rpart(tf)
+printcp(tf)
 @
 
 \subsubsection{Conclusion}

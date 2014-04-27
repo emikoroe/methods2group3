@@ -89,7 +89,7 @@
 
 \title[Group3:Data Analysis]{Group 3: Data Analysis} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author[Emily, Nick, Liza and Yiding]{Nick Cummings, Liza Nicoll, Emily Ramos, and Yiding Zhang} % Your name
+\author[Emily, Liza, Nick and Yiding]{Nick Cummings, Liza Nicoll, Emily Ramos, and Yiding Zhang} % Your name
 \institute[UMASS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 University of Massachusetts, Amherst \\ % Your institution for the title page
@@ -125,7 +125,7 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 <<Body data, echo=FALSE, message=FALSE, warning=FALSE>>=
 #Put in any packages needed here
 library(ggplot2)
-#library(xtable)
+library(car)
 library(RCurl)
 library(gridExtra)
 library(leaps)
@@ -141,124 +141,71 @@ names(body)<-c("biac.diam","pelvic.bredth" ,"bitro.diam","chest.dep",
               "wrist.min","age","weight","height",       
               "gender" )
 @
-
-Describe dataset
+\begin{columns}[t] % contents are top vertically aligned
+\begin{column}[T]{6cm} % each column can also be its own environment
+{\fontsize{0.3cm}{1em}\selectfont
 \begin{itemize}
-\item introduce the dataset, give the reason data was originally collected
-\item describe sample used
-\item basically introduce the project and discuss the usefulness of and applications for this data
+  \item The dataset, ``Exploring Relationships in Body Dimensions", contains 25 variables: 21 body dimension measurements as well as age, weight, height, and gender for 507 physically active, young individuals.
+  \item Of the body dimension measurements, 9 were skeletal/diameter measurements and 12 were girth/circumference measurements.
+  \item Of the 507 individual observations, there are 247 men and 260 women.
+  \item No missing values. Measurements made with metric scale.
 \end{itemize}
+}
+\end{column}
+
+\begin{column}[T]{6cm} 
+\includegraphics[width=\textwidth]{body}
+\end{column}
+\end{columns}
+
 \end{frame}
 
 %------------------------------------------------
 
-\subsection{Summary of the Dataset}
+\subsection{Description of Variables}
+
+%------------------------------------------------
+\begin{frame}{Description of Variables}
+\includegraphics[width=\textwidth]{summary_table}
+
+Text summary about the table
+
+\end{frame}
+
 
 %------------------------------------------------
 
-\begin{frame}{Weight}
-     \begin{columns}[t] % contents are top vertically aligned
-     \begin{column}[T]{5cm} % each column can also be its own environment
-   
-{\fontsize{0.275cm}{1em}\selectfont 
-Weight was measured for 507 physically active individuals - 247 men and 260 women. The distribution ranged from 42 kilograms to 116.4 kilograms. The mean weight and quartiles was signifigantly higher for men than women. We observe several outliers in the upper end of the range for both men and women. This may be due to the fact that the population sampled included a number of highly physicaly fit individuals with higher than average muscle mass.}
+\subsection{Outcome of Interest}
+
+%------------------------------------------------
+
+\begin{frame}{Outcome of Interest: Weight}
+
+\begin{columns}[t] % contents are top vertically aligned
+\begin{column}[T]{5cm} % each column can also be its own environment
+{\fontsize{0.275cm}{1em}\selectfont
+
+Applications of Data: 
+\begin {itemize}
+  \item investigate correspondence of frame size, girths, and weight of young, athletic people
+  \item  estimate ideal weight
+  \item  inform predictions of lean/fat body compositions
+  \item  identify gender in forensic science
+  \item  design appropriate clothing (law enforcement/military) 
+\end{itemize}
+
+Note: Outliers in the distribution of weight may be present because some of the individuals had unusually high muscle mass due to their high level of physical fitness.
 
 
-     \end{column}
-     \begin{column}[T]{5cm} % alternative top-align that's better for graphics
+}
+\end{column}
 
+\begin{column}[T]{7cm} 
 <<weight plot, echo=FALSE>>=
 print(qplot( as.factor(gender),weight, data=body, geom=c("boxplot"), main="Weight by Gender",xlab="Gender", ylab="Weight (kg)") + scale_x_discrete(labels=c("female","male"))+ theme_bw())
 @
-
-     \end{column}
-     \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}{Bitrochanteric Diameter and Hip Girth}
-     \begin{columns}[t] % contents are top vertically aligned
-     \begin{column}[T]{5cm} % each column can also be its own environment
-   
-{\fontsize{0.275cm}{1em}\selectfont 
-Bitrochanteric diameter is the distance between the outer points of the hips and hip girth is the circumference of the hip area measured at the level of the bitrochanteric diameter. The density distributions for both measures are normally distributed (though hip girth is skewed slightly right) and very similar in distribution for both men and women. A scatter plot of hip girth vs. weight suggests that weight increases linerally with increase in hip girth.}
-
 \end{column}
-\begin{column}[T]{5cm} % alternative top-align that's better for graphics
-
-
-<<hip plots, echo=FALSE>>=
-p1 <- qplot(bitro.diam, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Bitrochanteric Diameter", xlab="Bitrochanteric Diameter",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
-
-p2 <- qplot(hip, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Hip Girth", xlab="Hip Girth", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
-
-p3 <- qplot(hip,weight, data=body,colour = factor(gender),main="Hip Girth and Weight", xlab="Hip Girth (cm)",ylab="Weight (kg)")  + theme_bw()
-
-grid.arrange(p1, p2, p3,  ncol=1)
-@
-
-     \end{column}
-     \end{columns}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}{Chest and Shoulder}
-     \begin{columns}[t] % contents are top vertically aligned
-     \begin{column}[T]{5cm} % each column can also be its own environment
-   
-{\fontsize{0.275cm}{1em}\selectfont 
-Chest girth was measured at the nipple line in males and just above breast tissue in females at mid-expiration and shoulder girth was measured over deltoid muscles in both males and females. The density distributions for the two variables are quite similar. Women have narrower, though slightly skeewed, distribution with a much lower mean than that of the men. The scatterplots are also similar in that the regression lines for men and women are nearly identical, indicating that weight increases linearly with increase in shoulder girth, independant of gender.}
-
-\end{column}
-\begin{column}[T]{7cm} % alternative top-align that's better for graphics
-
-
-<<chest plots, echo=FALSE>>=
-ch1 <- qplot(chest, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Chest Girth", xlab="Chest Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
-
-ch2 <- qplot(chest, weight, data=body,colour = factor(gender),main="Chest Girth and Weight", xlab="Chest Girth (cm)",ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
-
-sh1 <- qplot(shoulder, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Shoulder Girth", xlab="Shoulder Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female","male")) + theme_bw()
-
-sh2 <- qplot(shoulder, weight, data=body,colour = factor(gender),main="Shoulder Girth and Weight", xlab="Shoulder Girth (cm)", ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
-
-grid.arrange(ch1, ch2, sh1, sh2,  ncol=2)
-
-@
-
-     \end{column}
-     \end{columns}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}{Wrist and Navel}
-     \begin{columns}[t] % contents are top vertically aligned
-     \begin{column}[T]{5cm} % each column can also be its own environment
-   
-{\fontsize{0.275cm}{1em}\selectfont 
-Wrist minimum girth is an average of right and left girths and navel (or abdominal) girth was measured at umbilicus and the iliac crest, using the iliac crest as a landmark. Wrist girth is bimodally distributed, but when divided into male and female, the distributions are normal with some outliers at the high end of the range for females. The distributions for navel girth is normal and remarkably similar for males and females. The scatterplot of navel girth against weight shows a linear relationship with weight increasing with increased naval girth.}
-
-\end{column}
-\begin{column}[T]{6cm} % alternative top-align that's better for graphics
-
-
-<<navel plots, echo=FALSE>>=
-n1 <- ggplot(body, aes(x=factor(gender), y=wrist.min, fill=factor(gender))) + geom_boxplot() +scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) +  xlab("Gender") +ylab("Wrist Girth (cm)") +ggtitle("Distribution of Minimum Wrist Girth")+ theme_bw()
-
-n2 <- qplot(navel, data=body, geom="density", fill=as.factor(gender), alpha=I(.5),main="Distribution of Navel Girth", xlab="Navel Girth",ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"),labels=c("female", "male")) + theme_bw()
-
-n3 <- qplot(navel, weight, data=body,colour = factor(gender),main="Navel Girth and Weight", xlab="Navel Girth (cm)",ylab="Weight (kg)")  + theme_bw() + geom_smooth(method=lm) 
-
-grid.arrange(n1, n2, n3,  ncol=1)
-
-@
-
-     \end{column}
-     \end{columns}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -269,23 +216,491 @@ grid.arrange(n1, n2, n3,  ncol=1)
 
 \begin{frame}{Multiple Linear Regression Model}
 
-Text describing why this model
-
-\begin{block}{Model}
-Present predictive model for weight (2) in paper
-
--fit this model and discuss results
-
--discuss potential uses for models of this data (finding ideal weight based on skeletal measurements?) and potential problems for applying to whole population (all participants were physically fit)
+\begin{block}{Initial Model}
+\begin{eqnarray*}
+\text{weight}_i &=& \beta_0 + \beta_1 \text{chest.diam}_{i} + \beta_2 \text{chest.dep}_{i} + \beta_3 \text{bitro.diam}_{i} \\
+&& + \beta_4 \text{wrist.min}_{i} + \beta_5 \text{ankle.min}_{i} + \beta_6 \text{height}_{i}
+\end{eqnarray*}
 \end{block}
 
+\\
 
+\texbf{R Output:}\\
+
+\\
+
+{\fontsize{0.275cm}{1em}\selectfont 
+\begin{tabular}{|r|r|r|r|r|r|r|}
+\hline
+    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height \\ \hline
+   -109.89 & 1.34  & 1.54 & 1.20  & 1.11 & 1.15 & 0.18 \\ \hline
+\end{tabular}
+
+\begin{itemize}
+  \item This model was chosen by the authors of the dataset based on the idea that these measurements remain constant after physical maturation.
+  \item It seems that, in our model, chest depth has the largest impact on weight.
+  \item COMMENTS ABOUT GOODNESS OF FIT???
+\end{itemize}
+
+}
 \end{frame}
 
 
 %------------------------------------------------
 
 \section{Individual Analysis}
+
+%------------------------------------------------
+
+\subsection{Model Selection}
+
+%------------------------------------------------
+\begin{frame}{Model Selection Criteria and Methods (Emily)}
+
+{\fontsize{0.275cm}{1em}\selectfont
+The methods used to create ten different models were: include all variables (1), suggested by paper (2), my selection (1), stepAIC (1), leaps (2) and combinations of R functions and human selection (3).  \\
+The seclection criterions used to analyse the models are AIC, BIC, PRESS and Adjusted $R^2$. \\
+AIC and BIC measure goodness-of-fit through residual sum of squares (log likelihoods) and penalizes the model size; the smaller the AIC/BIC, the better. Adjusted $R^2$ adjusts $R^2$ so that the model is penalized for adding more predictors; the higher the value of the adjusted $R^2$ the better. Finally, PRESS is a summary measure focused on prediction; the lower the value of PRESS, the better.
+}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{My Selection (Emily)}
+
+
+Predictors needed are age, height and gender. These variables contribute significantly to weight. The predictors we will allow in model selection are the predictors used in the inital model: chest diameter, chest depth and bitro diameter.\\
+Predictors I will allow are pelvic bredth, shoulder, chest, waist, hip and thigh will be used. I chose to allow these predictors in the model since these are directly associated with weight (e.g. waist). \\
+After running a few combinations using these variables, the model I decided was the ``best" includes the predictors chest.dep, chest.diam, shoulder, waist, hip, thight and height^2;\\
+The quadratic term for height was used since height is a significant variable. This model is deemed as the best since it has the lowest BIC and AIC values of the few models I tried.
+
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{R function: stepAIC() (Emily)}
+
+<<step, results='hide', eval=FALSE>>=
+MLRex <- lm(weight ~ height + wrist.min + ankle.min + chest, data=body)
+step <- stepAIC(MLRex, direction="both")
+@
+
+<<eval=FALSE>>=
+head(step$anova)
+@
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{R function: leaps() (Emily)}
+
+<<leap, fig.height=4, warning=FALSE, tidy=TRUE>>=
+leaps <- regsubsets(weight~height + wrist.diam + ankle.diam + chest, nbest=10, data=body)
+
+par(mfrow= c(1,2))
+plot(leaps, main = "BIC")
+plot(leaps,scale="adjr2", main = "AdjR2")
+@
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}{Summary (Emily)}
+
+{\fontsize{0.275cm}{1em}\selectfont 
+\caption{Table 2: Criteria Summary for each model}\\
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|r|}
+  \hline
+MLR\# & AIC & BIC & PRESS & Adjusted $R^2$ & Method \\ 
+  \hline
+all & 2216 & 2326 & 2384 & 0.9753 & \text{all variables  from dataset used} \\ \hline
+i & 2970 & 3004 & 10405 & 0.8869 & \text{suggested by paper} \\ \hline
+1 & 2256 & 2319 & 2560 & 0.9727 & \text{suggested by paper}\\ \hline
+2 & 2402 & 2441 & 3408 & 0.9632 & \text{my model}\\ \hline
+3 & 2206 & 2282 & 2329 & 0.9754 & \text{stepAIC} \\ \hline
+4 & 2195 & \textcolor{blue}{2271} & \textcolor{blue}{2281} & \textcolor{blue}{0.9759} & \text{stepAIC and adjustments} \\ \hline
+5 & 2207 & 2292 & 2335 & 0.9755 &\text{leaps (adj} R^2) \\ \hline
+6 & \textcolor{red}{2189} & 2278 & \textcolor{red}{2255} & \textcolor{red}{0.9764}  & \text{leaps(adj} R^2) \text{and adjustments}\\ \hline
+7 & 2213 & 2272 & 2353 & 0.9749 & \text{leaps(BIC)} \\ \hline
+8 & \textcolor{blue}{2205} & \textcolor{red}{2264} & 2316 & 0.9753 & \text{leaps(BIC) and adjustments}\\ \hline
+\end{tabular}\\
+\caption{\textit{\textcolor{red}{Red} corresponds to the best value for that criteria, \textcolor{blue}{blue} is the second best.}}
+\end{center}
+
+\begin{itemize}
+\item Model Selection truely is an art form. 
+\item R can mechanically run through steps, interactions, combinations, etc. 
+\item R cannot subjectively look at the variables to determine the absolute best model. 
+\item To acheive the model of ``best" fit, it is best to utilize a combination of R functions, criteria methods, and your own adjustments/ intuition.
+\end{itemize}
+}
+
+\end{frame}
+
+%------------------------------------------------
+
+\subsection{Resampling Inference or something}
+
+%------------------------------------------------
+
+\begin{frame}{Nick}
+
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Nick}
+
+\end{frame}
+
+%------------------------------------------------
+
+
+%------------------------------------------------
+
+\subsection{Logistic Regression and Ada-boosting}
+
+%------------------------------------------------
+\begin{frame}{Model Selection (Yiding)}
+\begin{minipage}{\textwidth}
+{\bf Logistic Model:}
+     $logit(p_i)=\beta_0+\beta_1X_{i1}+...+\beta_mX_{im}$
+\end{minipage}
+     \begin{columns}[t] % contents are top vertically aligned
+     \begin{column}[T]{5cm}
+     {\fontsize{0.3cm}{1em}\selectfont
+     {\bf Model selection criteria:}\\
+     \begin{itemize}
+     \item $AIC$\\
+     =$nlog(RRS/n)+2(p+1)$\\
+     in R: $step()$\\[2\baselineskip]
+     \item $BIC$\\
+    =$nlog(RSS/n)+(p+1)log(n)$\\
+      \&\\
+    Posterior Probability\\
+    $=p(\theta \mid x)=\frac{p(x\mid\theta)p(\theta)}{p(x)}$\\
+    in R: $BMA$ packages $bic.glm()$
+    \end{itemize}
+     }
+     \end{column}
+     \begin{column}[T]{7cm}
+     \begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{rlc}
+  & {\bf AIC} criteria model selection&\\
+  \hline
+  Step \# & Model & AIC \\ 
+  \hline
+  1 & $logi$(SEX)=WT+CDM+CDP+BDM+WR+ANK+HT+AGE+SHD+NAV+HIP & 110.35\\
+  2 & $logi$(SEX)=WT+CDP+BDM+WR+ANK+HT+AGE+SHD+NAV+HIP & 108.36\\
+  3 & $logi$(SEX)=WT+CDP+BDM+WR+HT+AGE+SHD+NAV+HIP & 106.45\\
+  4 & $logi$(SEX)=CDP+BDM+WR+HT+AGE+SHD+NAV+HIP & 104.55\\
+  5 & $logi$(SEX)=CDP+WR+HT+AGE+SHD+NAV+HIP & 102.69\\
+  6 & $logi$(SEX)=CDP+WR+HT+AGE+SHD+HIP & 101.05\\
+   \hline
+\end{tabular}
+}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\resizebox{0.89\textwidth}{!}{
+\begin{tabular}{rlrc}
+  & {\bf BIC} criteria model selection& &\\
+  \hline
+  Model \# & Model & BIC & Posterior prob\\ 
+  \hline
+  1 & $logi$(SEX)=WR+HT+SHD+HIP & -3033 & 0.453\\
+  2 & $logi$(SEX)=WR+HT+AGE+SHD+HIP & -3031 & 0.157\\
+  3 & $logi$(SEX)=CDP+WR+HT+AGE+SHD+HIP & -3031 & 0.151\\
+  4 & $logi$(SEX)=WR+HT+SHD+NAV+HIP & -3031 & 0.142\\
+  5 & $logi$(SEX)=WR+HT+SHD+HIP & -3029 & 0.047\\
+   \hline
+\end{tabular}
+}
+\end{table}
+     \end{column}
+
+     \end{columns}
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{Check the Goodness of Model (Yiding)}
+\begin{columns}[t]
+\begin{column}[t]{5cm}
+{\fontsize{0.3cm}{1em}\selectfont
+\begin{itemize}
+\item \textbf{Linearity}\\
+\underline{Residuals vs Fitted Values}\\
+Pearson residuals:\\
+$r_i=\frac{y_i-\hat{\mu}_i}{\sqrt{\hat{V}(y_i)}}=\frac{y_i-n_i\hat{\pi}_i}{\sqrt{n_i\hat{\pi}_i(1-\hat{\pi}_i)}}$\\[3\baselineskip]
+
+\item{\textbf{Predictive ability}}\\
+\underline{ROC curve}:\\
+sinsitivity $vs$ 1-specificity\\
+\underline{Somer's rank correlation}:\\
+$D_{xy}=2(c-0.5)$\\
+$c$ is the area under the ROC curve.\\[1\baselineskip]
+$Hmisc$ package: $somers2()$
+\end{itemize}
+
+}
+\end{column}
+
+\begin{column}[t]{7cm}
+<<AIC_BIC_RESIDUALS,echo=FALSE,fig.height=2.7>>=
+bic <- glm(gender~wrist.min+height+shoulder+hip,data=body,family="binomial")
+aic <- glm(gender~wrist.min+height+shoulder+hip+chest.dep+age,data=body,family="binomial")
+par(mfrow=c(1,2),cex=0.7)
+plot(aic,which=1,main="AIC")
+
+plot(bic,which=1,main="BIC")
+@
+
+<<prdict_ability,echo=FALSE,fig.height=2.7>>=
+p1=matrix(0,nrow=19,ncol=3)
+i=1
+for(p in seq(min(fitted(aic)),.95,.05)){
+t1=table(fitted(aic)>p,body$gender)
+p1[i,]=c(p,(t1[2,2])/sum(t1[,2]),(t1[1,1])/sum(t1[,1]))
+i=i+1
+}
+
+
+p2=matrix(0,nrow=19,ncol=3)
+i=1
+for(p in seq(min(fitted(bic)),.95,.05)){
+t2=table(fitted(bic)>p,body$gender)
+p2[i,]=c(p,(t2[2,2])/sum(t2[,2]),(t2[1,1])/sum(t2[,1]))
+i=i+1
+}
+par(mfrow=c(1,2),cex=0.7)
+plot(1-p1[,3],p1[,2],xlab="1-specificity",ylab="sensitivity",main="AIC model ROC")
+lines(1-p1[,3],p1[,2])
+plot(1-p2[,3],p2[,2],xlab="1-specificity",ylab="sensitivity",main="BIC model ROC")
+lines(1-p2[,3],p2[,2])
+@
+
+\begin{table}[ht]
+\centering
+\resizebox{0.6\textwidth}{!}{
+\begin{tabular}{ccc}
+  \hline
+  Model  & Area ROC curve & Somers' $D_{xy}$\\ 
+  \hline
+  AIC & 0.9944721 & 0.9889443\\
+  BIC & 0.9941607 & 0.9883214\\
+   \hline
+\end{tabular}
+}
+\end{table}
+\end{column}
+\end{columns}
+
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{Ada-boosting (Yiding)}
+\begin{columns}[T]
+\begin{column}[t]{5cm}
+{\fontsize{0.2cm}{1em}\selectfont
+\textbf{Algorithem}:\\
+Given: $(x_1,y_1),...,(x_m,y_m)$ where $x_i \in X, y_i \in Y=\{-1,+1\}$ Initialize $D_1(i)=1/m$.\\
+For $t=1,...,T$:\\
+$\bullet$ Train weak learner using distribution $D_t$.\\
+$\bullet$ Get weak hypothesis $h_t : X \rightarrow \{-1,+1\}$ with error $\epsilon_t=Pr_{i\sim D_t}\left[ h_t(x_i)\ne y_i \right]$\\
+$\bullet$ Choose $\alpha_t=\frac{1}{2}ln\left(\frac{1-\epsilon_t}{\epsilon_t}\right)$\\
+$\bullet$ Update:\\
+$$
+D_{t+1}(i)=\frac{D_t(i)}{Z_t}\times
+\left\{ 
+\begin{matrix}
+e^{-\alpha_t} & \mbox{if $h_t(x_i)=y_i$}\\
+e^{\alpha_t} & \mbox{if $h_t(x_i)\ne y_i$}
+\end{matrix}
+\right.
+$$\\
+$=\frac{D_i(i)exp(\alpha_t y_i h_t(x_i))}{Z_t}$ \\
+Final hypothesis: $H(x)=sign\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)$
+
+}
+\end{column}
+
+\begin{column}[t]{7cm}
+<<echo=FALSE>>=
+#x <- c(1,2,3.5,5.8,6.5)
+#y <- c(5,1.8,8,9.5,7.6)
+#x1 <- c(4,4.5,6,8,9)
+#y2 <- c(5.3,2.2,5.7,9.1,3.2)
+x1 <- c(1,2)
+y1 <- c(5,1.8)
+x2 <- c(3.5,5.8,6.5)
+y2 <- c(8,9.5,7.6)
+x3 <- c(4,4.5,6)
+y3 <- c(5.3,2.2,5.7)
+x4 <- 8
+y4 <- 9.1
+x5 <- 9
+y5 <- 3.2
+
+par(mfrow=c(3,3),mar=c(2,2,2,2))
+## begin
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.95,main="Begin")
+points(x2,y2,pch=3)
+points(x3,y3,pch="_")
+points(x4,y4,pch="_")
+points(x5,y5,pch="_")
+
+## 1
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.95,main="Round 1")
+points(x2,y2,pch=3,col="red",cex=1.7)
+points(x3,y3,pch="_")
+points(x4,y4,pch="_")
+points(x5,y5,pch="_")
+abline(v=3,col="red")
+## 11
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.7,main="Post round 1")
+points(x2,y2,pch=3,cex=1.7)
+points(x3,y3,pch="_",cex=0.85)
+points(x4,y4,pch="_",cex=0.85)
+points(x5,y5,pch="_",cex=0.85)
+
+## 2
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.7,main="Round 2")
+points(x2,y2,pch=3,cex=1.7)
+points(x3,y3,pch="_",col="green3",cex=0.85)
+points(x4,y4,pch="_",cex=0.85)
+points(x5,y5,pch="_",cex=0.85)
+abline(v=7.6,col="green3")
+
+## 22
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.6,main="Post round 2")
+points(x2,y2,pch=3,cex=1.3)
+points(x3,y3,pch="_")
+points(x4,y4,pch="_",cex=0.7)
+points(x5,y5,pch="_",cex=0.7)
+
+## 3
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.6,col="blue",main="Round 3")
+points(x2,y2,pch=3,cex=1.3)
+points(x3,y3,pch="_")
+points(x4,y4,pch="_",cex=0.7,col="blue")
+points(x5,y5,pch="_",cex=0.7)
+abline(h=7,col="blue")
+
+## 33
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.7,main="Post round 3")
+points(x2,y2,pch=3,cex=0.9)
+points(x3,y3,pch="_",cex=0.85)
+points(x4,y4,pch="_",cex=0.9)
+points(x5,y5,pch="_",cex=0.63)
+
+## final
+plot(x1,y1,pch=3,xlab="",ylab="",xlim=c(1,10),ylim=c(1,10),cex=0.95,main="Final")
+points(x2,y2,pch=3)
+points(x3,y3,pch="_")
+points(x4,y4,pch="_")
+points(x5,y5,pch="_")
+abline(v=3,col="red")
+abline(v=7.6,col="green3")
+abline(h=7,col="blue")
+@
+
+\end{column}
+
+\end{columns}
+\end{frame}
+%------------------------------------------------
+\begin{frame}{Logistic Regression vs Ada-boosting (Yiding)}
+\begin{columns}[t]
+\begin{column}[t]{4cm}
+{\fontsize{0.3cm}{1em}\selectfont
+\textbf{Logistic Regression}\\
+Predictive ability depends on \underline{cutoff point}\\
+}
+\begin{table}[ht]
+\centering
+\resizebox{0.7\textwidth}{!}{
+\begin{tabular}{ccc}
+  \hline
+  Cutoff point  & Sensitivity & Specificity\\ 
+  \hline
+  0.00 & 1.000 & 0.004\\
+  0.05 & 0.996 & 0.838\\
+  0.10 & 0.992 & 0.892\\
+  0.15 & 0.988 & 0.942\\
+  0.20 & 0.984 & 0.954\\
+  ... & ...    & ... \\
+  0.85 & 0.923 & 0.992\\
+  0.90 & 0.903 & 0.992\\
+   \hline
+\end{tabular}
+}
+\end{table}
+
+
+\end{column}
+\begin{column}[t]{8cm}
+{\fontsize{0.3cm}{1em}\selectfont
+\textbf{Ada-boosting}\\
+Predictive ability depends on \underline{variables}\\
+}
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ccccc}
+  \hline
+  Round $\#$  & Original data & AIC data & BIC data\\
+       & Sensitiviy; Specificity; Accuracy & Sensitiviy; Specificity; Accuracy & Sensitiviy; Specificity; Accuracy\\
+  \hline
+    1 & 0.975; 0.925; 0.949 & 0.967; 0.962; 0.965 & 0.967; 0.947; 0.957\\
+    2 & 0.953; 0.936; 0.945 & 0.953; 0.920; 0.937 & 0.961; 0.936; 0.949\\
+    3 & 0.949; 0.951; 0.949 & 0.954; 0.959; 0.957 & 0.954; 0.959; 0.957\\
+    4 & 0.983; 0.932; 0.957 & 0.983; 0.955; 0.961 & 0.983; 0.962; 0.972\\
+    5 & 0.983; 0.924; 0.953 & 0.983; 0.931; 0.957 & 0.983; 0.947; 0.965\\
+    Avarage & 0.969; 0.934; 0.951 & 0.968; 0.945; 0.955 & 0.970; 0.950; 0.960\\
+  \hline
+
+\end{tabular}
+}
+\end{table}
+\end{column}
+\end{columns}
+
+
+\begin{minipage}{\textwidth}
+{\fontsize{0.3cm}{1em}\selectfont
+\begin{columns}[t]
+
+
+\begin{column}[t]{4cm}
+\begin{itemize}
+\item \textbf{Inference}\\
+Logistic Regression $\surd$
+\end{itemize}
+\end{column}
+
+
+\begin{column}[t]{8cm}
+\begin{itemize}
+\item \textbf{Prediction}\\
+Ada-boosting $\surd$
+\end{itemize}
+\end{column}
+
+
+\end{columns}
+}
+\end{minipage}
+
+
+\end{frame}
 
 %------------------------------------------------
 
@@ -325,7 +740,7 @@ grid.arrange(mf1, mf2, mf3, mf4,  ncol=2)
 
 %------------------------------------------------
 
-\begin{frame}{Regression Trees}
+\begin{frame}{Regression Trees (Liza)}
 
 %this is the set-up for plotting regression trees
 <<RT1, echo=FALSE, message=FALSE, warning=FALSE>>=
@@ -367,124 +782,26 @@ prp(tf, extra=101, main="Regression Tree, Weight (Female)",box.col="pink")
 \end{frame}
 %------------------------------------------------
 
-\subsection{Model Selection}
+\begin{frame}{Group Conclusions}
+\begin{columns}[t]
+\begin{column}[t]{4cm}
 
-%------------------------------------------------
-\begin{frame}{Model Selection Criteria and Methods (Emily)}
+\includegraphics[width=\textwidth]{happy}
 
-{\fontsize{0.275cm}{1em}\selectfont
-The methods used to create ten different models were: include all variables (1), suggested by paper (2), my selection (1), stepAIC (1), leaps (2) and combinations of R functions and human selection (3).  \\
-The seclection criterions used to analyse the models are AIC, BIC, PRESS and Adjusted $R^2$. \\
-AIC and BIC measure goodness-of-fit through residual sum of squares (log likelihoods) and penalizes the model size; the smaller the AIC/BIC, the better. Adjusted $R^2$ adjusts $R^2$ so that the model is penalized for adding more predictors; the higher the value of the adjusted $R^2$ the better. Finally, PRESS is a summary measure focused on prediction; the lower the value of PRESS, the better.
-}
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}{My Selection (Emily)}
+\end{column}
 
 
-Predictors needed are age, height and gender. These variables contribute significantly to weight. The predictors we will allow in model selection are the predictors used in the inital model: chest diameter, chest depth and bitro diameter.\\
-Predictors I will allow are pelvic bredth, shoulder, chest, waist, hip and thigh will be used. I chose to allow these predictors in the model since these are directly associated with weight (e.g. waist). \\
-After running a few combinations using these variables, the model I decided was the ``best" includes the predictors chest.dep, chest.diam, shoulder, waist, hip, thight and height^2;\\
-The quadratic term for height was used since height is a significant variable. This model is deemed as the best since it has the lowest BIC and AIC values of the few models I tried.
-
-\end{frame}
-%------------------------------------------------
-\begin{frame}{R function: stepAIC() (Emily)}
-
-<<step, results='hide'>>=
-MLRex <- lm(weight ~ height + wrist.min + ankle.min + chest, data=body)
-step <- stepAIC(MLRex, direction="both")
-@
-
-<<>>=
-head(step$anova)
-@
-
-\end{frame}
-
-
-\begin{frame}{R function: leaps() (Emily)}
-
-<<leap, fig.height=4, warning=FALSE, tidy=TRUE>>=
-leaps <- regsubsets(weight~height + wrist.diam + ankle.diam + chest, nbest=10, data=body)
-
-par(mfrow= c(1,2))
-plot(leaps, main = "BIC")
-plot(leaps,scale="adjr2", main = "AdjR2")
-@
-@
-
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}{Summary (Emily)}
-
-{\fontsize{0.275cm}{1em}\selectfont 
-\caption{Table 2: Criteria Summary for each model}\\
-
-\begin{center}
-\begin{tabular}{|r|c|c|c|c|r|}
-  \hline
-MLR\# & AIC & BIC & PRESS & Adjusted $R^2$ & Method \\ 
-  \hline
-all & 2216 & 2326 & 2384 & 0.9753 & \text{all variables  from dataset used} \\ \hline
-i & 2970 & 3004 & 10405 & 0.8869 & \text{suggested by paper} \\ \hline
-1 & 2256 & 2319 & 2560 & 0.9727 & \text{suggested by paper}\\ \hline
-2 & 2402 & 2441 & 3408 & 0.9632 & \text{my model}\\ \hline
-3 & 2206 & 2282 & 2329 & 0.9754 & \text{stepAIC} \\ \hline
-4 & 2195 & \textcolor{blue}{2271} & \textcolor{blue}{2281} & \textcolor{blue}{0.9759} & \text{stepAIC and adjustments} \\ \hline
-5 & 2207 & 2292 & 2335 & 0.9755 &\text{leaps (adj} R^2) \\ \hline
-6 & \textcolor{red}{2189} & 2278 & \textcolor{red}{2255} & \textcolor{red}{0.9764}  & \text{leaps(adj} R^2) \text{and adjustments}\\ \hline
-7 & 2213 & 2272 & 2353 & 0.9749 & \text{leaps(BIC)} \\ \hline
-8 & \textcolor{blue}{2205} & \textcolor{red}{2264} & 2316 & 0.9753 & \text{leaps(BIC) and adjustments}\\ \hline
-\end{tabular}\\
-\caption{\textit{\textcolor{red}{Red} corresponds to the best value for that criteria, \textcolor{blue}{blue} is the second best.}}
-\end{center}
+\begin{column}[t]{8cm}
+What have we learned? 
 
 \begin{itemize}
-\item Model Selection truely is an art form. 
-\item R can mechanically run through steps, interactions, combinations, etc. 
-\item R cannot subjectively look at the variables to determine the absolute best model. 
-\item To acheive the model of ``best" fit, it is best to utilize a combination of R functions, criteria methods, human adjustments and your own discretion.
+    \item Nick's Conclusion
+  \item With model selection, a combination of selection criteria, R functions and intuition are needed to create the model of ``best" fit. 
+  \item Inference choose Logistic Regression; prediction choose Ada-boosting.
+  \item Liza's conclusion
 \end{itemize}
-}
-
-\end{frame}
-
-%------------------------------------------------
-
-\subsection{Resampling Inference or something}
-
-%------------------------------------------------
-
-\begin{frame}{Nick}
-
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}{Nick}
-
-\end{frame}
-
-%------------------------------------------------
-
-\subsection{Not sure what Yiding decided on}
-
-%------------------------------------------------
-
-\begin{frame}{Yiding}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}{Yiding}
-
+\end{column}
+\end{columns}
 \end{frame}
 
 %----------------------------------------------------------------------------------------

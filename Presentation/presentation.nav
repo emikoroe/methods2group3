@@ -9,35 +9,54 @@
 \headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Introduction}}\headcommand {\beamer@subsectionpages {3}{2}}
 \headcommand {\slideentry {1}{1}{1}{3/3}{Introduction}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{4}{Summary of the Dataset}}\headcommand {\beamer@subsectionpages {3}{3}}
-\headcommand {\slideentry {1}{2}{1}{4/4}{Summary of the Dataset}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{4}{Description of Variables}}\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\slideentry {1}{2}{1}{4/4}{Description of Variables}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {1}{2}{2}{5/5}{Summary of the Dataset}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{5}{Outcome of Interest}}\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\slideentry {1}{3}{1}{5/5}{Outcome of Interest}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {1}{2}{3}{6/6}{Summary of the Dataset}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{4}{6}{Initial Model}}\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\slideentry {1}{4}{1}{6/6}{Initial Model}{0}}
 \headcommand {\beamer@framepages {6}{6}}
-\headcommand {\slideentry {1}{2}{4}{7/7}{Summary of the Dataset}{0}}
+\headcommand {\sectionentry {2}{Individual Analysis}{7}{Individual Analysis}{0}}
+\headcommand {\beamer@sectionpages {3}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{7}{Model Selection}}\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\slideentry {2}{1}{1}{7/7}{Model Selection}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{8}{Initial Model}}\headcommand {\beamer@subsectionpages {4}{7}}
-\headcommand {\slideentry {1}{3}{1}{8/8}{Initial Model}{0}}
+\headcommand {\slideentry {2}{1}{2}{8/8}{Model Selection}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\sectionentry {2}{Individual Analysis}{9}{Individual Analysis}{0}}
-\headcommand {\beamer@sectionpages {3}{8}}
-\headcommand {\beamer@subsectionpages {8}{8}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{9}{Regression Trees}}\headcommand {\beamer@subsectionpages {9}{8}}
-\headcommand {\slideentry {2}{1}{1}{9/9}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{1}{3}{9/9}{Model Selection}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {2}{1}{2}{10/10}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{1}{4}{10/10}{Model Selection}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {2}{1}{3}{11/11}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{1}{5}{11/11}{Model Selection}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{12}{Model Selection}}\headcommand {\beamer@subsectionpages {9}{11}}
-\headcommand {\slideentry {2}{2}{1}{12/12}{Model Selection}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{12}{Resampling Inference or something}}\headcommand {\beamer@subsectionpages {7}{11}}
+\headcommand {\slideentry {2}{2}{1}{12/12}{Resampling Inference or something}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {2}{2}{2}{13/13}{Model Selection}{0}}
+\headcommand {\slideentry {2}{2}{2}{13/13}{Resampling Inference or something}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\beamer@partpages {1}{13}}
-\headcommand {\beamer@subsectionpages {14}{13}}
-\headcommand {\beamer@sectionpages {9}{13}}
-\headcommand {\beamer@documentpages {13}}
-\headcommand {\def \inserttotalframenumber {14}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{14}{Logistic Regression and Ada-boosting}}\headcommand {\beamer@subsectionpages {12}{13}}
+\headcommand {\slideentry {2}{3}{1}{14/14}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {2}{3}{2}{15/15}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {2}{3}{3}{16/16}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {2}{3}{4}{17/17}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{18}{Regression Trees}}\headcommand {\beamer@subsectionpages {14}{17}}
+\headcommand {\slideentry {2}{4}{1}{18/18}{Regression Trees}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{4}{2}{19/19}{Regression Trees}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {2}{4}{3}{20/20}{Regression Trees}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {2}{4}{4}{21/21}{Regression Trees}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@partpages {1}{21}}
+\headcommand {\beamer@subsectionpages {18}{21}}
+\headcommand {\beamer@sectionpages {7}{21}}
+\headcommand {\beamer@documentpages {21}}
+\headcommand {\def \inserttotalframenumber {21}}
