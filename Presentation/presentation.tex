@@ -377,6 +377,129 @@ Present predictive model for weight (2) in paper
 \end{frame}
 %------------------------------------------------
 
+\subsection{Model Selection}
+
+%------------------------------------------------
+\begin{frame}{Model Selection Criteria and Methods (Emily)}
+
+{\fontsize{0.275cm}{1em}\selectfont
+The methods used to create ten different models were: include all variables (1), suggested by paper (2), my selection (1), stepAIC (1), leaps (2) and combinations of R functions and human selection (3).  \\
+The seclection criterions used to analyse the models are AIC, BIC, PRESS and Adjusted $R^2$. \\
+AIC and BIC measure goodness-of-fit through residual sum of squares (log likelihoods) and penalizes the model size; the smaller the AIC/BIC, the better. Adjusted $R^2$ adjusts $R^2$ so that the model is penalized for adding more predictors; the higher the value of the adjusted $R^2$ the better. Finally, PRESS is a summary measure focused on prediction; the lower the value of PRESS, the better.
+}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{My Selection (Emily)}
+
+
+Predictors needed are age, height and gender. These variables contribute significantly to weight. The predictors we will allow in model selection are the predictors used in the inital model: chest diameter, chest depth and bitro diameter.\\
+Predictors I will allow are pelvic bredth, shoulder, chest, waist, hip and thigh will be used. I chose to allow these predictors in the model since these are directly associated with weight (e.g. waist). \\
+After running a few combinations using these variables, the model I decided was the ``best" includes the predictors chest.dep, chest.diam, shoulder, waist, hip, thight and height^2;\\
+The quadratic term for height was used since height is a significant variable. This model is deemed as the best since it has the lowest BIC and AIC values of the few models I tried.
+
+\end{frame}
+%------------------------------------------------
+\begin{frame}{R function: stepAIC() (Emily)}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{MLRex} \hlkwb{<-} \hlkwd{lm}\hlstd{(weight} \hlopt{~} \hlstd{height} \hlopt{+} \hlstd{wrist.min} \hlopt{+} \hlstd{ankle.min} \hlopt{+} \hlstd{chest,} \hlkwc{data} \hlstd{= body)}
+\hlstd{step} \hlkwb{<-} \hlkwd{stepAIC}\hlstd{(MLRex,} \hlkwc{direction} \hlstd{=} \hlstr{"both"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{head}\hlstd{(step}\hlopt{$}\hlstd{anova)}
+\end{alltt}
+\begin{verbatim}
+## Stepwise Model Path 
+## Analysis of Deviance Table
+## 
+## Initial Model:
+## weight ~ height + wrist.min + ankle.min + chest
+## 
+## Final Model:
+## weight ~ height + ankle.min + chest
+## 
+## 
+##          Step Df Deviance Resid. Df Resid. Dev  AIC
+## 1                               502      10962 1568
+## 2 - wrist.min  1     28.7       503      10990 1568
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\end{frame}
+
+
+\begin{frame}{R function: leaps() (Emily)}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{leaps} \hlkwb{<-} \hlkwd{regsubsets}\hlstd{(weight} \hlopt{~} \hlstd{height} \hlopt{+} \hlstd{wrist.diam} \hlopt{+} \hlstd{ankle.diam} \hlopt{+} \hlstd{chest,} \hlkwc{nbest} \hlstd{=} \hlnum{10}\hlstd{,}
+    \hlkwc{data} \hlstd{= body)}
+
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
+\hlkwd{plot}\hlstd{(leaps,} \hlkwc{main} \hlstd{=} \hlstr{"BIC"}\hlstd{)}
+\hlkwd{plot}\hlstd{(leaps,} \hlkwc{scale} \hlstd{=} \hlstr{"adjr2"}\hlstd{,} \hlkwc{main} \hlstd{=} \hlstr{"AdjR2"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/leap} 
+
+\end{knitrout}
+
+@
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Summary (Emily)}
+
+{\fontsize{0.275cm}{1em}\selectfont 
+\caption{Table 2: Criteria Summary for each model}\\
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|r|}
+  \hline
+MLR\# & AIC & BIC & PRESS & Adjusted $R^2$ & Method \\ 
+  \hline
+all & 2216 & 2326 & 2384 & 0.9753 & \text{all variables  from dataset used} \\ \hline
+i & 2970 & 3004 & 10405 & 0.8869 & \text{suggested by paper} \\ \hline
+1 & 2256 & 2319 & 2560 & 0.9727 & \text{suggested by paper}\\ \hline
+2 & 2402 & 2441 & 3408 & 0.9632 & \text{my model}\\ \hline
+3 & 2206 & 2282 & 2329 & 0.9754 & \text{stepAIC} \\ \hline
+4 & 2195 & \textcolor{blue}{2271} & \textcolor{blue}{2281} & \textcolor{blue}{0.9759} & \text{stepAIC and adjustments} \\ \hline
+5 & 2207 & 2292 & 2335 & 0.9755 &\text{leaps (adj} R^2) \\ \hline
+6 & \textcolor{red}{2189} & 2278 & \textcolor{red}{2255} & \textcolor{red}{0.9764}  & \text{leaps(adj} R^2) \text{and adjustments}\\ \hline
+7 & 2213 & 2272 & 2353 & 0.9749 & \text{leaps(BIC)} \\ \hline
+8 & \textcolor{blue}{2205} & \textcolor{red}{2264} & 2316 & 0.9753 & \text{leaps(BIC) and adjustments}\\ \hline
+\end{tabular}\\
+\caption{\textit{\textcolor{red}{Red} corresponds to the best value for that criteria, \textcolor{blue}{blue} is the second best.}}
+\end{center}
+
+\begin{itemize}
+\item Model Selection truely is an art form. 
+\item R can mechanically run through steps, interactions, combinations, etc. 
+\item R cannot subjectively look at the variables to determine the absolute best model. 
+\item To acheive the model of ``best" fit, it is best to utilize a combination of R functions, criteria methods, human adjustments and your own discretion.
+\end{itemize}
+}
+
+\end{frame}
+
+%------------------------------------------------
+
 \subsection{Resampling Inference or something}
 
 %------------------------------------------------
@@ -404,21 +527,6 @@ Present predictive model for weight (2) in paper
 %------------------------------------------------
 
 \begin{frame}{Yiding}
-
-\end{frame}
-
-%------------------------------------------------
-
-\subsection{Model Selection}
-
-%------------------------------------------------
-\begin{frame}{Emily}
-
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}{Emily}
 
 \end{frame}
 
