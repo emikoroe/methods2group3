@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  26 APR 2014 20:04
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  26 APR 2014 21:20
 entering extended mode
 **report.tex
 ("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.tex"
@@ -208,36 +208,148 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \f@ncyO@olf=\skip59
 \f@ncyO@orf=\skip60
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen128
+\Hy@linkcounter=\count103
+\Hy@pagecounter=\count104
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count105
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count106
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen129
+\Fld@menulength=\count107
+\Field@Width=\dimen130
+\Fld@charsize=\dimen131
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count108
+\c@Item=\count109
+\c@Hfootnote=\count110
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count111
+\c@bookmark@seq@number=\count112
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip61
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
 ("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen128
+\scratchcounter=\count113
+\scratchdimen=\dimen132
 \scratchbox=\box28
-\nofMPsegments=\count104
-\nofMParguments=\count105
+\nofMPsegments=\count114
+\nofMParguments=\count115
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen129
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen133
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks29
 )
 *geometry* driver: auto-detecting
@@ -274,8 +386,25 @@ LaTeX Font Info:    ... okay on input line 79.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 81.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count119
+)
+LaTeX Info: Redefining \ref on input line 81.
+LaTeX Info: Redefining \pageref on input line 81.
+LaTeX Info: Redefining \nameref on input line 81.
+
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.out")
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.out")
+\@outlinefile=\write3
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
@@ -286,16 +415,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.101 
+l.103 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
@@ -318,6 +442,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--111
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+
+! LaTeX Error: File `Data_summary' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.118 ...graphics[width=\textwidth]{Data_summary}}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 133.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 133.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
+
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 25.2842pt.
  We now make it that large for the rest of the document.
@@ -326,230 +482,138 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-
- []
-
-Package color Info: Redefining color shadecolor on input line 121.
-<figure/weight_plot.pdf, id=8, 505.89pt x 289.08pt>
-File: figure/weight_plot.pdf Graphic file (type pdf)
-
-<use figure/weight_plot.pdf>
-Package pdftex.def Info: figure/weight_plot.pdf used on input line 122.
-(pdftex.def)             Requested size: 430.00462pt x 245.72356pt.
- [2 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/weight
-_plot.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
-
- []
-
-Package color Info: Redefining color shadecolor on input line 136.
-<figure/hip_plots.pdf, id=17, 505.89pt x 216.81pt>
-File: figure/hip_plots.pdf Graphic file (type pdf)
- <use figure/hip_plots.pdf>
-Package pdftex.def Info: figure/hip_plots.pdf used on input line 137.
-(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
-Package color Info: Redefining color shadecolor on input line 144.
-
-<figure/hipgirth_plot.pdf, id=18, 505.89pt x 216.81pt>
-File: figure/hipgirth_plot.pdf Graphic file (type pdf)
-
-<use figure/hipgirth_plot.pdf>
-Package pdftex.def Info: figure/hipgirth_plot.pdf used on input line 145.
-(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
- [3 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/hip_pl
-ots.pdf> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/h
-ipgirth_plot.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
-Package color Info: Redefining color shadecolor on input line 159.
-<figure/chest_plots.pdf, id=37, 505.89pt x 325.215pt>
-File: figure/chest_plots.pdf Graphic file (type pdf)
-
-<use figure/chest_plots.pdf>
-Package pdftex.def Info: figure/chest_plots.pdf used on input line 160.
-(pdftex.def)             Requested size: 430.00462pt x 276.43901pt.
- [4 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/chest_
-plots.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
-
- []
-
-Package color Info: Redefining color shadecolor on input line 174.
-<figure/navel_plots.pdf, id=51, 505.89pt x 216.81pt>
-File: figure/navel_plots.pdf Graphic file (type pdf)
-
-<use figure/navel_plots.pdf>
-Package pdftex.def Info: figure/navel_plots.pdf used on input line 175.
-(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
-Package color Info: Redefining color shadecolor on input line 181.
-
-<figure/navelgirth_plot.pdf, id=52, 505.89pt x 216.81pt>
-File: figure/navelgirth_plot.pdf Graphic file (type pdf)
-
-<use figure/navelgirth_plot.pdf>
-Package pdftex.def Info: figure/navelgirth_plot.pdf used on input line 182.
-(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
- [5 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/navel_
-plots.pdf> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure
-/navelgirth_plot.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-
- []
-
-Package color Info: Redefining color shadecolor on input line 194.
-<figure/unnamed-chunk-1.pdf, id=74, 505.89pt x 216.81pt>
-File: figure/unnamed-chunk-1.pdf Graphic file (type pdf)
-
-<use figure/unnamed-chunk-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-1.pdf used on input line 195.
-(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 212.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 212.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
-
- []
-
-
-Overfull \hbox (10.97675pt too wide) in paragraph at lines 214--215
+Overfull \hbox (10.97675pt too wide) in paragraph at lines 135--136
 []\OT1/cmr/m/n/10.95 As we know, the ma-jor-ity of a per-sons body weight ac-cu
 -mu-lates in the mid-dle of body(beneath
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
-
- []
-
-[6 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/unnamed
--chunk-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.235 ...m$_{i} + \beta_4$ wrist.min$_{i}$ + \beta
+l.156 ...m$_{i} + \beta_4$ wrist.min$_{i}$ + \beta
                                                   _5$ ankle.min$_{i} + \beta...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
-Package color Info: Redefining color shadecolor on input line 240.
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 283--285
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
-
- []
-
-Package color Info: Redefining color shadecolor on input line 305.
-<figure/wdt.pdf, id=99, 505.89pt x 505.89pt>
+[2]
+Package color Info: Redefining color shadecolor on input line 161.
+ [3]
+Package color Info: Redefining color shadecolor on input line 211.
+ <figure/wdt.pdf, id=109, 252.945pt x 180.675pt>
 File: figure/wdt.pdf Graphic file (type pdf)
  <use figure/wdt.pdf>
-Package pdftex.def Info: figure/wdt.pdf used on input line 306.
-(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
-Package color Info: Redefining color shadecolor on input line 317.
+Package pdftex.def Info: figure/wdt.pdf used on input line 212.
+(pdftex.def)             Requested size: 252.94438pt x 180.67729pt.
 
-<figure/wt.pdf, id=100, 505.89pt x 505.89pt>
-File: figure/wt.pdf Graphic file (type pdf)
- <use figure/wt.pdf>
-Package pdftex.def Info: figure/wt.pdf used on input line 318.
-(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
- [9] [10 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/w
-dt.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.217 \caption
+              {Figure 1: Desnsity distribution of Weight for males and females}
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
-[11 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/wt.pdf
->]
-Package color Info: Redefining color shadecolor on input line 332.
-Package color Info: Redefining color shadecolor on input line 359.
- <figure/mtrees.pdf, id=126, 505.89pt x 505.89pt>
+Package color Info: Redefining color shadecolor on input line 224.
+<figure/wt.pdf, id=110, 505.89pt x 216.81pt>
+File: figure/wt.pdf Graphic file (type pdf)
+ <use figure/wt.pdf>
+Package pdftex.def Info: figure/wt.pdf used on input line 225.
+(pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
+ [4 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/wdt.pd
+f>]
+Package color Info: Redefining color shadecolor on input line 234.
+Package color Info: Redefining color shadecolor on input line 260.
+
+<figure/mtrees.pdf, id=124, 505.89pt x 252.945pt>
 File: figure/mtrees.pdf Graphic file (type pdf)
  <use figure/mtrees.pdf>
-Package pdftex.def Info: figure/mtrees.pdf used on input line 360.
-(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
+Package pdftex.def Info: figure/mtrees.pdf used on input line 261.
+(pdftex.def)             Requested size: 430.00462pt x 215.00812pt.
 
-[12] [13 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/m
-trees.pdf>]
-Package color Info: Redefining color shadecolor on input line 374.
- <figure/rsqf1.pdf, id=141, 505.89pt x 505.89pt>
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.265 \caption
+              {Figure 2: a. Pruned regression tree for male weight. b. Regre...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[5 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/wt.pdf>
+]
+Package color Info: Redefining color shadecolor on input line 271.
+ [6 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/mtrees
+.pdf>] <figure/rsqf1.pdf, id=147, 505.89pt x 266.9975pt>
 File: figure/rsqf1.pdf Graphic file (type pdf)
 
 <use figure/rsqf1.pdf>
-Package pdftex.def Info: figure/rsqf1.pdf used on input line 399.
-(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
- <figure/rsqf2.pdf, id=142, 505.89pt x 505.89pt> [14]
+Package pdftex.def Info: figure/rsqf1.pdf used on input line 296.
+(pdftex.def)             Requested size: 430.00462pt x 226.953pt.
+ <figure/rsqf2.pdf, id=148, 505.89pt x 266.9975pt>
 File: figure/rsqf2.pdf Graphic file (type pdf)
 
 <use figure/rsqf2.pdf>
-Package pdftex.def Info: figure/rsqf2.pdf used on input line 401.
-(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
- [15 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/rsqf1
-.pdf>] [16 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure
-/rsqf2.pdf>]
-Package color Info: Redefining color shadecolor on input line 423.
- [17]
+Package pdftex.def Info: figure/rsqf2.pdf used on input line 298.
+(pdftex.def)             Requested size: 430.00462pt x 226.953pt.
+ [7 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/rsqf1.
+pdf> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/rsqf2
+.pdf>]
+Package color Info: Redefining color shadecolor on input line 321.
+ [8]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -557,19 +621,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.459 
+l.357 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
 
  []
 
@@ -580,33 +644,33 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.477 
+l.375 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
-Package color Info: Redefining color shadecolor on input line 484.
-<figure/leap.pdf, id=167, 505.89pt x 289.08pt>
+Package color Info: Redefining color shadecolor on input line 382.
+<figure/leap.pdf, id=170, 505.89pt x 289.08pt>
 File: figure/leap.pdf Graphic file (type pdf)
  <use figure/leap.pdf>
-Package pdftex.def Info: figure/leap.pdf used on input line 485.
+Package pdftex.def Info: figure/leap.pdf used on input line 383.
 (pdftex.def)             Requested size: 430.00462pt x 245.72356pt.
- [18 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/leap.
-pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+ [9 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/leap.p
+df>]
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
 
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.512 ...292 & 2335 & 0.9755 &\text{leaps (adj} R^
+l.410 ...292 & 2335 & 0.9755 &\text{leaps (adj} R^
                                                   2) \\ \hline
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -614,7 +678,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.512 ... 0.9755 &\text{leaps (adj} R^2) \\ \hline
+l.410 ... 0.9755 &\text{leaps (adj} R^2) \\ \hline
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -625,7 +689,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.513 ...color{red}{0.9764}  & \text{leaps(adj} R^
+l.411 ...color{red}{0.9764}  & \text{leaps(adj} R^
                                                   2) \text{and adjustments}\...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -633,7 +697,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.513 ...adj} R^2) \text{and adjustments}\\ \hline
+l.411 ...adj} R^2) \text{and adjustments}\\ \hline
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -642,14 +706,14 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.521 ...$_{i} + \beta_4$ chest$.diam_{i}$ + \beta
+l.419 ...$_{i} + \beta_4$ chest$.diam_{i}$ + \beta
                                                   _5$ elbow.diam$_{i} + \bet...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -657,7 +721,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 \beta
+l.420 \beta
            _7$ shoulder$_{i}$ + \beta_7$ chest$_{i}$ + \beta_8$ waist$_{i}$ ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -665,7 +729,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 \beta_7$ shoulder$_{i}$ + \beta
+l.420 \beta_7$ shoulder$_{i}$ + \beta
                                      _7$ chest$_{i}$ + \beta_8$ waist$_{i}$ ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -673,7 +737,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...lder$_{i}$ + \beta_7$ chest$_{i}$ + \beta
+l.420 ...lder$_{i}$ + \beta_7$ chest$_{i}$ + \beta
                                                   _8$ waist$_{i}$ + \beta_9$...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -681,7 +745,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...hest$_{i}$ + \beta_8$ waist$_{i}$ + \beta
+l.420 ...hest$_{i}$ + \beta_8$ waist$_{i}$ + \beta
                                                   _9$ hip$_{i}$ + \beta_{10}...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -689,7 +753,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ... waist$_{i}$ + \beta_9$ hip$_{i}$ + \beta
+l.420 ... waist$_{i}$ + \beta_9$ hip$_{i}$ + \beta
                                                   _{10}$ thigh$_{i}$ + \beta...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -697,7 +761,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...p$_{i}$ + \beta_{10}$ thigh$_{i}$ + \beta
+l.420 ...p$_{i}$ + \beta_{10}$ thigh$_{i}$ + \beta
                                                   _{11}$ bicep_{i} + \beta_{...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -705,7 +769,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...ta_{10}$ thigh$_{i}$ + \beta_{11}$ bicep_
+l.420 ...ta_{10}$ thigh$_{i}$ + \beta_{11}$ bicep_
                                                   {i} + \beta_{12}$ forearm_...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -713,7 +777,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...ta_{11}$ bicep_{i} + \beta_{12}$ forearm_
+l.420 ...ta_{11}$ bicep_{i} + \beta_{12}$ forearm_
                                                   {i} + \beta_{13}$ knee_{i}...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -721,7 +785,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...eta_{12}$ forearm_{i} + \beta_{13}$ knee_
+l.420 ...eta_{12}$ forearm_{i} + \beta_{13}$ knee_
                                                   {i} + \beta_{14}$ calf_{i}...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -729,7 +793,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ... \beta_{13}$ knee_{i} + \beta_{14}$ calf_
+l.420 ... \beta_{13}$ knee_{i} + \beta_{14}$ calf_
                                                   {i} +\beta_{15}$ age_{i} +...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -737,7 +801,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ... + \beta_{14}$ calf_{i} +\beta_{15}$ age_
+l.420 ... + \beta_{14}$ calf_{i} +\beta_{15}$ age_
                                                   {i} + \beta_{16}$ height_{...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -745,7 +809,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...\beta_{15}$ age_{i} + \beta_{16}$ height_
+l.420 ...\beta_{15}$ age_{i} + \beta_{16}$ height_
                                                   {i} + \beta_{17}$ gender_{...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -753,40 +817,48 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.522 ...ta_{16}$ height_{i} + \beta_{17}$ gender_
+l.420 ...ta_{16}$ height_{i} + \beta_{17}$ gender_
                                                   {i} + \beta_{18}$ height$^...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--523
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
-[19] [20]
-("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.aux") ) 
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
+ [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
+
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: 472A07F35E77138EBDA518FCA9792A7E;1604.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
+ ) 
 Here is how much of TeX's memory you used:
- 2960 strings out of 493921
- 38923 string characters out of 3144876
- 104506 words of memory out of 3000000
- 6203 multiletter control sequences out of 15000+200000
- 10320 words of font info for 39 fonts, out of 3000000 for 9000
+ 6718 strings out of 493921
+ 96569 string characters out of 3144876
+ 188264 words of memory out of 3000000
+ 9881 multiletter control sequences out of 15000+200000
+ 9974 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 28i,12n,43p,968b,334s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (20 pages, 422763 bytes).
+ 29i,12n,43p,968b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on report.pdf (11 pages, 200518 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 227 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

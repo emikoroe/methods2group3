@@ -70,6 +70,8 @@
 \pagestyle{fancy}
 %\usepackage{listings}
 %\usepackage{inconsolata}
+\usepackage{graphicx}
+\usepackage{hyperref}
 
 \lhead{\textbf{Group 3: Data Analysis\\ Spring 2014}}
 \rhead{\textbf{Nick Cummings, Liza Nicoll \\ Emily Ramos and Yiding Zhang}}
@@ -111,92 +113,11 @@ Other measurements include: age, weight, height and gender (male= 1 and femal = 
 
 %------------------------------------------------
 
-\newpage
-
-\textbf{Weight}\\ %Liza
-   
-Weight was measured for 507 physically active individuals - 247 men and 260 women. The distribution ranged from 42 kilograms to 116.4 kilograms. The mean weight and quartiles was signifigantly higher for men than women. We observe several outliers in the upper end of the range for both men and women. This may be due to the fact that the population sampled included a number of highly physicaly fit individuals with higher than average muscle mass.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/weight_plot} 
-
-\end{knitrout}
-
-
-%------------------------------------------------
-
-\newpage
-
-\textbf{Bitrochanteric Diameter and Hip Girth}\\ %Liza
- 
-Bitrochanteric diameter is the distance between the outer points of the hips and hip girth is the circumference of the hip area measured at the level of the bitrochanteric diameter. The density distributions for both measures are normally distributed (though hip girth is skewed slightly right) and very similar in distribution for both men and women. A scatter plot of hip girth vs. weight suggests that weight increases linerally with increase in hip girth.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/hip_plots} 
-
-\end{knitrout}
-
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/hipgirth_plot} 
-
-\end{knitrout}
-
-
-%------------------------------------------------
-
-\newpage
-
-\textbf{Chest and Shoulder}\\ %Liza
-   
-Chest girth was measured at the nipple line in males and just above breast tissue in females at mid-expiration and shoulder girth was measured over deltoid muscles in both males and females. The density distributions for the two variables are quite similar. Women have narrower, though slightly skeewed, distribution with a much lower mean than that of the men. The scatterplots are also similar in that the regression lines for men and women are nearly identical, indicating that weight increases linearly with increase in shoulder girth, independant of gender.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/chest_plots} 
-
-\end{knitrout}
-
-
-%------------------------------------------------
-
-\newpage
-
-\textbf{Wrist and Navel}\\ %Liza
-   
-Wrist minimum girth is an average of right and left girths and navel (or abdominal) girth was measured at umbilicus and the iliac crest, using the iliac crest as a landmark. Wrist girth is bimodally distributed, but when divided into male and female, the distributions are normal with some outliers at the high end of the range for females. The distributions for navel girth is normal and remarkably similar for males and females. The scatterplot of navel girth against weight shows a linear relationship with weight increasing with increased naval girth.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/navel_plots} 
-
-\end{knitrout}
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/navelgirth_plot} 
-
-\end{knitrout}
-
-
-\newpage
-
-\textbf{Age and Weight}\\ %Yiding
-
-Since our dataset contains information on \textit{mostly} individuals in their 20s and 30s, we should check how age and weight intereact in our data before conducting analysis on weight. The mean age is 30, the youngest subject is 18 and the oldes subject is 67. The first plot shows that age is unevenly distributed, i.e left skewed. Most of the subjects are physically active young individuals. Since we have this skewness of data, we seperate the data into two subsets- young and middle age to see how weight interacts in these subsets. The weight of young and middle age groups are generally normally distributed and are remarkably similar. This shows that, although our ages are skewed, we can apply this analysis to physically active individuals of all ages.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-1} 
-
-\end{knitrout}
-
-
+\begin{figure}
+  \href{https://docs.google.com/file/d/0B975xsTIaD43aUZBZ1NfbTRhWWs/edit}
+       {\includegraphics[width=\textwidth]{Data_summary}}
+  \caption{Data summary}
+\end{figure}
 
 %------------------------------------------------
 
@@ -270,36 +191,21 @@ This model was chosen based on the idea that these variables remain constant ove
 
 Our model indicates that the expected weight when all variables are 0 is -110 (which does not make sense in this context). Furthermore the expected change in weight for a 1 unit change in chest.diam, holding all other variables constant, is 1.34 lbs. The expected change in weight for a 1 unit change in chest.dep, holding all other variables constant, is 1.54 lbs., etc. Note that chest depth has the largest impact on weight. In addition to the coefficients, the R-squared value of 0.8882 implies that our model explains 88.82\% of the variation in weight and the $P$-values for each variable and for the model are significant. This model seems like a good tool to predict weight given these measurements.
 
-%------------------------------------------------
-
-\subsection{Further Applications} %Nick
-
-Applications of this data and the regression model can be used for predictive measurements for physically fit individuals in multiple capacities.  Employers that require employees to wear a uniform may apply this model to predict the measurements of clothing to purchase for prospective employees.  Given the data limitations of this sample, the model is best suited to represent individuals that live active lifestyles.  An example of this sample would be police officers and military recruits, each of which require strict uniforms that are likely to be worn by individuals that are muscular and physically fit. \\
-
-An engineer that produces furniture may apply this model to construct objects that meet criteria that would be more comfortable for a population that is physically active.  Predicting the weight of individuals will allow such an engineer to ensure that the correct weight is supported by furniture in order for it to be comfortably utilized.  \\
-
-A car manufacturer that is concerned with producing seat belts that will ensure the safety of drivers and passengers will be able to use this model and apply the results to install appropriate lengths.  By observing those individuals with the largest waist girth, she can ensure that each car has seat belts that would fit these individuals.  \\
-
-Architects will adopt this regression model when constructing a house to ensure that the buyers have adequate room that will ensure comfort.  Installments, such as doors and windows, are easily planned with knowledge of the common range of heights of the population.  Additionally, the height of ceilings, showers, and counters are dependent on the height measurements of prospective buyers.  
-Finally, this regression model is applicable to the general public, as the measurements can be easily self-measured and substituted into the model.  The result will give the curious individual an approximate value for their weight.  Again, this data was taken from a sample of physically fit and athletic individuals, so the application of this data can reflect an idealized body weight that an individual may strive for given her various skeletal measures.  \\
-
-The sample of this data poses a potential problem to the application of the regression model.  As described above, the applications revolve around predicting the weight, height, and skeletal measurements of healthy and physically fit individuals.  Given the sample of healthy men and women, the regression model should also not be attributed to the prediction of weight for children, and/or malnourished individuals.  This model cannot be applied to individuals that perform little-to-no physical activity and live a primarily sedentary lifestyle.  For those individuals, this regression model will be of little intuitive use.  The exception to this is the final application given above.  An individual may take skeletal measurements to identify a weight that could be set as a goal if she were interested in beginning a regimen to decrease body weight and become more physically active.\\
-
 
 %------------------------------------------------
+\newpage
 
 \section{Individual Analyses}
 
 %------------------------------------------------
 
-\subsection{Using Regression Trees to Explore Differences in Male and Female Body Measurements (Liza)} %Liza
+\subsection{Regression Trees: Differences in Males and Females (Liza)} %Liza
 
 As we have shown in previous sections, males and females differ significantly in terms of weight and body measurements. However, the regression presented for predicting weight did not include a term for gender, citing that doing so would not add significantly to the model. My hypothesis is that separate models for males and females would be more appropriate based on the systematic differences in body shape and size between the genders. Using recursive partitioning, or regression tree analysis, I plan to explore what the most important variables are in predicting weight for the two genders both together and separately to see if there are differences in the way the data is divided based on the different body measurements sampled.
 
 
 
 
-\begin{figure}
 \begin{center}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -307,11 +213,12 @@ As we have shown in previous sections, males and females differ significantly in
 
 \end{knitrout}
 
+\vspace{-10pt}
+\caption{Figure 1: Desnsity distribution of Weight for males and females}
 \end{center}
-\vspace{-20pt}
-\caption{Desnsity distribution of Weight for males and females}
-\label{fig:one}
-\end{figure}
+
+\subsubsection{Tree 1: Males and Females} 
+To explore whether gender is an important dividing variable for the entire dataset, I first grew a regression tree with all of the data. As shown in the regression tree below, a split was not produced based on gender of the subjects. Variables used in this tree are waist girth, chest girth, hip girth, knee girth and knee diameter. \\
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -319,11 +226,6 @@ As we have shown in previous sections, males and females differ significantly in
 
 \end{knitrout}
 
-
-\subsubsection{Tree 1: Males and Females} 
-To explore whether gender is an important dividing variable for the entire dataset, I first grew a regression tree with all of the data. As shown in the regression tree above, a split was not produced based on gender of the subjects. Variables used in this tree are waist girth, chest girth, hip girth, knee girth and knee diameter. \\
-
-\pagebreak
 
 \subsubsection{Tree 2: Males} 
 Even though the full dataset did not utilize gender to partition the data, it might be informative to see if we obtain different trees by subsetting the data by gender. Next, I produced a regression tree with weight as the dependent variable for males only using all available body measurement variables. The CP tables showed us that at 5 splits we obtain a minimum relative error, therefore we were able to prune the tree to a reasonable size to avoid overfitting the data (Figure 2a). The final variables used to produce the pruned tree were hip girth and shoulder girth.
@@ -354,18 +256,13 @@ Even though the full dataset did not utilize gender to partition the data, it mi
 \end{knitrout}
 
 
-\begin{figure}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/mtrees} 
 
 \end{knitrout}
 
-\caption{a. Pruned regression tree for male weight. b. Regression tree for female weight.}
-\label{fig:two}
-\end{figure}
-
-\pagebreak
+\caption{Figure 2: a. Pruned regression tree for male weight. b. Regression tree for female weight.}
 
 \subsubsection{Tree 3: Females} 
 The regression tree for the female subset (Figure 2b) does not reach a minimum relative error before the final node and therefore did not need pruning. The variables used to produce this tree vary significantly in number and type from the male tree. They are: hip girth, knee girth, calf girth, chest girth, and waist girth. In fact, the only variable the female tree and the pruned male tree have in common is shoulder girth.
@@ -405,7 +302,8 @@ The regression tree for the female subset (Figure 2b) does not reach a minimum r
 
 \subsubsection{Conclusion}
 While regression trees are not intended to produce a model for prediction, they can be quite useful in elucidating the most important variables for partitioning data. Here we found that these variables differed significantly between men and women, perhaps suggesting that separate models for predicting weight would be more appropriate and potentially more accurate than one general model for both genders. Further analysis would be needed to test this hypothesis, specifically model fitting and selction for subsets of the data by gender. One could then show whether these separate models have better predictive power than one combined model.
-\pagebreak
+
+\newpage
 
 %------------------------------------------------
 
