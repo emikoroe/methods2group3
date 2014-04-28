@@ -58,6 +58,7 @@ names(body)<-c("biac.diam","pelvic.bredth" ,"bitro.diam","chest.dep",
               "forearm","knee","calf","ankle.min" ,   
               "wrist.min","age","weight","height",       
               "gender" )
+model <- lm(weight ~ chest.diam + chest.dep + bitro.diam + wrist.min + ankle.min + height, data=body)
 @
 
 %------------------------------------------------

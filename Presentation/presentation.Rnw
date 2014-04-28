@@ -130,6 +130,14 @@ library(RCurl)
 library(gridExtra)
 library(leaps)
 library(MASS)
+require(graphics)
+require(grid)
+require(Hmisc)
+require(knitr)
+require(labeling)
+require(formatR)
+require(rstudio)
+require(GGally)
 #Here is the dataset
 body1<-getURL("http://www.amstat.org/publications/jse/datasets/body.dat.txt",ssl.verifypeer=FALSE)
 body<-read.table(text=body1)
@@ -252,8 +260,104 @@ print(qplot( as.factor(gender),weight, data=body, geom=c("boxplot"), main="Weigh
 \subsection{Model Diagnostics}
 
 %------------------------------------------------
-\begin{frame}{Nick}
+\begin{frame}{Model Diagnostics (Nick)}
+  \begin{columns}[t] % vertically aligned
+  \begin{column}[c]{6cm}
 
+\begin{itemize}
+  \item Model diagnostics are extremely important to fitting an appropriate model.
+  \item Assumption violations can lead to biased or faulty results.
+  \item These plots show us that observations 124, 359, and 474 may be problematic. 
+\end{itemize}
+
+  \end{column}
+  \begin{column}[c]{4.5cm}
+  
+<<residual plots, echo=FALSE, warning=FALSE, fig.width=4>>=
+model <- lm(weight ~ chest.diam + chest.dep + bitro.diam + wrist.min + ankle.min + height, data=body)
+par(mfrow=c(2,1))
+plot(model,which=1)
+plot(model,which=2)
+@ 
+
+  \end{column}
+  \end{columns}
+
+\end{frame}
+%------------------------------------------------
+
+\begin{frame} {Leverage} %make and interpret leverage plots
+
+<<leverage, echo=FALSE, warning=FALSE, fig.height=2.5, fig.width=4.5>>=
+mat<- model.matrix(model)
+lev<- hat(mat)
+plot(lev, ylab="Leverages", main="Index Plot of Leverages",cex.main=0.7)
+abline(h=2*7/507, col="red")
+@
+
+A "rule of thumb" is that leverages of more than 2p/n (p= # of predictors) should be looked at more closely.  Points of concern are located above the red line. 
+
+\end{frame}
+
+%-----------------------------------------------------
+
+\begin{frame}{Influence}  
+
+{\fontsize{0.3cm}{1em}\selectfont
+An \textbf{influential point} is one whose removal from the dataset causes a drastic change in the fit.  An influential point will either be an outlier in the data, will have high leverage, or will have both. Cook's Distance is a popular method of identifying influential points.}
+
+<<influence plot, echo=FALSE, eval=FALSE>>=
+influencePlot(model, main="Influence Plot",cex.main=0.7)
+@
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{influence}
+\end{center}
+
+\end{frame}
+%------------------------------------------------
+
+\begin{frame} {Cook's Distance}
+
+<<warning=FALSE, echo=FALSE, fig.height=4, tidy=TRUE>>=
+cutoff <- 20/((nrow(body) - length(model$coefficients) - 8))
+plot(model, which =6, cooks.levels = cutoff)
+@
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame} {Better Fit?} 
+
+Initial Model: \\
+
+{\fontsize{0.3cm}{1em}\selectfont 
+\begin{tabular}{|r|r|r|r|r|r|r|}
+\hline
+    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height \\ \hline
+   -109.89 & 1.34  & 1.54 & 1.20  & 1.11 & 1.15 & 0.18 \\ \hline
+   
+\end{tabular}
+}
+
+\linebreak[4]
+
+New model with influential points removed:\\
+
+{\fontsize{0.3cm}{1em}\selectfont 
+\begin{tabular}{|r|r|r|r|r|r|r|}
+\hline
+    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height \\ \hline
+   -109.11 & 1.38  & 1.55 & 1.10  & 0.97 & 1.17 & 0.19 \\ \hline
+
+\end{tabular}
+
+}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{outlier}
+\end{center}
 
 \end{frame}
 
