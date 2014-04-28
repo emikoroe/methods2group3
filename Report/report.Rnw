@@ -96,7 +96,7 @@ mlr1 <- lm(weight ~ chest.diam + chest.dep + bitro.diam + wrist.min + ankle.min 
 mlr1$coeff
 @
 
-Our model indicates that the expected weight when all variables are 0 is -110 (which does not make sense in this context). Furthermore the expected change in weight for a 1 unit change in chest.diam, holding all other variables constant, is 1.34 lbs. The expected change in weight for a 1 unit change in chest.dep, holding all other variables constant, is 1.54 lbs., etc. Note that chest depth has the largest impact on weight. In addition to the coefficients, the model has an R-squared value of 0.8882 which implies that our model explains 88.82\% of the variation in weight. This model seems like a good tool to predict weight given these measurements, but can we find a better one?
+Our model indicates that the expected weight when all variables are 0 is -110 (which does not make sense in this context). Furthermore the expected change in weight for a 1 unit change in chest.diam, holding all other variables constant, is 1.34 lbs. The expected change in weight for a 1 unit change in chest.dep, holding all other variables constant, is 1.54 kgs., etc. Note that chest depth has the largest impact on weight. In addition to the coefficients, the model has an R-squared value of 0.8882 which implies that our model explains 88.82\% of the variation in weight. This model seems like a good tool to predict weight given these measurements, but can we find a better one?
 
 %------------------------------------------------
 \newpage
