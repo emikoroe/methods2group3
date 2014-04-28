@@ -265,9 +265,9 @@ print(qplot( as.factor(gender),weight, data=body, geom=c("boxplot"), main="Weigh
 Model Diagnostics are important to fitting an appropriate model
 \begin{itemize}
   \item Outliers: extreme points that are distant form the other observations, measured by residuals
-  \item Leverage: an extreme point, measured by the hat matrix. An "outlier on the X axis"
+  \item Leverage: an extreme point, measured by the hat matrix. An ``outlier on the X axis"
   \item Influential Points: points that have a large effect on the slope of the model
-  \item Influence = Leverage + "Outlyingness"
+  \item Influence = Leverage + ``Outlyingness"
 \end{itemize}
 \end{frame}
 
@@ -622,7 +622,7 @@ $r_i=\frac{y_i-\hat{\mu}_i}{\sqrt{\hat{V}(y_i)}}=\frac{y_i-n_i\hat{\pi}_i}{\sqrt
 
 \item{\textbf{Predictive ability}}\\
 \underline{ROC curve}:\\
-sinsitivity $vs$ 1-specificity\\
+sensitivity $vs$ 1-specificity\\
 \underline{Somer's rank correlation}:\\
 $D_{xy}=2(c-0.5)$\\
 $c$ is the area under the ROC curve.\\[1\baselineskip]
@@ -843,7 +843,7 @@ Predictive ability depends on \underline{variables}\\
     3 & 0.949; 0.951; 0.949 & 0.954; 0.959; 0.957 & 0.954; 0.959; 0.957\\
     4 & 0.983; 0.932; 0.957 & 0.983; 0.955; 0.961 & 0.983; 0.962; 0.972\\
     5 & 0.983; 0.924; 0.953 & 0.983; 0.931; 0.957 & 0.983; 0.947; 0.965\\
-    Avarage & 0.969; 0.934; 0.951 & 0.968; 0.945; 0.955 & 0.970; 0.950; 0.960\\
+    Average & 0.969; 0.934; 0.951 & 0.968; 0.945; 0.955 & 0.970; 0.950; 0.960\\
   \hline
 
 \end{tabular}
