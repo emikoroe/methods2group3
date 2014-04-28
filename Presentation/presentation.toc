@@ -6,6 +6,6 @@
 \beamer@subsectionintoc {1}{4}{Initial Model}{6}{0}{1}
 \beamer@sectionintoc {2}{Individual Analysis}{7}{0}{2}
 \beamer@subsectionintoc {2}{1}{Model Diagnostics}{7}{0}{2}
-\beamer@subsectionintoc {2}{2}{Model Selection}{14}{0}{2}
-\beamer@subsectionintoc {2}{3}{Logistic Regression and Ada-boosting}{19}{0}{2}
-\beamer@subsectionintoc {2}{4}{Regression Trees}{23}{0}{2}
+\beamer@subsectionintoc {2}{2}{Model Selection}{13}{0}{2}
+\beamer@subsectionintoc {2}{3}{Logistic Regression and Ada-boosting}{18}{0}{2}
+\beamer@subsectionintoc {2}{4}{Regression Trees}{22}{0}{2}

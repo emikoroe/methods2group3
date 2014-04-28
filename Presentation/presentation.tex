@@ -340,30 +340,7 @@ A "rule of thumb" is that leverages of more than $\dfrac{2p}{n}$ or $\dfrac{3p}{
 
 
 \end{frame}
-%----------------------------------------------------
-\begin{frame}{Leverage}
 
-
-
-
-{\fontsize{0.275cm}{1em}\selectfont
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrrrrrrrrrrrrrrrrrrrrrrr}
-  \hline
- & biac.diam & pelvic.bredth & bitro.diam & chest.dep & chest.diam & elbow.diam & wrist.diam & knee.diam & ankle.diam & shoulder & chest & waist & navel & hip & thigh & bicep & forearm & knee & calf & ankle.min & wrist.min & age & weight & height & gender \\ 
-  \hline
-116 & 40.50 & 28.30 & 32.40 & 19.40 & 27.80 & 13.40 & 11.00 & 19.00 & 14.50 & 109.10 & 94.80 & 75.00 & 79.60 & 91.60 & 49.40 & 30.00 & 26.50 & 31.70 & 30.20 & 16.40 & 16.10 & 27.00 & 66.80 & 185.40 &   1 \\ 
-  127 & 43.40 & 30.60 & 32.90 & 21.60 & 28.30 & 15.00 & 12.00 & 20.50 & 17.20 & 117.90 & 96.90 & 82.50 & 90.80 & 94.90 & 54.40 & 32.80 & 28.70 & 39.20 & 37.00 & 27.50 & 17.90 & 27.00 & 85.50 & 198.10 &   1 \\ 
-  135 & 41.10 & 25.60 & 29.90 & 23.30 & 25.20 & 14.10 & 10.70 & 19.00 & 15.10 & 114.40 & 96.20 & 76.70 & 83.50 & 93.90 & 50.40 & 32.10 & 27.70 & 36.10 & 32.90 & 23.20 & 17.00 & 27.00 & 73.60 & 190.50 &   1 \\ 
-  176 & 43.60 & 30.80 & 33.30 & 20.40 & 29.70 & 14.30 & 10.90 & 19.60 & 15.40 & 117.60 & 101.00 & 83.70 & 91.10 & 99.90 & 56.80 & 33.50 & 27.70 & 38.70 & 41.80 & 29.30 & 18.00 & 30.00 & 84.10 & 188.00 &   1 \\ 
-  477 & 35.60 & 30.80 & 33.80 & 26.80 & 27.10 & 12.40 & 10.20 & 18.20 & 14.00 & 106.40 & 96.30 & 86.10 & 107.40 & 112.00 & 69.40 & 31.70 & 25.50 & 39.40 & 38.70 & 23.70 & 16.30 & 33.00 & 80.50 & 160.00 &   0 \\ 
-   \hline
-\end{tabular}
-\end{table}
-}
-
-\end{frame}
 %-----------------------------------------------------
 
 \begin{frame}{Influence (Nick)}  
@@ -383,20 +360,20 @@ An \textbf{influential point} is one whose removal from the dataset causes a dra
 
 \begin{frame} {Cook's Distance (Nick)}
 \begin{columns}[t]
-\begin{column}[c]{6cm}
+\begin{column}[c]{5cm}
 
 \begin{itemize}
   \item We can look at leverage, outlyingness, and influence altogether
-  \item Cook's Distance vs. Leverage shows the same points that may be problematic
+  \item The Cook's Distance plot shows the values of these problematic points
   \item When we remove these points, does the model improve much?
 \end{itemize}
 \end{column}
 
-\begin{column}[c]{4.5cm}
+\begin{column}[c]{7cm}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-1} 
 
 \end{knitrout}
 
@@ -404,17 +381,18 @@ An \textbf{influential point} is one whose removal from the dataset causes a dra
 \end{columns}
 \end{frame}
 
+
 %------------------------------------------------
 
 \begin{frame} {Better Fit? (Nick)} 
 
 Initial Model: \\
 
-{\fontsize{0.3cm}{1em}\selectfont 
-\begin{tabular}{|r|r|r|r|r|r|r|}
+{\fontsize{0.275cm}{1em}\selectfont 
+\begin{tabular}{|r|r|r|r|r|r|r|r|}
 \hline
-    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height \\ \hline
-   -109.89 & 1.34  & 1.54 & 1.20  & 1.11 & 1.15 & 0.18 \\ \hline
+    (Inter.) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height & Adj. $R^2$ \\ \hline
+   -109.89 & 1.34  & 1.54 & 1.20  & 1.11 & 1.15 & 0.18 & 0.887 \\ \hline
    
 \end{tabular}
 }
@@ -423,11 +401,11 @@ Initial Model: \\
 
 New model with influential points removed:\\
 
-{\fontsize{0.3cm}{1em}\selectfont 
-\begin{tabular}{|r|r|r|r|r|r|r|}
+{\fontsize{0.275cm}{1em}\selectfont 
+\begin{tabular}{|r|r|r|r|r|r|r|r|}
 \hline
-    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height \\ \hline
-   -109.11 & 1.38  & 1.55 & 1.10  & 0.97 & 1.17 & 0.19 \\ \hline
+    (Inter.) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height & Adj. $R^2$ \\ \hline
+   -109.11 & 1.38  & 1.55 & 1.10  & 0.97 & 1.17 & 0.19 & 0.891 \\ \hline
 
 \end{tabular}
 
@@ -546,7 +524,7 @@ Final Model: weight ~ height + ankle.diam + chest\\
 
 %------------------------------------------------
 
-\begin{frame}{R function: leaps() (Emily)}
+\begin{frame}{R package: leaps (Emily)}
 
 {\fontsize{0.265cm}{1em}\selectfont
 \begin{knitrout}
@@ -762,7 +740,7 @@ Final hypothesis: $H(x)=sign\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)$
 \begin{column}[t]{7cm}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2} 
 
 \end{knitrout}
 
