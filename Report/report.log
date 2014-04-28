@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  27 APR 2014 21:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  28 APR 2014 12:27
 entering extended mode
 **report.tex
-("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.tex"
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group3\Report\report.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -370,7 +370,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.aux")
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group3\Report\report.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
 LaTeX Font Info:    ... okay on input line 83.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
@@ -448,8 +448,8 @@ LaTeX Info: Redefining \ref on input line 83.
 LaTeX Info: Redefining \pageref on input line 83.
 LaTeX Info: Redefining \nameref on input line 83.
 
-("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.out")
-("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.out")
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group3\Report\report.out")
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group3\Report\report.out")
 \@outlinefile=\write3
 
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
@@ -478,8 +478,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
- <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/summary_table.pd
-f>]
+ <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/summary_table.pdf
+>]
 Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
@@ -507,8 +507,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 125--126
  []
 
 Package color Info: Redefining color shadecolor on input line 130.
-[2 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/weight_
-plot.pdf>] [3]
+[2 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/figure/weight_p
+lot.pdf>] [3]
 Package color Info: Redefining color shadecolor on input line 167.
  [4]
 
@@ -558,8 +558,8 @@ File: figure/leap.pdf Graphic file (type pdf)
  <use figure/leap.pdf>
 Package pdftex.def Info: figure/leap.pdf used on input line 229.
 (pdftex.def)             Requested size: 430.00462pt x 245.72356pt.
- [5 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/leap.p
-df>]
+ [5 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/figure/leap.pd
+f>]
 Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
@@ -768,9 +768,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 365--373
 
  []
 
-[8 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/model_c
-heck.pdf> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/
-ROV_curve.pdf>]
+[8 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/figure/model_ch
+eck.pdf> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/figure/RO
+V_curve.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 380--383
 
  []
@@ -802,9 +802,8 @@ File: figure/wt.pdf Graphic file (type pdf)
  <use figure/wt.pdf>
 Package pdftex.def Info: figure/wt.pdf used on input line 433.
 (pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
- [10 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/wdt.p
-df> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/wt.pdf
->]
+ [10 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/figure/wdt.pd
+f> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/figure/wt.pdf>]
 Package color Info: Redefining color shadecolor on input line 442.
 Package color Info: Redefining color shadecolor on input line 468.
 
@@ -827,15 +826,15 @@ l.473 \caption
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[11 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group 3/Report/figure/mtrees
-.pdf>]
+[11 <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Report/figure/mtrees.
+pdf>]
 Package color Info: Redefining color shadecolor on input line 479.
  [12]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 517.
  [13]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 517.
 
-("D:\Users\Emily\Documents\School\Spring 14\Bio\Group 3\Report\report.aux")
+("D:\Users\Emily\Documents\School\Spring 14\Bio\Group3\Report\report.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 517.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 517.
 Package rerunfilecheck Info: File `report.out' has not changed.
@@ -844,7 +843,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 517.
  ) 
 Here is how much of TeX's memory you used:
  7449 strings out of 493921
- 108612 string characters out of 3144876
+ 108601 string characters out of 3144876
  202235 words of memory out of 3000000
  10585 multiletter control sequences out of 15000+200000
  10621 words of font info for 40 fonts, out of 3000000 for 9000
@@ -863,7 +862,7 @@ s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (13 pages, 334637 bytes).
+Output written on report.pdf (13 pages, 334605 bytes).
 PDF statistics:
  285 PDF objects out of 1000 (max. 8388607)
  38 named destinations out of 1000 (max. 500000)
