@@ -72,6 +72,8 @@
 %\usepackage{inconsolata}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{adjustbox}
+\usepackage{amsmath}
 
 \lhead{\textbf{Group 3: Data Analysis\\ Spring 2014}}
 \rhead{\textbf{Nick Cummings, Liza Nicoll \\ Emily Ramos and Yiding Zhang}}
@@ -83,9 +85,7 @@
 
 \section{Introduction} %Emily
 
-The dataset we will be using for our group analysis is ``Exploring Relationships in Body Dimensions". This dataset contains information on 21 body dimension measurements (including skeletal measurements and girth measurments) as well as age, weight, height and gender from 507 physically active men and women within the normal weight range. Most of these individuals are in their 20s and 30s. The initial reason the data was collected was to determine how well weight could be predicted between body build, weight, and girths. \\ 
-
-This analysis will include our group analysis: summary of the dataset, our hypothesis, the base model we will be using, applications of the data and model, and our individual analyses: regression trees, model selection, resampling inference, bootstrapping, logistic regression and Ada-boosting.
+The dataset we will be using for our group analysis is ``Exploring Relationships in Body Dimensions". This dataset contains information on 21 body dimension measurements (including skeletal measurements and girth measurments) as well as age, weight, height and gender from 507 physically active, young men and women within the normal weight range (a total of 25 variables).
 
 %------------------------------------------------
 \section{Group Analysis} 
@@ -93,104 +93,52 @@ This analysis will include our group analysis: summary of the dataset, our hypot
 
 
 
+%------------------------------------------------
+
+\subsection{Variables of the Dataset}
+
+Skeletal measurements include: biacromial diameter, pelvic breadth, bitrochanteric diameter, chest depth, chest diameter, elbow diameter, wrist diameter, knee and ankle diameter. Note that elbow, wrist, knee and ankle measurements are the sum of the two ankle diameters. Girth measurements include: shoulder, chest, waist, navel, hip, thigh, flexed bicep, extended forearm, knee, calf maximum, ankle minimum and wrist minimum. Note, for thigh, bicep, forearm, knee, calf, ankle and wrist girth measurments the average of both body parts was taken. Other measurements include: age, weight, height and gender (male= 1 and femal = 0).\\
+
+\textit{Table 1}\\
+\includegraphics[width=0.9\textwidth]{summary_table}\\
+These are the 11 out of 25 variables selected from the original dataset. Most of these 11 variables are symmetrically distributed except age. The mean of weight, height and age are 69.15kg, 171.10cm and 30.18 yr, respectively, which would suggest that the avarage subjects are middle and healthy.
+
 
 %------------------------------------------------
 
-\subsection{Summary of the Dataset}
+\subsection{Outcome of Interest: Weight}
 
-%-------------------------------------------------
-\\
+The initial reason the data was collected was to determine how well weight could be predicted between body build, weight, and girths. Using weight as the response variable, these data can be used to investigate the correspondence between frame size, girths, and weight of physically active young men and women that are within a normal weigth range. 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/weight_plot} 
 
-\textbf{Variables in the Dataset}\\ %Emily
+\end{knitrout}
 
-There are a total of 25 variables.\\
 
-Skeletal measurements include: biacromial diameter, pelvic breadth, bitrochanteric diameter, chest depth, chest diameter, elbow diameter, wrist diameter, knee and ankle diameter. Note that elbow, wrist, knee and ankle measurements are the sum of the two ankle diameters.\\
+%------------------------------------------------------------------
 
-Girth measurements include: shoulder, chest, waist, navel, hip, thigh, flexed bicep, extended forearm, knee, calf maximum, ankle minimum and wrist minimum. Note, for thigh, bicep, forearm, knee, calf, ankle and wrist girth measurments the average of both body parts was taken.\\
-
-Other measurements include: age, weight, height and gender (male= 1 and femal = 0).\\
-
-%------------------------------------------------
-
-\begin{figure}
-  \href{https://docs.google.com/file/d/0B975xsTIaD43aUZBZ1NfbTRhWWs/edit}
-       {\includegraphics[width=\textwidth]{Data_summary}}
-  \caption{Data summary}
-\end{figure}
-
-%------------------------------------------------
-
-\subsection{Initial Multiple Linear Regression Model} 
-
-%------------------------------------------------
-
-\subsubsection{Hypothesises}%Yiding
-
-%------------------------------------------------
-
-\textbf{Weight}\\ 
-In two ways one can get a plausible model: statistical analysis and experience. Upon initial exploration, we notice that several variables have high $p$-values, such as navel girth and flexed bicep. From a statistical perspective, these variables may be considerated as non-significant variables; however, in the paper, the author use the initial model with a adjusted $R^2 = 0.946$ and state that students could apply it to predict their weight. The model is long and includes several non-significant variables. The author also introduces another model which can be used as the standard healthy body weight predict model, but the model includes two implausible variables: ankle and wrist. On the one hand, the model is well fitted with strong significance for all variables and $R^2$ of 0.887; on the other hand, the model is too simple and also includes two implausible vaiables.\\
-
-As we know, the majority of a persons body weight accumulates in the middle of body(beneath head and above knee). Given this information, one can predict if a person is overweight, strong, normal, or thin. Thus, we could directly and empirically add variables that make a large contribution to the weight to the model. For example, we could include shoulder girth, chest diam, waist, hip and thigh girth. The model would become:\\
-
-weight$_i = \beta_0 + \beta_1$ shoulder$_i + \beta_2$ chest.diam$_i + \beta_3$ waist$_i + \beta_4$ hip$_i + \beta_5$ thigh$_i$ \\
-
-We now have significant $p$-values for all of them ($<0.001$) and adjusted $R^2 = 0.853$. \\
-
-We can obtain a ``well fitted" model from both methods and each of them has their strengths, but the question is which one is better and more meaningful. Thus, we must  take consideration of both methods and then get a good-fitting, meaningful model.\\
-
-\textbf{Gender}\\
-As we discuss in the section \textbf{Summary of the Dataset}, we can easily disinguish the difference of dimensions between male and female. Some of them do have obviouse difference such as chest girth and shoulder girth, some of do not. So we assume that when the weight model been divided into two groups---male and female, the model would present changes in each $\beta$ and become more accurate.\\
-
-Now that gender would make the fitted model different, which would make the most accurate prediction, the fact that the subject is male or female? In the paper, the author mentions that:
-\begin{quotation}
-Most useful to this determination of gender are the pelvis and the skull... Using biacromial diameter as the only classifier variable, quadratic discriminant analysis with cross-validation correctly classified gender 89.3\% of the time with the 507 cases in the dataset. (Nickell and Fischer 1999; Innes 2000; Owen 2000)
-\end{quotation}
-We suppose that after division of gender the variables that have significant changes of their $\beta$ would be the variables that make the classification for gender accurate.\\
-
-\subsubsection{Initial Multiple Linear Regression Model} % Emily
+\subsection{Initial Multiple Linear Regression Model} % Emily
 
 The initial model we are interested in fitting is of the form:\\
 
 weight$_i = \beta_0 + \beta_1$ chest.diam$_{i} + \beta_2$ chest.dep$_{i} + \beta_3$ bitro.diam$_{i} + \beta_4$ wrist.min$_{i}$ + \beta_5$ ankle.min$_{i} + \beta_6$ height$_{i}$ \\
 
-This model was chosen based on the idea that these variables remain constant over a persons adult years. Thus, a person can input these measurements and determine their weight. Recall, the initial objective of the study was to determine how well weight could be predicted. Although the paper mentioned multiple models one could use, we chose this as our base model. This is due to the fact that the model had variables across the entire body, included measurements of depth, girth and diameter and contained a reasonable amount of variables. The variables are: chest diameter (at mid-expiration level), chest depth (between spine and sternum at mid-expiration), bitrochanteric diameter (distance between both trochanters),  wrist minimum girth (average of right and left girths), ankle minimum girth (average), and height.
+The paper attached with the dataset mentioned multiple models one could use, we chose this as our base model, due to the fact that the model had variables across the entire body, included measurements of depth, girth and diameter and contained a reasonable amount of variables. The variables are: chest diameter (at mid-expiration level), chest depth (between spine and sternum at mid-expiration), bitrochanteric diameter (distance between both trochanters),  wrist minimum girth (average of right and left girths), ankle minimum girth (average), and height.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
-## 
-## Call:
-## lm(formula = weight ~ chest.diam + chest.dep + bitro.diam + wrist.min + 
-##     ankle.min + height, data = body)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -13.233  -2.934   0.084   2.478  22.379 
-## 
-## Coefficients:
-##              Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -109.8902     4.1359  -26.57  < 2e-16 ***
-## chest.diam     1.3405     0.1223   10.96  < 2e-16 ***
-## chest.dep      1.5374     0.1158   13.28  < 2e-16 ***
-## bitro.diam     1.1960     0.1244    9.62  < 2e-16 ***
-## wrist.min      1.1135     0.2889    3.85  0.00013 ***
-## ankle.min      1.1520     0.1722    6.69  6.1e-11 ***
-## height         0.1770     0.0307    5.76  1.5e-08 ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## Residual standard error: 4.49 on 500 degrees of freedom
-## Multiple R-squared:  0.888,	Adjusted R-squared:  0.887 
-## F-statistic:  662 on 6 and 500 DF,  p-value: <2e-16
+## (Intercept)  chest.diam   chest.dep  bitro.diam   wrist.min   ankle.min 
+##    -109.890       1.340       1.537       1.196       1.113       1.152 
+##      height 
+##       0.177
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
-Our model indicates that the expected weight when all variables are 0 is -110 (which does not make sense in this context). Furthermore the expected change in weight for a 1 unit change in chest.diam, holding all other variables constant, is 1.34 lbs. The expected change in weight for a 1 unit change in chest.dep, holding all other variables constant, is 1.54 lbs., etc. Note that chest depth has the largest impact on weight. In addition to the coefficients, the R-squared value of 0.8882 implies that our model explains 88.82\% of the variation in weight and the $P$-values for each variable and for the model are significant. This model seems like a good tool to predict weight given these measurements.
-
+Our model indicates that the expected weight when all variables are 0 is -110 (which does not make sense in this context). Furthermore the expected change in weight for a 1 unit change in chest.diam, holding all other variables constant, is 1.34 lbs. The expected change in weight for a 1 unit change in chest.dep, holding all other variables constant, is 1.54 lbs., etc. Note that chest depth has the largest impact on weight. In addition to the coefficients, the model has an R-squared value of 0.8882 which implies that our model explains 88.82\% of the variation in weight. This model seems like a good tool to predict weight given these measurements, but can we find a better one?
 
 %------------------------------------------------
 \newpage
@@ -198,110 +146,12 @@ Our model indicates that the expected weight when all variables are 0 is -110 (w
 \section{Individual Analyses}
 
 %------------------------------------------------
-
-\subsection{Regression Trees: Differences in Males and Females (Liza)} %Liza
-
-As we have shown in previous sections, males and females differ significantly in terms of weight and body measurements. However, the regression presented for predicting weight did not include a term for gender, citing that doing so would not add significantly to the model. My hypothesis is that separate models for males and females would be more appropriate based on the systematic differences in body shape and size between the genders. Using recursive partitioning, or regression tree analysis, I plan to explore what the most important variables are in predicting weight for the two genders both together and separately to see if there are differences in the way the data is divided based on the different body measurements sampled.
+\subsection{Model Diagnostics (Nick)} %Nick
 
 
-
-
-\begin{center}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/wdt} 
-
-\end{knitrout}
-
-\vspace{-10pt}
-\caption{Figure 1: Desnsity distribution of Weight for males and females}
-\end{center}
-
-\subsubsection{Tree 1: Males and Females} 
-To explore whether gender is an important dividing variable for the entire dataset, I first grew a regression tree with all of the data. As shown in the regression tree below, a split was not produced based on gender of the subjects. Variables used in this tree are waist girth, chest girth, hip girth, knee girth and knee diameter. \\
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/wt} 
-
-\end{knitrout}
-
-
-\subsubsection{Tree 2: Males} 
-Even though the full dataset did not utilize gender to partition the data, it might be informative to see if we obtain different trees by subsetting the data by gender. Next, I produced a regression tree with weight as the dependent variable for males only using all available body measurement variables. The CP tables showed us that at 5 splits we obtain a minimum relative error, therefore we were able to prune the tree to a reasonable size to avoid overfitting the data (Figure 2a). The final variables used to produce the pruned tree were hip girth and shoulder girth.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## 
-## Regression tree:
-## rpart(formula = weight ~ ., data = bodym, method = "anova")
-## 
-## Variables actually used in tree construction:
-## [1] hip      shoulder
-## 
-## Root node error: 27188/247 = 110
-## 
-## n= 247 
-## 
-##      CP nsplit rel error xerror  xstd
-## 1 0.552      0      1.00   1.00 0.094
-## 2 0.129      1      0.45   0.47 0.049
-## 3 0.069      2      0.32   0.36 0.041
-## 4 0.032      3      0.25   0.31 0.030
-## 5 0.025      4      0.22   0.32 0.029
-## 6 0.014      5      0.19   0.31 0.028
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/mtrees} 
-
-\end{knitrout}
-
-\caption{Figure 2: a. Pruned regression tree for male weight. b. Regression tree for female weight.}
-
-\subsubsection{Tree 3: Females} 
-The regression tree for the female subset (Figure 2b) does not reach a minimum relative error before the final node and therefore did not need pruning. The variables used to produce this tree vary significantly in number and type from the male tree. They are: hip girth, knee girth, calf girth, chest girth, and waist girth. In fact, the only variable the female tree and the pruned male tree have in common is shoulder girth.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## 
-## Regression tree:
-## rpart(formula = weight ~ ., data = bodyf, method = "anova")
-## 
-## Variables actually used in tree construction:
-## [1] calf  chest hip   knee  waist
-## 
-## Root node error: 23948/260 = 92
-## 
-## n= 260 
-## 
-##      CP nsplit rel error xerror  xstd
-## 1 0.516      0      1.00   1.01 0.134
-## 2 0.129      1      0.48   0.54 0.072
-## 3 0.112      2      0.35   0.41 0.069
-## 4 0.031      3      0.24   0.30 0.040
-## 5 0.028      4      0.21   0.29 0.039
-## 6 0.027      5      0.18   0.28 0.039
-## 7 0.019      6      0.16   0.26 0.039
-## 8 0.010      7      0.14   0.25 0.038
-## 9 0.010      8      0.13   0.23 0.038
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-
-
-\subsubsection{Conclusion}
-While regression trees are not intended to produce a model for prediction, they can be quite useful in elucidating the most important variables for partitioning data. Here we found that these variables differed significantly between men and women, perhaps suggesting that separate models for predicting weight would be more appropriate and potentially more accurate than one general model for both genders. Further analysis would be needed to test this hypothesis, specifically model fitting and selction for subsets of the data by gender. One could then show whether these separate models have better predictive power than one combined model.
-
-\newpage
 
 %------------------------------------------------
+\newpage
 
 \subsection{Model Selection (Emily)} %Emily
 
@@ -423,12 +273,245 @@ Model Selection truely is an art form. R can mechanically run through steps, int
 \newpage
 
 %------------------------------------------------
+\subsection{Logistic regression and Ada-Boosting (Yiding)}
 
-\subsection{Resampling Inference and  Bootstrapping} %Nick
+\subsubsection{Logistic regression}
+
+\textbf{AIC Method:} The procedure- Start from the full-fit model that include the all variables and then delete the one variable that would decrease the AIC most, and then delete another one.
+\begin{table}[ht]
+\centering
+\resizebox{0.98\textwidth}{!}{
+\begin{tabular}{rlc}
+  \hline
+  Step \# & Model & AIC \\ 
+  \hline
+  1 & $logi$(SEX)=WT+CDM+CDP+BDM+WR+ANK+HT+AGE+SHD+NAV+HIP & 110.35\\
+  2 & $logi$(SEX)=WT+CDP+BDM+WR+ANK+HT+AGE+SHD+NAV+HIP & 108.36\\
+  3 & $logi$(SEX)=WT+CDP+BDM+WR+HT+AGE+SHD+NAV+HIP & 106.45\\
+  4 & $logi$(SEX)=CDP+BDM+WR+HT+AGE+SHD+NAV+HIP & 104.55\\
+  5 & $logi$(SEX)=CDP+WR+HT+AGE+SHD+NAV+HIP & 102.69\\
+  6 & $logi$(SEX)=CDP+WR+HT+AGE+SHD+HIP & 101.05\\
+   \hline
+\end{tabular}
+}
+\end{table}
+\\
+The final model: $logi(gender)=-62.14702 +0.29592\times chest.dep + 1.30672\times wrist.min + 0.20283\times height + 0.05411\times age + 0.44689\times shoulder - 0.50595\times hip$\\
+
+\textbf{BIC Method:} The method start picking the variables that have highest posterior probabilities individually against null model and then add the secondary highest variables to the model.
+\begin{table}[ht]
+\centering
+\resizebox{0.89\textwidth}{!}{
+\begin{tabular}{rlrc}
+  \hline
+  Model \# & Model & BIC & Posterior prob\\ 
+  \hline
+  1 & $logi$(SEX)=WR+HT+SHD+HIP & -3033 & 0.453\\
+  2 & $logi$(SEX)=WR+HT+AGE+SHD+HIP & -3031 & 0.157\\
+  3 & $logi$(SEX)=CDP+WR+HT+AGE+SHD+HIP & -3031 & 0.151\\
+  4 & $logi$(SEX)=WR+HT+SHD+NAV+HIP & -3031 & 0.142\\
+  5 & $logi$(SEX)=WR+HT+SHD+HIP & -3029 & 0.047\\
+   \hline
+\end{tabular}
+}
+\end{table}
+
+The model with least BIC and most posterior probability is model 1 and it includes $wrist, height, shoulder, hip$. The model is : $logi(gender)=-61.89401 + 1.42080\times wrist+ 0.19783\times height+0.46062\times shoulder-0.46046\times hip$\\
+
+\textbf{Brief Summary:} When the model is small, according to the p-value of each variable, the BIC method peform better. Besides, the final model calculated by AIC includes some implausible variable, such that "age"--meaningless in reality and "chest.dep"--not significant. However, p-value is just one criterion to estimate the goodness of a model. What else perspectives should we consider?\\
+
+\textbf{Check Goodness of Model}\\
+\textsc{Linearity:} Checking the residuals can be useful for identifying potential outliers (observations not well fit by the model) as well as misspecified models. The larger the deviance, the poorer the fit.
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/model_check} 
+
+\end{knitrout}
+
+Both model have a fairly good fit except several subjects that have high predicted probability in the center of x-axis.\\
+
+\textsc{Quantifying Predictive Ability:} Usually, using 0.5 as a cutoff point to determine the prediced outcome is 1 or 0 by estimated probabilities is a quantified way of assessing the predictive ability. Similar to the cutoff method, the Receiver Operating Characteristic (ROC) curv is a very usful method to assess the predictive ability. It is a curve such that plotted based on the sensitivity against 1-specificity of a series cutoff points. The area under the ROC curve can give us insight into the predictive ability of the model. If $c(area)$ =  0.5 means model predicting at random and if $c$ = 1 indicates a very good predictive ability.\\
+When Somers' $D_{xy}$ rank correlation = 0, $D_{xy}=2(c-0.5)= 0$, the model is making random prediction; when = 1, the model discriminates outcome perfectly.\\
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/ROV_curve} 
+
+\end{knitrout}
+
+
+\begin{table}[ht]
+\centering
+\resizebox{0.45\textwidth}{!}{
+\begin{tabular}{ccc}
+  \hline
+  Model  & Area ROC curve & Somers' $D_{xy}$\\ 
+  \hline
+  AIC & 0.9944721 & 0.9889443\\
+  BIC & 0.9941607 & 0.9883214\\
+   \hline
+\end{tabular}
+}
+\end{table}
+
+Both of them have a very good predictive ability, but from the perspective of efficiency, the BIC model is preferable. Because BIC model use fewer variables to achive the as high as AIC model's predictive ability. 
+In reality, how the performance is depends on how the cutoff point been selected. The higher cutoff point you selected, the higher accuracy the prediction would be. However, the higher sensitivity would lead to a poor specificity.
+
+\subsubsection{Ada-Boosting}
+
+Ada-boosting is a tree based method to find a good classification stratagy to classify the data. Its key idea is to give more weight to the subjects that wrongly classified during last round of classification. This method is so powerful that one do not need to select cutoff point and model selection.\\
+The algorithem of AdaBoost: \textit{Yoav.F, Robert E.S,A Short Introduction to Boosting, 1999.}\\
+Given: $(x_1,y_1),...,(x_m,y_m)$ where $x_i \in X, y_i \in Y=\{-1,+1\}$\\
+Initialize $D_1(i)=1/m$.\\
+For $t=1,...,T$:\\
+$\bullet$ Train weak learner using distribution $D_t$.\\
+$\bullet$ Get weak hypothesis $h_t : X \rightarrow \{-1,+1\}$ with error $\epsilon_t=Pr_{i\sim D_t}\left[ h_t(x_i)\ne y_i \right]$\\
+$\bullet$ Choose $\alpha_t=\frac{1}{2}ln\left(\frac{1-\epsilon_t}{\epsilon_t}\right)$\\
+\[
+D_{t+1}(i)=\frac{D_t(i)}{Z_t}\times
+\left\{\begin{matrix}
+e^{-\alpha_t} & \mbox{if $h_t(x_i)=y_i$}\\
+e^{\alpha_t} & \mbox{if $h_t(x_i)\ne y_i$}
+\end{matrix}
+\right.
+\]
+where $Z_t$ is a normalization factor.\\
+Output the final hypothesis:\\
+$$H(x)=sign\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)$$
+Conduct 5 rounds ada-boosting trainning on original data, AIC selected data and BIC selected data, using 1/2 of the data as trainning data and the rest 1/2 of data as test data.
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ccccc}
+  \hline
+  Round $\#$  & Original data & AIC data & BIC data\\
+       & Sensitiviy; Specificity; Accuracy & Sensitiviy; Specificity; Accuracy & Sensitiviy; Specificity; Accuracy\\ \hline
+    1 & 0.975; 0.925; 0.949 & 0.967; 0.962; 0.965 & 0.967; 0.947; 0.957\\
+    2 & 0.953; 0.936; 0.945 & 0.953; 0.920; 0.937 & 0.961; 0.936; 0.949\\
+    3 & 0.949; 0.951; 0.949 & 0.954; 0.959; 0.957 & 0.954; 0.959; 0.957\\
+    4 & 0.983; 0.932; 0.957 & 0.983; 0.955; 0.961 & 0.983; 0.962; 0.972\\
+    5 & 0.983; 0.924; 0.953 & 0.983; 0.931; 0.957 & 0.983; 0.947; 0.965\\
+    Avarage & 0.969; 0.934; 0.951 & 0.968; 0.945; 0.955 & 0.970; 0.950; 0.960\\
+  \hline
+
+\end{tabular}
+}
+\end{table}
+Ada-boosting is so powerful that without subsetting the data it can make a very good prediction with high sensitivity, specificity and accuracy, subsetting data according to the AIC and BIC model can improve the ada-boosting performance. The BIC data has a littel better performance than AIC model, since the data contains less variables, resulting a more efficient prediction.
+
+\subsubsection{Conclusion}
+
+As we see, ada-boosting cannot be a better and convinient way to make prediction. However, ada-boosting cannot make any inferences about each variables, which would result in some drawbacks such as blindly collect data and unefficiency caused by too many noise variables. In other words, if one needs to determine and make a strong inference about certain variables, like a car insurance company wants to determine whether a driver is a safe-driver or not base on his/her age, income etc., the logistic regression model is neccessary. Thus he/she should choose the tools according to his or her purposes.
 
 %------------------------------------------------
+\newpage
 
-\subsection{Logistic Regression and Ada-boosting} %Yiding
+\subsection{Regression Trees: Differences in Males and Females (Liza)} %Liza
+
+As we have shown in previous sections, males and females differ significantly in terms of weight and body measurements. However, the regression presented for predicting weight did not include a term for gender, citing that doing so would not add significantly to the model. My hypothesis is that separate models for males and females would be more appropriate based on the systematic differences in body shape and size between the genders. Using recursive partitioning, or regression tree analysis, I plan to explore what the most important variables are in predicting weight for the two genders both together and separately to see if there are differences in the way the data is divided based on the different body measurements sampled.
+
+
+\begin{center}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/wdt} 
+
+\end{knitrout}
+
+\vspace{-10pt}
+\caption{Figure 1: Desnsity distribution of Weight for males and females}
+\end{center}
+
+\subsubsection{Tree 1: Males and Females} 
+To explore whether gender is an important dividing variable for the entire dataset, I first grew a regression tree with all of the data. As shown in the regression tree below, a split was not produced based on gender of the subjects. Variables used in this tree are waist girth, chest girth, hip girth, knee girth and knee diameter.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/wt} 
+
+\end{knitrout}
+
+
+\subsubsection{Tree 2: Males} 
+Even though the full dataset did not utilize gender to partition the data, it might be informative to see if we obtain different trees by subsetting the data by gender. Next, I produced a regression tree with weight as the dependent variable for males only using all available body measurement variables. The CP tables showed us that at 5 splits we obtain a minimum relative error, therefore we were able to prune the tree to a reasonable size to avoid overfitting the data (Figure 2a). The final variables used to produce the pruned tree were hip girth and shoulder girth.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## 
+## Regression tree:
+## rpart(formula = weight ~ ., data = bodym, method = "anova")
+## 
+## Variables actually used in tree construction:
+## [1] hip      shoulder
+## 
+## Root node error: 27188/247 = 110
+## 
+## n= 247 
+## 
+##      CP nsplit rel error xerror  xstd
+## 1 0.552      0      1.00   1.00 0.094
+## 2 0.129      1      0.45   0.47 0.049
+## 3 0.069      2      0.32   0.36 0.041
+## 4 0.032      3      0.25   0.31 0.030
+## 5 0.025      4      0.22   0.32 0.029
+## 6 0.014      5      0.19   0.31 0.028
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/mtrees} 
+
+\end{knitrout}
+
+\caption{Figure 2: a. Pruned regression tree for male weight. b. Regression tree for female weight.}
+
+\subsubsection{Tree 3: Females} 
+The regression tree for the female subset (Figure 2b) does not reach a minimum relative error before the final node and therefore did not need pruning. The variables used to produce this tree vary significantly in number and type from the male tree. They are: hip girth, knee girth, calf girth, chest girth, and waist girth. In fact, the only variable the female tree and the pruned male tree have in common is shoulder girth.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## 
+## Regression tree:
+## rpart(formula = weight ~ ., data = bodyf, method = "anova")
+## 
+## Variables actually used in tree construction:
+## [1] calf  chest hip   knee  waist
+## 
+## Root node error: 23948/260 = 92
+## 
+## n= 260 
+## 
+##      CP nsplit rel error xerror  xstd
+## 1 0.516      0      1.00   1.01 0.134
+## 2 0.129      1      0.48   0.54 0.072
+## 3 0.112      2      0.35   0.41 0.069
+## 4 0.031      3      0.24   0.30 0.040
+## 5 0.028      4      0.21   0.29 0.039
+## 6 0.027      5      0.18   0.28 0.039
+## 7 0.019      6      0.16   0.26 0.039
+## 8 0.010      7      0.14   0.25 0.038
+## 9 0.010      8      0.13   0.23 0.038
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\subsubsection{Conclusion}
+While regression trees are not intended to produce a model for prediction, they can be quite useful in elucidating the most important variables for partitioning data. Here we found that these variables differed significantly between men and women, perhaps suggesting that separate models for predicting weight would be more appropriate and potentially more accurate than one general model for both genders. Further analysis would be needed to test this hypothesis, specifically model fitting and selction for subsets of the data by gender. One could then show whether these separate models have better predictive power than one combined model.
+
+%------------------------------------------------------------------------
+
+\newpage
+
+\section{Conclusion/ Discussion}
 
 
 \end{document}

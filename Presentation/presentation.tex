@@ -174,8 +174,8 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 
 
 
-\begin{columns}[t] % contents are top vertically aligned
-\begin{column}[T]{6cm} % each column can also be its own environment
+\begin{columns}[c] % contents are top vertically aligned
+\begin{column}[c]{6cm} % each column can also be its own environment
 {\fontsize{0.3cm}{1em}\selectfont
 \begin{itemize}
   \item The dataset, ``Exploring Relationships in Body Dimensions", contains 25 variables: 21 body dimension measurements as well as age, weight, height, and gender for 507 physically active, young individuals.
@@ -186,7 +186,7 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 }
 \end{column}
 
-\begin{column}[T]{6cm} 
+\begin{column}[c]{6cm} 
 \includegraphics[width=\textwidth]{body}
 \end{column}
 \end{columns}
@@ -201,8 +201,6 @@ University of Massachusetts, Amherst \\ % Your institution for the title page
 \begin{frame}{Description of Variables}
 \includegraphics[width=\textwidth]{summary_table}
 
-Text summary about the table
-
 \end{frame}
 
 
@@ -214,8 +212,8 @@ Text summary about the table
 
 \begin{frame}{Outcome of Interest: Weight}
 
-\begin{columns}[t] % contents are top vertically aligned
-\begin{column}[T]{5cm} % each column can also be its own environment
+\begin{columns}[c] % contents are top vertically aligned
+\begin{column}[c]{5cm} % each column can also be its own environment
 {\fontsize{0.275cm}{1em}\selectfont
 
 Applications of Data: 
@@ -229,11 +227,10 @@ Applications of Data:
 
 Note: Outliers in the distribution of weight may be present because some of the individuals had unusually high muscle mass due to their high level of physical fitness.
 
-
 }
 \end{column}
 
-\begin{column}[T]{7cm} 
+\begin{column}[c]{7cm} 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/weight_plot} 
@@ -288,66 +285,134 @@ Note: Outliers in the distribution of weight may be present because some of the 
 
 %------------------------------------------------
 
+\subsection{Model Diagnostics}
+
+%------------------------------------------------
+\begin{frame}{Nick}
+
+
+\end{frame}
+
+%------------------------------------------------
+
 \subsection{Model Selection}
 
 %------------------------------------------------
 \begin{frame}{Model Selection Criteria and Methods (Emily)}
 
-{\fontsize{0.275cm}{1em}\selectfont
-The methods used to create ten different models were: include all variables (1), suggested by paper (2), my selection (1), stepAIC (1), leaps (2) and combinations of R functions and human selection (3).  \\
-The seclection criterions used to analyse the models are AIC, BIC, PRESS and Adjusted $R^2$. \\
-AIC and BIC measure goodness-of-fit through residual sum of squares (log likelihoods) and penalizes the model size; the smaller the AIC/BIC, the better. Adjusted $R^2$ adjusts $R^2$ so that the model is penalized for adding more predictors; the higher the value of the adjusted $R^2$ the better. Finally, PRESS is a summary measure focused on prediction; the lower the value of PRESS, the better.
-}
+\begin{center}
+\textbf{Goal:} Find the ``best" method for model selection.\\
+\end{center}
 
+\begin{columns}[c] % contents are top vertically aligned
+\begin{column}[c]{5cm} % each column can also be its own environment
+The methods used to create ten different models were:
+\begin{itemize}
+\item include all variables (1)\\
+\item suggested by paper (2)\\
+\item my selection (1)\\
+\item stepAIC (1) \\
+\item leaps (2) \\
+\item combinations of R functions and human intuition (3).  \\
+\end{itemize}
+
+\end{column}
+
+\begin{column}[c]{7cm} 
+
+These models were compared using: \\
+\begin{itemize}
+\item AIC/ BIC: measure goodness-of-fit through residual sum of squares and penalizes for adding more predictors; the smaller the better.\\
+\item Adjusted $R^2$: adjusts $R^2$ so that the model is penalized for adding more predictors; the larger the better. \\
+\item PRESS is a summary measure focused on prediction; the smaller the better.\\
+\end{itemize}
+\end{column}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}{My Selection (Emily)}
 
+\begin{columns}[t] % contents are top vertically aligned
+\begin{column}[T]{5cm} % each column can also be its own environment
+\includegraphics[width=\textwidth]{rafiki}
+\end{column}
 
-Predictors needed are age, height and gender. These variables contribute significantly to weight. The predictors we will allow in model selection are the predictors used in the inital model: chest diameter, chest depth and bitro diameter.\\
-Predictors I will allow are pelvic bredth, shoulder, chest, waist, hip and thigh will be used. I chose to allow these predictors in the model since these are directly associated with weight (e.g. waist). \\
-After running a few combinations using these variables, the model I decided was the ``best" includes the predictors chest.dep, chest.diam, shoulder, waist, hip, thight and height^2;\\
-The quadratic term for height was used since height is a significant variable. This model is deemed as the best since it has the lowest BIC and AIC values of the few models I tried.
+\begin{column}[T]{7cm} 
+
+\begin{itemize}
+\item \textbf{Predictors needed:} age, height and gender (since these contribute significantly to weight) \\
+
+\item \textbf{Predictors we will allow:} the predictors used in the inital model (chest diameter, chest depth and bitro diameter), pelvic bredth, shoulder, chest, waist, hip and thigh (since these are directly associated with weight)\\
+
+\item The model I decided was the ``best" includes the predictors chest.dep, chest.diam, shoulder, waist, hip, thight and height$^2$, based on AIC and BIC.  \\
+\end{itemize}
+
+\end{column}
+\end{columns}
 
 \end{frame}
 %------------------------------------------------
 
 \begin{frame}{R function: stepAIC() (Emily)}
 
+To demonstrate these two R functions, we will begin with a simple model:
+
+{\fontsize{0.275cm}{1em}\selectfont
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{MLRex} \hlkwb{<-} \hlkwd{lm}\hlstd{(weight} \hlopt{~} \hlstd{height} \hlopt{+} \hlstd{wrist.min} \hlopt{+} \hlstd{ankle.min} \hlopt{+} \hlstd{chest,} \hlkwc{data} \hlstd{= body)}
-\hlstd{step} \hlkwb{<-} \hlkwd{stepAIC}\hlstd{(MLRex,} \hlkwc{direction} \hlstd{=} \hlstr{"both"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
+}
+
+The R function found in the package ``MASS" called ``stepAIC()" performs stepwise model selection by AIC. This function allows you to indicate the direction of the search: forward, backward or both.
+
+{\fontsize{0.275cm}{1em}\selectfont
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlstd{step} \hlkwb{<-} \hlkwd{stepAIC}\hlstd{(MLRex,} \hlkwc{direction} \hlstd{=} \hlstr{"both"}\hlstd{)}
+
 \hlkwd{head}\hlstd{(step}\hlopt{$}\hlstd{anova)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
 
+\texttt{Initial Model: weight ~ height + wrist.diam + ankle.diam + chest\\
+Final Model: weight ~ height + ankle.diam + chest\\
+\begin{tabular}{r r r r r r r}
+        &  Step & Df & Deviance & Resid. Df & Resid. Dev & AIC \\
+1  &            &      &        &  502 &  13294.14 & 1666.150 \\
+2 & - wrist.diam & 1 & 47.90427 & 503 &   13342.05 & 1665.974
+\end{tabular}
+}
+
+
+}
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}{R function: leaps() (Emily)}
 
+{\fontsize{0.265cm}{1em}\selectfont
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{leaps} \hlkwb{<-} \hlkwd{regsubsets}\hlstd{(weight} \hlopt{~} \hlstd{height} \hlopt{+} \hlstd{wrist.diam} \hlopt{+} \hlstd{ankle.diam} \hlopt{+} \hlstd{chest,} \hlkwc{nbest} \hlstd{=} \hlnum{10}\hlstd{,}
+\hlstd{leaps} \hlkwb{<-} \hlkwd{regsubsets}\hlstd{(weight} \hlopt{~} \hlstd{height} \hlopt{+} \hlstd{wrist.diam} \hlopt{+} \hlstd{ankle.diam} \hlopt{+} \hlstd{chest,} \hlkwc{nbest} \hlstd{=} \hlnum{2}\hlstd{,}
     \hlkwc{data} \hlstd{= body)}
 
 \hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
+
 \hlkwd{plot}\hlstd{(leaps,} \hlkwc{main} \hlstd{=} \hlstr{"BIC"}\hlstd{)}
+
 \hlkwd{plot}\hlstd{(leaps,} \hlkwc{scale} \hlstd{=} \hlstr{"adjr2"}\hlstd{,} \hlkwc{main} \hlstd{=} \hlstr{"AdjR2"}\hlstd{)}
 \end{alltt}
 \end{kframe}
@@ -355,7 +420,7 @@ The quadratic term for height was used since height is a significant variable. T
 
 \end{knitrout}
 
-
+}
 \end{frame}
 
 
@@ -394,25 +459,6 @@ i & 2970 & 3004 & 10405 & 0.8869 & \text{suggested by paper} \\ \hline
 }
 
 \end{frame}
-
-%------------------------------------------------
-
-\subsection{Resampling Inference or something}
-
-%------------------------------------------------
-
-\begin{frame}{Nick}
-
-
-\end{frame}
-
-%------------------------------------------------
-\begin{frame}{Nick}
-
-\end{frame}
-
-%------------------------------------------------
-
 
 %------------------------------------------------
 
@@ -570,7 +616,7 @@ Final hypothesis: $H(x)=sign\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)$
 \begin{column}[t]{7cm}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-1} 
 
 \end{knitrout}
 
@@ -745,10 +791,10 @@ Ada-boosting $\surd$
 What have we learned? 
 
 \begin{itemize}
-    \item Nick's Conclusion
+  \item Always check your assumptions, even low influence outliers can change your model fit
   \item With model selection, a combination of selection criteria, R functions and intuition are needed to create the model of ``best" fit. 
   \item Inference choose Logistic Regression; prediction choose Ada-boosting.
-  \item Liza's conclusion
+  \item Regression trees are a powerful, yet simple, non-parametric method for exploring data.
 \end{itemize}
 \end{column}
 \end{columns}
