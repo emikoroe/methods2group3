@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  28 APR 2014 13:48
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  28 APR 2014 15:23
 entering extended mode
 **presentation.tex
 
@@ -1185,138 +1185,124 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <5.47699> not available
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <3.91216> not available
 (Font)              size <5> substituted on input line 279.
 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.279 \end{frame}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.279 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (14.81927pt too wide) in paragraph at lines 279--279
+[][]  
+ []
+
 [6
 
-] <figure/residual_plots.pdf, id=271, 289.08pt x 505.89pt>
+] [7
+
+] <figure/residual_plots.pdf, id=301, 289.08pt x 505.89pt>
 File: figure/residual_plots.pdf Graphic file (type pdf)
 
 <use figure/residual_plots.pdf>
-Package pdftex.def Info: figure/residual_plots.pdf used on input line 314.
+Package pdftex.def Info: figure/residual_plots.pdf used on input line 327.
 (pdftex.def)             Requested size: 128.0374pt x 224.05893pt.
 
-Overfull \vbox (7.05495pt too high) detected at line 314
- []
-
-[7
-
- <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/resi
-dual_plots.pdf>]
-! Illegal parameter number in definition of \test.
-<to be read again> 
-                    
-l.328 \end{frame}
-                 
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Illegal parameter number in definition of \iterate.
-<to be read again> 
-                    
-l.328 \end{frame}
-                 
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Illegal parameter number in definition of \iterate.
-<to be read again> 
-                    
-l.328 \end{frame}
-                 
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-! Illegal parameter number in definition of \beamer@doifinframe.
-<to be read again> 
-                    
-l.328 \end{frame}
-                 
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
-
-<figure/leverage.pdf, id=307, 325.215pt x 180.675pt>
-File: figure/leverage.pdf Graphic file (type pdf)
- <use figure/leverage.pdf>
-Package pdftex.def Info: figure/leverage.pdf used on input line 328.
-(pdftex.def)             Requested size: 325.2142pt x 180.68832pt.
-
-! You can't use `macro parameter character #' in horizontal mode.
-\beamer@doifinframe ...es of more than 2p/n (p= ##
-                                                   of predictors) should be ...
-l.328 \end{frame}
-                 
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \vbox (3.48436pt too high) detected at line 328
+Overfull \vbox (7.05495pt too high) detected at line 327
  []
 
 [8
 
+ <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/resi
+dual_plots.pdf>] <figure/leverage.pdf, id=335, 325.215pt x 180.675pt>
+File: figure/leverage.pdf Graphic file (type pdf)
+
+<use figure/leverage.pdf>
+Package pdftex.def Info: figure/leverage.pdf used on input line 342.
+(pdftex.def)             Requested size: 325.2142pt x 180.68832pt.
+ [9
+
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/leve
 rage.pdf>]
-
-LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <8.5359> not available
-(Font)              size <9> substituted on input line 344.
-
-<influence.pdf, id=342, 420.57124pt x 268.00125pt>
-File: influence.pdf Graphic file (type pdf)
- <use influence.pdf>
-Package pdftex.def Info: influence.pdf used on input line 344.
-(pdftex.def)             Requested size: 273.83728pt x 174.49725pt.
-
-Overfull \vbox (11.04329pt too high) detected at line 344
+Overfull \hbox (699.06197pt too wide) in paragraph at lines 366--366
+ [] 
  []
 
-[9
+[10
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <8.5359> not available
+(Font)              size <9> substituted on input line 381.
+
+<influence.pdf, id=399, 420.57124pt x 268.00125pt>
+File: influence.pdf Graphic file (type pdf)
+ <use influence.pdf>
+Package pdftex.def Info: influence.pdf used on input line 381.
+(pdftex.def)             Requested size: 273.83728pt x 174.49725pt.
+
+Overfull \vbox (9.29329pt too high) detected at line 381
+ []
+
+[11
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/influence.p
-df>] <figure/unnamed-chunk-1.pdf, id=378, 505.89pt x 289.08pt>
-File: figure/unnamed-chunk-1.pdf Graphic file (type pdf)
+df>] <figure/unnamed-chunk-2.pdf, id=435, 289.08pt x 505.89pt>
+File: figure/unnamed-chunk-2.pdf Graphic file (type pdf)
 
-<use figure/unnamed-chunk-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-1.pdf used on input line 356.
-(pdftex.def)             Requested size: 342.2953pt x 195.60136pt.
- [10
+<use figure/unnamed-chunk-2.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-2.pdf used on input line 405.
+(pdftex.def)             Requested size: 128.0374pt x 224.05893pt.
+
+Overfull \vbox (7.05495pt too high) detected at line 405
+ []
+
+[12
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/unna
-med-chunk-1.pdf>]
-LaTeX Font Info:    Calculating math sizes for size <8.5359> on input line 391.
+med-chunk-2.pdf>]
+LaTeX Font Info:    Calculating math sizes for size <8.5359> on input line 440.
 
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4.26794> not available
-(Font)              size <5> substituted on input line 391.
+(Font)              size <5> substituted on input line 440.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5359> not available
-(Font)              size <9> substituted on input line 391.
+(Font)              size <9> substituted on input line 440.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.26794> not available
-(Font)              size <5> substituted on input line 391.
+(Font)              size <5> substituted on input line 440.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5359> not available
-(Font)              size <9> substituted on input line 391.
+(Font)              size <9> substituted on input line 440.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.26794> not available
-(Font)              size <5> substituted on input line 391.
+(Font)              size <5> substituted on input line 440.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <8.5359> not available
-(Font)              size <9> substituted on input line 391.
+(Font)              size <9> substituted on input line 440.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <4.26794> not available
-(Font)              size <5> substituted on input line 391.
+(Font)              size <5> substituted on input line 440.
 
 
 ! LaTeX Error: There's no line here to end.
@@ -1325,43 +1311,43 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.391 \end{frame}
+l.440 \end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<outlier.jpg, id=412, 401.5pt x 224.84pt>
+<outlier.jpg, id=469, 401.5pt x 224.84pt>
 File: outlier.jpg Graphic file (type jpg)
  <use outlier.jpg>
-Package pdftex.def Info: outlier.jpg used on input line 391.
+Package pdftex.def Info: outlier.jpg used on input line 440.
 (pdftex.def)             Requested size: 239.60567pt x 134.18114pt.
 
-Overfull \vbox (10.00635pt too high) detected at line 391
+Overfull \vbox (10.00635pt too high) detected at line 440
  []
 
-[11
+[13
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/outlier.jpg
->] [12
+>] [14
 
-] <rafiki.jpg, id=470, 451.6875pt x 602.25pt>
+] <rafiki.jpg, id=527, 451.6875pt x 602.25pt>
 File: rafiki.jpg Graphic file (type jpg)
  <use rafiki.jpg>
-Package pdftex.def Info: rafiki.jpg used on input line 451.
+Package pdftex.def Info: rafiki.jpg used on input line 500.
 (pdftex.def)             Requested size: 142.26378pt x 189.68217pt.
 
-[13
+[15
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/rafiki.jpg>
 ]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7.82433> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 496.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 545.
 
 ! Extra }, or forgotten $.
 <recently read> }
                  
-l.496 \end{frame}
+l.545 \end{frame}
                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1376,7 +1362,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.496 \end{frame}
+l.545 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1388,7 +1374,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.496 \end{frame}
+l.545 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1400,7 +1386,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.496 \end{frame}
+l.545 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1408,7 +1394,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.496 \end{frame}
+l.545 \end{frame}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1419,7 +1405,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.496 \end{frame}
+l.545 \end{frame}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1427,40 +1413,40 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-[14
+[16
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <7.53996> not available
-(Font)              size <8> substituted on input line 521.
+(Font)              size <8> substituted on input line 570.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <7.53996> not available
-(Font)              size <8> substituted on input line 521.
+(Font)              size <8> substituted on input line 570.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7.53996> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 521.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 570.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <7.53996> not available
-(Font)              size <8> substituted on input line 521.
+(Font)              size <8> substituted on input line 570.
 
 
-Overfull \hbox (1.95964pt too wide) in paragraph at lines 521--521
+Overfull \hbox (1.95964pt too wide) in paragraph at lines 570--570
 [][]\OT1/cmtt/m/n/8 leaps[] []<-[] []regsubsets[][](weight[] [][]  []height[] [
 ]+[] []wrist.diam[] []+[] []ankle.diam[] []+[] []chest,[] []nbest[] []=[] []2[]
 [],[]
  []
 
-<figure/leap.pdf, id=529, 505.89pt x 252.945pt>
+<figure/leap.pdf, id=585, 505.89pt x 252.945pt>
 File: figure/leap.pdf Graphic file (type pdf)
  <use figure/leap.pdf>
-Package pdftex.def Info: figure/leap.pdf used on input line 521.
+Package pdftex.def Info: figure/leap.pdf used on input line 570.
 (pdftex.def)             Requested size: 342.2953pt x 171.1512pt.
 
-Overfull \vbox (23.23068pt too high) detected at line 521
+Overfull \vbox (23.23068pt too high) detected at line 570
  []
 
-[15
+[17
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/leap
 .pdf>]
@@ -1471,7 +1457,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.558 \end{frame}
+l.607 \end{frame}
                  
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1479,7 +1465,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.558 \end{frame}
+l.607 \end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1487,7 +1473,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.558 \end{frame}
+l.607 \end{frame}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1498,7 +1484,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.558 \end{frame}
+l.607 \end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1506,7 +1492,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.558 \end{frame}
+l.607 \end{frame}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1521,100 +1507,100 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.558 \end{frame}
+l.607 \end{frame}
                  
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[16
+[18
 
-] [17
+] [19
 
-] <figure/AIC_BIC_RESIDUALS.pdf, id=624, 505.89pt x 194.7275pt>
+] <figure/AIC_BIC_RESIDUALS.pdf, id=681, 505.89pt x 194.7275pt>
 File: figure/AIC_BIC_RESIDUALS.pdf Graphic file (type pdf)
 
 <use figure/AIC_BIC_RESIDUALS.pdf>
-Package pdftex.def Info: figure/AIC_BIC_RESIDUALS.pdf used on input line 684.
+Package pdftex.def Info: figure/AIC_BIC_RESIDUALS.pdf used on input line 733.
 (pdftex.def)             Requested size: 199.16928pt x 76.66544pt.
 
-<figure/prdict_ability.pdf, id=625, 505.89pt x 194.7275pt>
+<figure/prdict_ability.pdf, id=682, 505.89pt x 194.7275pt>
 File: figure/prdict_ability.pdf Graphic file (type pdf)
 
 <use figure/prdict_ability.pdf>
-Package pdftex.def Info: figure/prdict_ability.pdf used on input line 684.
+Package pdftex.def Info: figure/prdict_ability.pdf used on input line 733.
 (pdftex.def)             Requested size: 199.16928pt x 76.66544pt.
- [18
+ [20
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/AIC_
 BIC_RESIDUALS.pdf> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presen
 tation/figure/prdict_ability.pdf>]
-LaTeX Font Info:    Calculating math sizes for size <5.69046> on input line 724
+LaTeX Font Info:    Calculating math sizes for size <5.69046> on input line 773
 .
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <3.98329> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <2.84523> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.98329> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <2.84523> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.98329> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <2.84523> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <3.98329> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <2.84523> not available
-(Font)              size <5> substituted on input line 724.
+(Font)              size <5> substituted on input line 773.
 
-<figure/unnamed-chunk-2.pdf, id=666, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-2.pdf Graphic file (type pdf)
+<figure/unnamed-chunk-3.pdf, id=723, 505.89pt x 505.89pt>
+File: figure/unnamed-chunk-3.pdf Graphic file (type pdf)
 
-<use figure/unnamed-chunk-2.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2.pdf used on input line 724.
-(pdftex.def)             Requested size: 199.16928pt x 199.17207pt.
- [19
-
- <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/unna
-med-chunk-2.pdf>] [20
-
-]
-<figure/gender_plots.pdf, id=731, 505.89pt x 505.89pt>
-File: figure/gender_plots.pdf Graphic file (type pdf)
-
-<use figure/gender_plots.pdf>
-Package pdftex.def Info: figure/gender_plots.pdf used on input line 840.
+<use figure/unnamed-chunk-3.pdf>
+Package pdftex.def Info: figure/unnamed-chunk-3.pdf used on input line 773.
 (pdftex.def)             Requested size: 199.16928pt x 199.17207pt.
  [21
 
+ <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/unna
+med-chunk-3.pdf>] [22
+
+]
+<figure/gender_plots.pdf, id=787, 505.89pt x 505.89pt>
+File: figure/gender_plots.pdf Graphic file (type pdf)
+
+<use figure/gender_plots.pdf>
+Package pdftex.def Info: figure/gender_plots.pdf used on input line 889.
+(pdftex.def)             Requested size: 199.16928pt x 199.17207pt.
+ [23
+
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/gend
 er_plots.pdf>]
-<figure/mf_plots.pdf, id=769, 505.89pt x 252.945pt>
+<figure/mf_plots.pdf, id=825, 505.89pt x 252.945pt>
 File: figure/mf_plots.pdf Graphic file (type pdf)
  <use figure/mf_plots.pdf>
-Package pdftex.def Info: figure/mf_plots.pdf used on input line 863.
+Package pdftex.def Info: figure/mf_plots.pdf used on input line 912.
 (pdftex.def)             Requested size: 342.2953pt x 171.1512pt.
 
 ! Misplaced alignment tab character &.
 \beamer@doifinframe ...es used in male tree: hip &
                                                    shoulder girths \item Var...
-l.863 \end{frame}
+l.912 \end{frame}
                  
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1623,44 +1609,44 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[22
+[24
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/figure/mf_p
-lots.pdf>] [23
+lots.pdf>] [25
 
-] <happy.jpg, id=832, 194.7275pt x 259.97125pt>
+] <happy.jpg, id=889, 194.7275pt x 259.97125pt>
 File: happy.jpg Graphic file (type jpg)
 
 <use happy.jpg>
-Package pdftex.def Info: happy.jpg used on input line 899.
+Package pdftex.def Info: happy.jpg used on input line 948.
 (pdftex.def)             Requested size: 113.81102pt x 151.94174pt.
- [24
+ [26
 
  <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presentation/happy.jpg>]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 903.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 903.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 952.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 952.
 
 ("D:\Users\Emily\Documents\School\Spring 14\Bio\Group3\Presentation\presentatio
 n.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 903.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 903.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 952.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 952.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 1B8DD71208F1B527D4312C52033BD384;661.
+(rerunfilecheck)             Checksum: EC8BAAD0968379EF781DB12590B96839;661.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.15477pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 903.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 952.
  ) 
 Here is how much of TeX's memory you used:
- 17291 strings out of 493921
- 321437 string characters out of 3144876
- 399627 words of memory out of 3000000
- 20090 multiletter control sequences out of 15000+200000
+ 17299 strings out of 493921
+ 321507 string characters out of 3144876
+ 414580 words of memory out of 3000000
+ 20094 multiletter control sequences out of 15000+200000
  18725 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,17n,62p,474b,668s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1682,9 +1668,9 @@ iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on presentation.pdf (24 pages, 894013 bytes).
+Output written on presentation.pdf (26 pages, 940176 bytes).
 PDF statistics:
- 929 PDF objects out of 1000 (max. 8388607)
- 59 named destinations out of 1000 (max. 500000)
+ 987 PDF objects out of 1000 (max. 8388607)
+ 63 named destinations out of 1000 (max. 500000)
  239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -32,37 +32,41 @@
 \headcommand {\beamer@framepages {10}{10}}
 \headcommand {\slideentry {2}{1}{5}{11/11}{Model Diagnostics}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{12}{Model Selection}}\headcommand {\beamer@subsectionpages {7}{11}}
-\headcommand {\slideentry {2}{2}{1}{12/12}{Model Selection}{0}}
+\headcommand {\slideentry {2}{1}{6}{12/12}{Model Diagnostics}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\slideentry {2}{2}{2}{13/13}{Model Selection}{0}}
+\headcommand {\slideentry {2}{1}{7}{13/13}{Model Diagnostics}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {2}{2}{3}{14/14}{Model Selection}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{14}{Model Selection}}\headcommand {\beamer@subsectionpages {7}{13}}
+\headcommand {\slideentry {2}{2}{1}{14/14}{Model Selection}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\slideentry {2}{2}{4}{15/15}{Model Selection}{0}}
+\headcommand {\slideentry {2}{2}{2}{15/15}{Model Selection}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {2}{2}{5}{16/16}{Model Selection}{0}}
+\headcommand {\slideentry {2}{2}{3}{16/16}{Model Selection}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{17}{Logistic Regression and Ada-boosting}}\headcommand {\beamer@subsectionpages {12}{16}}
-\headcommand {\slideentry {2}{3}{1}{17/17}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\slideentry {2}{2}{4}{17/17}{Model Selection}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {2}{3}{2}{18/18}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\slideentry {2}{2}{5}{18/18}{Model Selection}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {2}{3}{3}{19/19}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{19}{Logistic Regression and Ada-boosting}}\headcommand {\beamer@subsectionpages {14}{18}}
+\headcommand {\slideentry {2}{3}{1}{19/19}{Logistic Regression and Ada-boosting}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\slideentry {2}{3}{4}{20/20}{Logistic Regression and Ada-boosting}{0}}
+\headcommand {\slideentry {2}{3}{2}{20/20}{Logistic Regression and Ada-boosting}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{21}{Regression Trees}}\headcommand {\beamer@subsectionpages {17}{20}}
-\headcommand {\slideentry {2}{4}{1}{21/21}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{3}{3}{21/21}{Logistic Regression and Ada-boosting}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\slideentry {2}{4}{2}{22/22}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{3}{4}{22/22}{Logistic Regression and Ada-boosting}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {2}{4}{3}{23/23}{Regression Trees}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{23}{Regression Trees}}\headcommand {\beamer@subsectionpages {19}{22}}
+\headcommand {\slideentry {2}{4}{1}{23/23}{Regression Trees}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {2}{4}{4}{24/24}{Regression Trees}{0}}
+\headcommand {\slideentry {2}{4}{2}{24/24}{Regression Trees}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@partpages {1}{24}}
-\headcommand {\beamer@subsectionpages {21}{24}}
-\headcommand {\beamer@sectionpages {7}{24}}
-\headcommand {\beamer@documentpages {24}}
-\headcommand {\def \inserttotalframenumber {24}}
+\headcommand {\slideentry {2}{4}{3}{25/25}{Regression Trees}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {2}{4}{4}{26/26}{Regression Trees}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@partpages {1}{26}}
+\headcommand {\beamer@subsectionpages {23}{26}}
+\headcommand {\beamer@sectionpages {7}{26}}
+\headcommand {\beamer@documentpages {26}}
+\headcommand {\def \inserttotalframenumber {26}}

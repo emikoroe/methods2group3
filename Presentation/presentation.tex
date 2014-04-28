@@ -263,16 +263,16 @@ Note: Outliers in the distribution of weight may be present because some of the 
 \\
 
 {\fontsize{0.275cm}{1em}\selectfont 
-\begin{tabular}{|r|r|r|r|r|r|r|}
+\begin{tabular}{|r|r|r|r|r|r|r|r|}
 \hline
-    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height \\ \hline
-   -109.89 & 1.34  & 1.54 & 1.20  & 1.11 & 1.15 & 0.18 \\ \hline
+    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height & R^2 \\ \hline
+   -109.89 & 1.34  & 1.54 & 1.20  & 1.11 & 1.15 & 0.18 & 0.8882 \\ \hline
 \end{tabular}
 
 \begin{itemize}
   \item This model was chosen by the authors of the dataset based on the idea that these measurements remain constant after physical maturation.
   \item It seems that, in our model, chest depth has the largest impact on weight.
-  \item COMMENTS ABOUT GOODNESS OF FIT???
+  \item Model seems like a good fit, but can we find a better one?
 \end{itemize}
 
 }
@@ -288,14 +288,27 @@ Note: Outliers in the distribution of weight may be present because some of the 
 \subsection{Model Diagnostics}
 
 %------------------------------------------------
+
 \begin{frame}{Model Diagnostics (Nick)}
+Model Diagnostics are important to fitting an appropriate model
+\begin{itemize}
+  \item Outliers: extreme points that are distant form the other observations, measured by residuals
+  \item Leverage: an extreme point, measured by the hat matrix. An "outlier on the X axis"
+  \item Influential Points: points that have a large effect on the slope of the model
+  \item Influence = Leverage + "Outlyingness"
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Outliers (Nick)}
   \begin{columns}[t] % vertically aligned
   \begin{column}[c]{6cm}
 
 \begin{itemize}
-  \item Model diagnostics are extremely important to fitting an appropriate model.
-  \item Assumption violations can lead to biased or faulty results.
-  \item These plots show us that observations 124, 359, and 474 may be problematic. 
+  \item Assumption violations can lead to biased or faulty results
+  \item Outliers are commonly measurement errors, or are points indicative of a population that has a heavy tailed distribution
+  \item Outliers are present in the model (points 124, 359, 474) 
 \end{itemize}
 
   \end{column}
@@ -316,6 +329,8 @@ Note: Outliers in the distribution of weight may be present because some of the 
 
 \begin{frame} {Leverage (Nick)} %make and interpret leverage plots
 
+A "rule of thumb" is that leverages of more than $\dfrac{2p}{n}$ or $\dfrac{3p}{n}$ should be looked at more closely.  Points of concern are located above the red line. 
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/leverage} 
@@ -323,16 +338,38 @@ Note: Outliers in the distribution of weight may be present because some of the 
 \end{knitrout}
 
 
-A "rule of thumb" is that leverages of more than 2p/n (p= # of predictors) should be looked at more closely.  Points of concern are located above the red line. 
 
 \end{frame}
+%----------------------------------------------------
+\begin{frame}{Leverage}
 
+
+
+
+{\fontsize{0.275cm}{1em}\selectfont
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrrrrrrrrrrrrrrrrrrrrrr}
+  \hline
+ & biac.diam & pelvic.bredth & bitro.diam & chest.dep & chest.diam & elbow.diam & wrist.diam & knee.diam & ankle.diam & shoulder & chest & waist & navel & hip & thigh & bicep & forearm & knee & calf & ankle.min & wrist.min & age & weight & height & gender \\ 
+  \hline
+116 & 40.50 & 28.30 & 32.40 & 19.40 & 27.80 & 13.40 & 11.00 & 19.00 & 14.50 & 109.10 & 94.80 & 75.00 & 79.60 & 91.60 & 49.40 & 30.00 & 26.50 & 31.70 & 30.20 & 16.40 & 16.10 & 27.00 & 66.80 & 185.40 &   1 \\ 
+  127 & 43.40 & 30.60 & 32.90 & 21.60 & 28.30 & 15.00 & 12.00 & 20.50 & 17.20 & 117.90 & 96.90 & 82.50 & 90.80 & 94.90 & 54.40 & 32.80 & 28.70 & 39.20 & 37.00 & 27.50 & 17.90 & 27.00 & 85.50 & 198.10 &   1 \\ 
+  135 & 41.10 & 25.60 & 29.90 & 23.30 & 25.20 & 14.10 & 10.70 & 19.00 & 15.10 & 114.40 & 96.20 & 76.70 & 83.50 & 93.90 & 50.40 & 32.10 & 27.70 & 36.10 & 32.90 & 23.20 & 17.00 & 27.00 & 73.60 & 190.50 &   1 \\ 
+  176 & 43.60 & 30.80 & 33.30 & 20.40 & 29.70 & 14.30 & 10.90 & 19.60 & 15.40 & 117.60 & 101.00 & 83.70 & 91.10 & 99.90 & 56.80 & 33.50 & 27.70 & 38.70 & 41.80 & 29.30 & 18.00 & 30.00 & 84.10 & 188.00 &   1 \\ 
+  477 & 35.60 & 30.80 & 33.80 & 26.80 & 27.10 & 12.40 & 10.20 & 18.20 & 14.00 & 106.40 & 96.30 & 86.10 & 107.40 & 112.00 & 69.40 & 31.70 & 25.50 & 39.40 & 38.70 & 23.70 & 16.30 & 33.00 & 80.50 & 160.00 &   0 \\ 
+   \hline
+\end{tabular}
+\end{table}
+}
+
+\end{frame}
 %-----------------------------------------------------
 
 \begin{frame}{Influence (Nick)}  
 
 {\fontsize{0.3cm}{1em}\selectfont
-An \textbf{influential point} is one whose removal from the dataset causes a drastic change in the fit.  An influential point will either be an outlier in the data, will have high leverage, or will have both. Cook's Distance is a popular method of identifying influential points.}
+An \textbf{influential point} is one whose removal from the dataset causes a drastic change in the fit.  An influential point will either be an outlier in the data, will have high leverage, or will have both.}
 
 
 
@@ -345,14 +382,26 @@ An \textbf{influential point} is one whose removal from the dataset causes a dra
 %------------------------------------------------
 
 \begin{frame} {Cook's Distance (Nick)}
+\begin{columns}[t]
+\begin{column}[c]{6cm}
+
+\begin{itemize}
+  \item We can look at leverage, outlyingness, and influence altogether
+  \item Cook's Distance vs. Leverage shows the same points that may be problematic
+  \item When we remove these points, does the model improve much?
+\end{itemize}
+\end{column}
+
+\begin{column}[c]{4.5cm}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-1} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2} 
 
 \end{knitrout}
 
-
+\end{column}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -442,7 +491,7 @@ These models were compared using: \\
 
 \item \textbf{Predictors we will allow:} the predictors used in the inital model (chest diameter, chest depth and bitro diameter), pelvic bredth, shoulder, chest, waist, hip and thigh (since these are directly associated with weight)\\
 
-\item The model I decided was the ``best" includes the predictors chest.dep, chest.diam, shoulder, waist, hip, thight and height$^2$, based on AIC and BIC.  \\
+\item The model I decided was the ``best" includes the predictors chest.dep, chest.diam, shoulder, waist, hip, thigh and height$^2$, based on AIC and BIC.  \\
 \end{itemize}
 
 \end{column}
@@ -713,7 +762,7 @@ Final hypothesis: $H(x)=sign\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)$
 \begin{column}[t]{7cm}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3} 
 
 \end{knitrout}
 
