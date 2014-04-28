@@ -314,7 +314,7 @@ Note: Outliers in the distribution of weight may be present because some of the 
 \end{frame}
 %------------------------------------------------
 
-\begin{frame} {Leverage} %make and interpret leverage plots
+\begin{frame} {Leverage (Nick)} %make and interpret leverage plots
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -329,7 +329,7 @@ A "rule of thumb" is that leverages of more than 2p/n (p= # of predictors) shoul
 
 %-----------------------------------------------------
 
-\begin{frame}{Influence}  
+\begin{frame}{Influence (Nick)}  
 
 {\fontsize{0.3cm}{1em}\selectfont
 An \textbf{influential point} is one whose removal from the dataset causes a drastic change in the fit.  An influential point will either be an outlier in the data, will have high leverage, or will have both. Cook's Distance is a popular method of identifying influential points.}
@@ -344,7 +344,7 @@ An \textbf{influential point} is one whose removal from the dataset causes a dra
 \end{frame}
 %------------------------------------------------
 
-\begin{frame} {Cook's Distance}
+\begin{frame} {Cook's Distance (Nick)}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -357,7 +357,7 @@ An \textbf{influential point} is one whose removal from the dataset causes a dra
 
 %------------------------------------------------
 
-\begin{frame} {Better Fit?} 
+\begin{frame} {Better Fit? (Nick)} 
 
 Initial Model: \\
 
@@ -526,7 +526,7 @@ Final Model: weight ~ height + ankle.diam + chest\\
 \begin{frame}{Summary (Emily)}
 
 {\fontsize{0.275cm}{1em}\selectfont 
-\caption{Table 2: Criteria Summary for each model}\\
+\caption{Criteria Summary for each model}\\
 
 \begin{center}
 \begin{tabular}{|r|c|c|c|c|r|}
@@ -892,6 +892,7 @@ What have we learned?
   \item With model selection, a combination of selection criteria, R functions and intuition are needed to create the model of ``best" fit. 
   \item Inference choose Logistic Regression; prediction choose Ada-boosting.
   \item Regression trees are a powerful, yet simple, non-parametric method for exploring data.
+  \item If time allowed, a combination of methods shown may produce and even better fitting model.
 \end{itemize}
 \end{column}
 \end{columns}

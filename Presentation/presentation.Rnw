@@ -286,7 +286,7 @@ plot(model,which=2)
 \end{frame}
 %------------------------------------------------
 
-\begin{frame} {Leverage} %make and interpret leverage plots
+\begin{frame} {Leverage (Nick)} %make and interpret leverage plots
 
 <<leverage, echo=FALSE, warning=FALSE, fig.height=2.5, fig.width=4.5>>=
 mat<- model.matrix(model)
@@ -301,7 +301,7 @@ A "rule of thumb" is that leverages of more than 2p/n (p= # of predictors) shoul
 
 %-----------------------------------------------------
 
-\begin{frame}{Influence}  
+\begin{frame}{Influence (Nick)}  
 
 {\fontsize{0.3cm}{1em}\selectfont
 An \textbf{influential point} is one whose removal from the dataset causes a drastic change in the fit.  An influential point will either be an outlier in the data, will have high leverage, or will have both. Cook's Distance is a popular method of identifying influential points.}
@@ -317,7 +317,7 @@ influencePlot(model, main="Influence Plot",cex.main=0.7)
 \end{frame}
 %------------------------------------------------
 
-\begin{frame} {Cook's Distance}
+\begin{frame} {Cook's Distance (Nick)}
 
 <<warning=FALSE, echo=FALSE, fig.height=4, tidy=TRUE>>=
 cutoff <- 20/((nrow(body) - length(model$coefficients) - 8))
@@ -328,7 +328,7 @@ plot(model, which =6, cooks.levels = cutoff)
 
 %------------------------------------------------
 
-\begin{frame} {Better Fit?} 
+\begin{frame} {Better Fit? (Nick)} 
 
 Initial Model: \\
 
@@ -479,7 +479,7 @@ plot(leaps,scale="adjr2", main = "AdjR2")
 \begin{frame}{Summary (Emily)}
 
 {\fontsize{0.275cm}{1em}\selectfont 
-\caption{Table 2: Criteria Summary for each model}\\
+\caption{Criteria Summary for each model}\\
 
 \begin{center}
 \begin{tabular}{|r|c|c|c|c|r|}
@@ -949,6 +949,7 @@ What have we learned?
   \item With model selection, a combination of selection criteria, R functions and intuition are needed to create the model of ``best" fit. 
   \item Inference choose Logistic Regression; prediction choose Ada-boosting.
   \item Regression trees are a powerful, yet simple, non-parametric method for exploring data.
+  \item If time allowed, a combination of methods shown may produce and even better fitting model.
 \end{itemize}
 \end{column}
 \end{columns}
