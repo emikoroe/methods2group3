@@ -760,22 +760,24 @@ Predictive ability depends on \underline{cutoff point}\\
 \begin{table}[ht]
 \centering
 \resizebox{0.7\textwidth}{!}{
-\begin{tabular}{ccc}
+\begin{tabular}{cccc}
   \hline
-  Cutoff point  & Sensitivity & Specificity\\ 
+  Cutoff point  & Sensitivity & Specificity & Accuracy\\ 
   \hline
-  0.00 & 1.000 & 0.004\\
-  0.05 & 0.996 & 0.838\\
-  0.10 & 0.992 & 0.892\\
-  0.15 & 0.988 & 0.942\\
-  0.20 & 0.984 & 0.954\\
-  ... & ...    & ... \\
-  0.85 & 0.923 & 0.992\\
-  0.90 & 0.903 & 0.992\\
+  0.00 & 1.000 & 0.004 & 0.489\\
+  0.05 & 0.996 & 0.838 & 0.915\\
+  0.10 & 0.992 & 0.892 & 0.941\\
+  0.15 & 0.988 & 0.942 & 0.964\\
+  ... & ...    & ... & ...\\
+  0.55 & 0.968 & 0.981 & 0.974\\
+  ... & ... & ... & ...\\
+  0.85 & 0.923 & 0.992 & 0.959\\
+  0.90 & 0.903 & 0.992 & 0.949\\
    \hline
 \end{tabular}
 }
 \end{table}
+
 
 
 \end{column}
@@ -823,6 +825,7 @@ Logistic Regression $\surd$
 \begin{column}[t]{8cm}
 \begin{itemize}
 \item \textbf{Prediction}\\
+Logistic Regression $\surd$\\
 Ada-boosting $\surd$
 \end{itemize}
 \end{column}
@@ -917,7 +920,7 @@ What have we learned?
 \begin{itemize}
   \item Always check your assumptions, even low influence outliers can change your model fit
   \item With model selection, a combination of selection criteria, R functions and intuition are needed to create the model of ``best" fit. 
-  \item Inference choose Logistic Regression; prediction choose Ada-boosting.
+  \item Inference choose Logistic Regression; prediction choose Logistic Regression or Ada-boosting.
   \item Regression trees are a powerful, yet simple, non-parametric method for exploring data.
   \item If time allowed, a combination of methods shown may produce and even better fitting model.
 \end{itemize}
