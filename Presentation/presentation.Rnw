@@ -244,6 +244,7 @@ print(qplot( as.factor(gender),weight, data=body, geom=c("boxplot"), main="Weigh
 \begin{itemize}
   \item This model was chosen by the authors of the dataset based on the idea that these measurements remain constant after physical maturation.
   \item It seems that, in our model, chest depth has the largest impact on weight.
+  \item The $R^2$ value implies that our initial model explains 88.8\% of the variation in weight.
   \item Model seems like a good fit, but can we find a better one?
 \end{itemize}
 
