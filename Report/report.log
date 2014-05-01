@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  30 APR 2014 22:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 MAY 2014 12:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -358,6 +358,23 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@loff=\dimen140
 \@vwid@roff=\dimen141
 ))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen142
+\captionmargin@=\dimen143
+\captionwidth=\dimen144
+\caption@tempdima=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
+)
+\c@ContinuedFloat=\count116
+Package caption Info: hyperref package is loaded.
+)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
@@ -365,33 +382,33 @@ tim
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count116
-\scratchdimen=\dimen142
+\scratchcounter=\count117
+\scratchdimen=\dimen149
 \scratchbox=\box30
-\nofMPsegments=\count117
-\nofMParguments=\count118
+\nofMPsegments=\count118
+\nofMParguments=\count119
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count119
-\MPscratchDim=\dimen143
-\MPnumerator=\count120
-\makeMPintoPDFobject=\count121
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen150
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
 \everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -443,40 +460,42 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 83.
+Package hyperref Info: Link coloring OFF on input line 84.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count122
+\c@section@level=\count123
 )
-LaTeX Info: Redefining \ref on input line 83.
-LaTeX Info: Redefining \pageref on input line 83.
-LaTeX Info: Redefining \nameref on input line 83.
+LaTeX Info: Redefining \ref on input line 84.
+LaTeX Info: Redefining \pageref on input line 84.
+LaTeX Info: Redefining \nameref on input line 84.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 <summary_table.pdf, id=100, 397.485pt x 180.675pt>
 File: summary_table.pdf Graphic file (type pdf)
  <use summary_table.pdf>
-Package pdftex.def Info: summary_table.pdf used on input line 103.
+Package pdftex.def Info: summary_table.pdf used on input line 104.
 (pdftex.def)             Requested size: 387.00153pt x 175.91617pt.
-Package color Info: Redefining color shadecolor on input line 113.
+Package color Info: Redefining color shadecolor on input line 114.
 
 <figure/weight_plot.pdf, id=101, 505.89pt x 216.81pt>
 File: figure/weight_plot.pdf Graphic file (type pdf)
 
 <use figure/weight_plot.pdf>
-Package pdftex.def Info: figure/weight_plot.pdf used on input line 114.
+Package pdftex.def Info: figure/weight_plot.pdf used on input line 115.
 (pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
 
 
@@ -488,154 +507,161 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./summary_table.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 125.
+LaTeX Font Info:    Try loading font information for U+msa on input line 126.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 125.
+LaTeX Font Info:    Try loading font information for U+msb on input line 126.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
-Package color Info: Redefining color shadecolor on input line 130.
+Package color Info: Redefining color shadecolor on input line 131.
 [2 <./figure/weight_plot.pdf>] [3]
-Package color Info: Redefining color shadecolor on input line 167.
+Package color Info: Redefining color shadecolor on input line 168.
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
-Package color Info: Redefining color shadecolor on input line 225.
+Package color Info: Redefining color shadecolor on input line 226.
 <figure/leap.pdf, id=146, 505.89pt x 289.08pt>
 File: figure/leap.pdf Graphic file (type pdf)
  <use figure/leap.pdf>
-Package pdftex.def Info: figure/leap.pdf used on input line 226.
+Package pdftex.def Info: figure/leap.pdf used on input line 227.
 (pdftex.def)             Requested size: 430.00462pt x 245.72356pt.
  [5 <./figure/leap.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--264
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 277--297
+Underfull \hbox (badness 10000) in paragraph at lines 278--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
 
  []
 
-Package color Info: Redefining color shadecolor on input line 326.
-<figure/model_check.pdf, id=161, 505.89pt x 180.675pt>
+Package color Info: Redefining color shadecolor on input line 327.
+<figure/model_check.pdf, id=161, 505.89pt x 151.56625pt>
 File: figure/model_check.pdf Graphic file (type pdf)
 
 <use figure/model_check.pdf>
-Package pdftex.def Info: figure/model_check.pdf used on input line 327.
-(pdftex.def)             Requested size: 430.00462pt x 153.57721pt.
+Package pdftex.def Info: figure/model_check.pdf used on input line 328.
+(pdftex.def)             Requested size: 430.00462pt x 128.83423pt.
  [7]
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--335
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
 
  []
 
-Package color Info: Redefining color shadecolor on input line 337.
-<figure/ROV_curve.pdf, id=169, 505.89pt x 180.675pt>
+Package color Info: Redefining color shadecolor on input line 338.
+<figure/ROV_curve.pdf, id=171, 505.89pt x 165.61874pt>
 File: figure/ROV_curve.pdf Graphic file (type pdf)
 
 <use figure/ROV_curve.pdf>
-Package pdftex.def Info: figure/ROV_curve.pdf used on input line 338.
-(pdftex.def)             Requested size: 430.00462pt x 153.57721pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--370
-
- []
-
-[8 <./figure/model_check.pdf> <./figure/ROV_curve.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 377--380
-
- []
-
-[9]
-Package color Info: Redefining color shadecolor on input line 417.
- <figure/wdt.pdf, id=192, 289.08pt x 144.54pt>
+Package pdftex.def Info: figure/ROV_curve.pdf used on input line 339.
+(pdftex.def)             Requested size: 430.00462pt x 140.77911pt.
+ [8 <./figure/model_check.pdf> <./figure/ROV_curve.pdf>] [9]
+Package color Info: Redefining color shadecolor on input line 433.
+ <figure/wdt.pdf, id=195, 289.08pt x 144.54pt>
 File: figure/wdt.pdf Graphic file (type pdf)
  <use figure/wdt.pdf>
-Package pdftex.def Info: figure/wdt.pdf used on input line 418.
+Package pdftex.def Info: figure/wdt.pdf used on input line 434.
 (pdftex.def)             Requested size: 289.07928pt x 144.54623pt.
-Package color Info: Redefining color shadecolor on input line 431.
+Package color Info: Redefining color shadecolor on input line 447.
 
-<figure/wt.pdf, id=193, 505.89pt x 216.81pt>
+<figure/wt.pdf, id=196, 505.89pt x 216.81pt>
 File: figure/wt.pdf Graphic file (type pdf)
  <use figure/wt.pdf>
-Package pdftex.def Info: figure/wt.pdf used on input line 432.
+Package pdftex.def Info: figure/wt.pdf used on input line 448.
 (pdftex.def)             Requested size: 430.00462pt x 184.29266pt.
- [10 <./figure/wdt.pdf> <./figure/wt.pdf>]
-Package color Info: Redefining color shadecolor on input line 441.
-Package color Info: Redefining color shadecolor on input line 467.
- <figure/mtrees.pdf, id=215, 505.89pt x 252.945pt>
-File: figure/mtrees.pdf Graphic file (type pdf)
 
-<use figure/mtrees.pdf>
-Package pdftex.def Info: figure/mtrees.pdf used on input line 468.
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+[10 <./figure/wdt.pdf> <./figure/wt.pdf>]
+Package color Info: Redefining color shadecolor on input line 457.
+Package color Info: Redefining color shadecolor on input line 483.
+
+<figure/mtrees.pdf, id=218, 505.89pt x 252.945pt>
+File: figure/mtrees.pdf Graphic file (type pdf)
+ <use figure/mtrees.pdf>
+Package pdftex.def Info: figure/mtrees.pdf used on input line 484.
 (pdftex.def)             Requested size: 430.00462pt x 215.00812pt.
-Package color Info: Redefining color shadecolor on input line 478.
- [11] [12 <./figure/mtrees.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
+
+
+Package caption Warning: \captionsetup{type*=...} or \captionof
+(caption)                outside box or environment on input line 488.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 488.
+See the caption package documentation for explanation.
+
+[11 <./figure/mtrees.pdf>]
+Package color Info: Redefining color shadecolor on input line 495.
+ [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 533.
  [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 0D4541DAC8F3185CDB07C3078CD5CFA1;1768.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 516.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 533.
  ) 
 Here is how much of TeX's memory you used:
- 7563 strings out of 493315
- 110258 string characters out of 6137904
- 209394 words of memory out of 5000000
- 10847 multiletter control sequences out of 15000+600000
+ 8586 strings out of 493315
+ 128945 string characters out of 6137904
+ 227604 words of memory out of 5000000
+ 11861 multiletter control sequences out of 15000+600000
  10621 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 30i,12n,43p,750b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,15n,92p,750b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -649,10 +675,10 @@ cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
 live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (13 pages, 307657 bytes).
+Output written on report.pdf (13 pages, 307608 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 295 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

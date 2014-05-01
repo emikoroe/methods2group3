@@ -25,6 +25,7 @@
 \usepackage{hyperref}
 \usepackage{adjustbox}
 \usepackage{amsmath}
+\usepackage{caption}
 
 \lhead{\textbf{Group 3: Data Analysis\\ Spring 2014}}
 \rhead{\textbf{Nick Cummings, Liza Nicoll \\ Emily Ramos and Yiding Zhang}}
@@ -310,10 +311,10 @@ Model Selection truely is an art form. R can mechanically run through steps, int
 
 \subsubsection{Logistic regression}
 
-\textbf{AIC Method:} The procedure- Start from the full-fit model that include the all variables and then delete the one variable that would decrease the AIC most, and then delete another one.
+\textbf{AIC Method:} The procedure starts from the full-fit model that include the all variables and then delete the one variable that would decrease the AIC most, and then delete another one.
 \begin{table}[ht]
 \centering
-\resizebox{0.98\textwidth}{!}{
+\resizebox{0.74\textwidth}{!}{
 \begin{tabular}{rlc}
   \hline
   Step \# & Model & AIC \\ 
@@ -329,12 +330,12 @@ Model Selection truely is an art form. R can mechanically run through steps, int
 }
 \end{table}
 \\
-The final model: $logi(gender)=-62.14702 +0.29592\times chest.dep + 1.30672\times wrist.min + 0.20283\times height + 0.05411\times age + 0.44689\times shoulder - 0.50595\times hip$\\
+The final model by AIC criteria: $logi(gender)=-62.147 +0.296\times chest.dep + 1.307\times wrist.min + 0.203\times height + 0.054\times age + 0.447\times shoulder - 0.506\times hip$\\
 
 \textbf{BIC Method:} The method start picking the variables that have highest posterior probabilities individually against null model and then add the secondary highest variables to the model.
 \begin{table}[ht]
 \centering
-\resizebox{0.89\textwidth}{!}{
+\resizebox{0.7\textwidth}{!}{
 \begin{tabular}{rlrc}
   \hline
   Model \# & Model & BIC & Posterior prob\\ 
@@ -349,9 +350,9 @@ The final model: $logi(gender)=-62.14702 +0.29592\times chest.dep + 1.30672\time
 }
 \end{table}
 
-The model with least BIC and most posterior probability is model 1 and it includes $wrist, height, shoulder, hip$. The model is : $logi(gender)=-61.89401 + 1.42080\times wrist+ 0.19783\times height+0.46062\times shoulder-0.46046\times hip$\\
+The model with least BIC and most posterior probability is model 1 and it includes $wrist, height, shoulder, hip$. The final model by BIC criteria: : $logi(gender)=-61.894 + 1.421\times wrist+ 0.198\times height+0.461\times shoulder-0.460\times hip$\\
 
-\textbf{Brief Summary:} When the model is small, according to the p-value of each variable, the BIC method peform better. Besides, the final model calculated by AIC includes some implausible variable, such that "age"--meaningless in reality and "chest.dep"--not significant. However, p-value is just one criterion to estimate the goodness of a model. What else perspectives should we consider?\\
+\textbf{Brief Summary:} When the model is small, according to the p-value of each variable, the BIC method peform better. Besides, the final model calculated by AIC includes some implausible variable, such that "age"--meaningless in reality and "chest.dep"--not significant. However, utilize AIC, BIC and p-value to estimate the goodness of a model are not sufficient. What else perspectives should we consider?\\
 
 \textbf{Check Goodness of Model}\\
 \textsc{Linearity:} Checking the residuals can be useful for identifying potential outliers (observations not well fit by the model) as well as misspecified models. The larger the deviance, the poorer the fit.
@@ -360,34 +361,34 @@ var <- c("gender","weight","chest.diam","chest.dep","bitro.diam","wrist.min","an
 subdata <- body[var]
 @
 
-<<model check, echo=FALSE,fig.height=2.5,fig.weight=2>>=
+<<model check, echo=FALSE,fig.height=2.1>>=
 bic <- glm(gender~wrist.min+height+shoulder+hip,data=subdata,family="binomial")
 aic <- glm(gender~wrist.min+height+shoulder+hip+chest.dep+age,data=subdata,family="binomial")
-par(mfrow=c(1,2),cex=0.7)
-plot(aic,which=1,main="AIC")
-plot(bic,which=1,main="BIC")
+par(mfrow=c(1,2),cex=0.6)
+plot(aic,which=1,main="AIC",cex.axis=0.9)
+plot(bic,which=1,main="BIC",cex.axis=0.9)
 @
-Both model have a fairly good fit except several subjects that have high predicted probability in the center of x-axis.\\
+Both model have a fairly good fit except several subjects in the center of x-axis. These subjects' prediccted odds ratio $\simeq$ 1, which may be performed as random guess, thus lead higher residuals.\\
 
-\textsc{Quantifying Predictive Ability:} Usually, using 0.5 as a cutoff point to determine the prediced outcome is 1 or 0 by estimated probabilities is a quantified way of assessing the predictive ability. Similar to the cutoff method, the Receiver Operating Characteristic (ROC) curv is a very usful method to assess the predictive ability. It is a curve such that plotted based on the sensitivity against 1-specificity of a series cutoff points. The area under the ROC curve can give us insight into the predictive ability of the model. If $c(area)$ =  0.5 means model predicting at random and if $c$ = 1 indicates a very good predictive ability.\\
-When Somers' $D_{xy}$ rank correlation = 0, $D_{xy}=2(c-0.5)= 0$, the model is making random prediction; when = 1, the model discriminates outcome perfectly.\\
+\textsc{Quantifying Predictive Ability:} The Receiver Operating Characteristic (ROC) curv is a very usful method to assess the predictive ability. It is a curve such that plotted based on the sensitivity against 1-specificity of a series cutoff points (such that 0.5, 0.6 ...). The area under the ROC curve can give us insight into the predictive ability of the model. If $c(area)$ =  0.5 means model predicting at random and if $c$ = 1 indicates a very good predictive ability.\\
+When Somers' $D_{xy}$ rank correlation = 0, that is $D_{xy}=2(c-0.5)= 0$, the model is making random prediction; when = 1, the model discriminates outcome perfectly.\\
 
-<<ROV curve,echo=FALSE,fig.height=2.5>>=
+<<ROV curve,echo=FALSE,fig.height=2.3>>=
 
-p1=matrix(0,nrow=length(seq(min(fitted(aic)),1,.05)),ncol=3)
+p1=matrix(0,nrow=length(seq(min(fitted(aic,type="response")),1,.05)),ncol=4)
 i=1
-for(p in seq(min(fitted(aic)),1,.05)){
-t1=table(fitted(aic)>p,subdata$gender)
-p1[i,]=c(p,(t1[2,2])/sum(t1[,2]),(t1[1,1])/sum(t1[,1]))
+for(p in seq(min(fitted(aic,type="response")),1,.05)){
+t1=table(fitted(aic,type="response")>p,subdata$gender)
+p1[i,]=c(p,(t1[2,2])/sum(t1[,2]),(t1[1,1])/sum(t1[,1]),(sum(t1[1,1])+sum(t1[2,2]))/sum(t1))
 i=i+1
 }
 
 
-p2=matrix(0,nrow=length(seq(min(fitted(bic)),1,.05)),ncol=3)
+p2=matrix(0,nrow=length(seq(min(fitted(bic,type="response")),1,.05)),ncol=4)
 i=1
-for(p in seq(min(fitted(bic)),1,.05)){
-t2=table(fitted(bic)>p,subdata$gender)
-p2[i,]=c(p,(t2[2,2])/sum(t2[,2]),(t2[1,1])/sum(t2[,1]))
+for(p in seq(min(fitted(bic,type="response")),1,.05)){
+t2=table(fitted(bic,type="response")>p,subdata$gender)
+p2[i,]=c(p,(t2[2,2])/sum(t2[,2]),(t2[1,1])/sum(t2[,1]),(sum(t2[1,1])+sum(t2[2,2]))/sum(t2))
 i=i+1
 }
 par(mfrow=c(1,2),cex=0.7)
@@ -397,11 +398,11 @@ lines(1-p1[,3],p1[,2])
 plot(1-p2[,3],p2[,2],xlab="1-specificity",ylab="sensitivity",main="BIC model ROC")
 lines(1-p2[,3],p2[,2])
 @
-
-\begin{table}[ht]
-\centering
-\resizebox{0.45\textwidth}{!}{
-\begin{tabular}{ccc}
+\begin{center}
+\resizebox{0.8\textwidth}{!}{
+\begin{tabular}{cc}
+a.Check criteria & b.BIC Logistic model predictive ability\\
+\begin{tabular}[t]{ccc}
   \hline
   Model  & Area ROC curve & Somers' $D_{xy}$\\ 
   \hline
@@ -409,23 +410,38 @@ lines(1-p2[,3],p2[,2])
   BIC & 0.9941607 & 0.9883214\\
    \hline
 \end{tabular}
-}
-\end{table}
 
-Both of them have a very good predictive ability, but from the perspective of efficiency, the BIC model is preferable. Because BIC model use fewer variables to achive the as high as AIC model's predictive ability. 
-In reality, how the performance is depends on how the cutoff point been selected. The higher cutoff point you selected, the higher accuracy the prediction would be. However, the higher sensitivity would lead to a poor specificity.
+&
+\begin{tabular}[t]{cccc}
+  \hline
+  Cutoff point  & Sensitivity & Specificity & Accuracy\\ 
+  \hline
+  0.00 & 1.000 & 0.004 & 0.489 \\
+  0.05 & 0.996 & 0.835 & 0.913 \\ 
+  ... & ...    & ... & ...\\
+  0.60 & 0.960 & 0.981 & 0.970 \\
+  ... & ... & ... & ...\\
+  0.90 & 0.899 & 0.992 & 0.947 \\
+  0.95 & 0.846 & 0.996 & 0.923 \\
+   \hline
+\end{tabular}
+\end{tabular}
+}
+\end{center}
+
+Both of them have a very good predictive ability, AIC model performs a little higher than BIC model. But from the perspective of efficiency, the BIC model is preferable. Because BIC model use fewer variables to achive the as high as AIC model's predictive ability. 
+In reality, the performance depends on how the cutoff point been selected.
+
 
 \subsubsection{Ada-Boosting}
 
-Ada-boosting is a tree based method to find a good classification stratagy to classify the data. Its key idea is to give more weight to the subjects that wrongly classified during last round of classification. This method is so powerful that one do not need to select cutoff point and model selection.\\
+Ada-boosting is a weak learning based method to find a good classification stratagy to classify the data, also called exponential loss minimization algorithem. Its key idea is to give more weight to the subjects that wrongly classified during the last round of classification and change the previous distribution. This algorithem does not make any assumption on the model.\\
 The algorithem of AdaBoost: \textit{Yoav.F, Robert E.S,A Short Introduction to Boosting, 1999.}\\
-Given: $(x_1,y_1),...,(x_m,y_m)$ where $x_i \in X, y_i \in Y=\{-1,+1\}$\\
-Initialize $D_1(i)=1/m$.\\
+Given: $(x_1,y_1),...,(x_m,y_m)$ where $x_i \in X, y_i \in Y=\{-1,+1\}$ Initialize $D_1(i)=1/m$.\\
 For $t=1,...,T$:\\
 $\bullet$ Train weak learner using distribution $D_t$.\\
 $\bullet$ Get weak hypothesis $h_t : X \rightarrow \{-1,+1\}$ with error $\epsilon_t=Pr_{i\sim D_t}\left[ h_t(x_i)\ne y_i \right]$\\
-$\bullet$ Choose $\alpha_t=\frac{1}{2}ln\left(\frac{1-\epsilon_t}{\epsilon_t}\right)$\\
-\[
+$\bullet$ Choose $\alpha_t=\frac{1}{2}ln\left(\frac{1-\epsilon_t}{\epsilon_t}\right)$\[
 D_{t+1}(i)=\frac{D_t(i)}{Z_t}\times
 \left\{\begin{matrix}
 e^{-\alpha_t} & \mbox{if $h_t(x_i)=y_i$}\\
@@ -434,32 +450,32 @@ e^{\alpha_t} & \mbox{if $h_t(x_i)\ne y_i$}
 \right.
 \]
 where $Z_t$ is a normalization factor.\\
-Output the final hypothesis:\\
-$$H(x)=sign\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)$$
-Conduct 5 rounds ada-boosting trainning on original data, AIC selected data and BIC selected data, using 1/2 of the data as trainning data and the rest 1/2 of data as test data.
+Output the final hypothesis: $H(x)=sign\left(\sum_{t=1}^{T}\alpha_t h_t(x)\right)$\\[1\baselineskip]
+Conduct 5 rounds ada-boosting trainning on original data, AIC selected data and BIC selected data, using 1/2 of the data as trainning data and the rest 1/2 of data as test data. Besides the results will be compared with the best cutoff point of BIC logistic model.
 \begin{table}[ht]
 \centering
 \resizebox{\textwidth}{!}{
-\begin{tabular}{ccccc}
+\begin{tabular}{cccc|c}
   \hline
-  Round $\#$  & Original data & AIC data & BIC data\\
-       & Sensitiviy; Specificity; Accuracy & Sensitiviy; Specificity; Accuracy & Sensitiviy; Specificity; Accuracy\\ \hline
-    1 & 0.975; 0.925; 0.949 & 0.967; 0.962; 0.965 & 0.967; 0.947; 0.957\\
-    2 & 0.953; 0.936; 0.945 & 0.953; 0.920; 0.937 & 0.961; 0.936; 0.949\\
-    3 & 0.949; 0.951; 0.949 & 0.954; 0.959; 0.957 & 0.954; 0.959; 0.957\\
-    4 & 0.983; 0.932; 0.957 & 0.983; 0.955; 0.961 & 0.983; 0.962; 0.972\\
-    5 & 0.983; 0.924; 0.953 & 0.983; 0.931; 0.957 & 0.983; 0.947; 0.965\\
-    Avarage & 0.969; 0.934; 0.951 & 0.968; 0.945; 0.955 & 0.970; 0.950; 0.960\\
+  Round $\#$  & Original data & AIC data & BIC data & BIC LR\\
+       & SNS; SPC; ACC & SNS; SPC; ACC & SNS; SPC; ACC & CUT; SNS; SPC; ACC\\ \hline
+    1 & 0.975; 0.925; 0.949 & 0.967; 0.962; 0.965 & 0.967; 0.947; 0.957 & 0.75; 0.934; 0.962; 0.949\\
+    2 & 0.953; 0.936; 0.945 & 0.953; 0.920; 0.937 & 0.961; 0.936; 0.949 & 0.80; 0.938; 0.984; 0.961\\
+    3 & 0.949; 0.951; 0.949 & 0.954; 0.959; 0.957 & 0.954; 0.959; 0.957 & 0.70; 0.939; 1.000; 0.969\\
+    4 & 0.983; 0.932; 0.957 & 0.983; 0.955; 0.961 & 0.983; 0.962; 0.972 & 0.65; 0.943; 1.000; 0.972\\
+    5 & 0.983; 0.924; 0.953 & 0.983; 0.931; 0.957 & 0.983; 0.947; 0.965 & 0.75; 0.967; 0.969; 0.969\\
+    Avarage & 0.969; 0.934; 0.951 & 0.968; 0.945; 0.955 & 0.970; 0.950; 0.960 & 0.73; 0.944; 0.983; 0.964\\
   \hline
 
 \end{tabular}
 }
 \end{table}
-Ada-boosting is so powerful that without subsetting the data it can make a very good prediction with high sensitivity, specificity and accuracy, subsetting data according to the AIC and BIC model can improve the ada-boosting performance. The BIC data has a littel better performance than AIC model, since the data contains less variables, resulting a more efficient prediction.
+The performance of Ada-boosting improved by subsetting data according to the AIC and BIC model data and  a littel better in BIC model data. Compared with BIC logistic regression model, Ada-boosting has better performance in sensitivity and has more stable performance in SNS, SPC and ACC through all 5 rounds. BIC logistic regression model performs better in avarage than Ada-boosting, but its performance depends on the cutoff point.
 
 \subsubsection{Conclusion}
 
-As we see, ada-boosting cannot be a better and convinient way to make prediction. However, ada-boosting cannot make any inferences about each variables, which would result in some drawbacks such as blindly collect data and unefficiency caused by too many noise variables. In other words, if one needs to determine and make a strong inference about certain variables, like a car insurance company wants to determine whether a driver is a safe-driver or not base on his/her age, income etc., the logistic regression model is neccessary. Thus he/she should choose the tools according to his or her purposes.
+As we see, both Ada-boosting and logistic regression model can make good prediction in this case. Ada-boosting is more easy and convenient to use; however, it cannot make any inferences about variables. If one needs to determine and make a strong inference about certain variables, the logistic regression model is neccessary. \\
+It is worth keeping in mind that logistic regression model could be better than Ada-boosting when the model been fitted so well and the best cutoff point been selected, but it not always be. Similarly, Ada-boosting could be better when logistic model is too complex to get , but it will also lose some efficiency when there are too many noise variables.
 
 %------------------------------------------------
 \newpage
@@ -478,7 +494,7 @@ tf <- rpart(weight ~ ., data = bodyf, method="anova")
 tm <- rpart(weight ~ ., data = bodym, method="anova")
 @
 \begin{center}
-\begin{figure}
+\begin{figure}[h]
 <<wdt,echo=FALSE, fig.height=2, fig.width=4>>=
 qplot(weight, data=body, geom="density", fill=as.factor(gender), alpha=I(.5), main="Distribution of Weight", xlab="Weight (kg)", ylab="Density")+ scale_fill_discrete(name="Gender",breaks=c("0", "1"), labels=c("female", "male")) + theme_bw()
 @
@@ -495,20 +511,21 @@ prp(tmf, extra=101, main="Regression Tree - Weight",box.col="yellow")
 @
 
 \subsubsection{Tree 2: Males} 
-Even though the full dataset did not utilize gender to partition the data, it might be informative to see if we obtain different trees by subsetting the data by gender. Next, I produced a regression tree with weight as the dependent variable for males only using all available body measurement variables. The CP tables showed us that at 5 splits we obtain a minimum relative error, therefore we were able to prune the tree to a reasonable size to avoid overfitting the data (Figure 2a). The final variables used to produce the pruned tree were hip girth and shoulder girth.
+Even though the full dataset did not utilize gender to partition the data, it might be informative to see if we obtain different trees by subsetting the data by gender. Next, I produced a regression tree with weight as the dependent variable for males only using all available body measurement variables. The CP tables showed us that at 5 splits we obtain a minimum relative error, therefore we were able to prune the tree to a reasonable size to avoid overfitting the data (Figure 2a). The final variables used to produce the pruned tree were hip girth and shoulder girth.\\
 
 <<prunem, echo=FALSE, message=FALSE, warning=FALSE>>=
 ptm<-prune(tm, cp=tm$cptable[which.min(tm$cptable[,"xerror"]),"CP"])
 printcp(ptm)
 @
-\begin{figure}
+
 <<mtrees, echo=FALSE, fig.height=3.5>>=
 par(mfrow=c(1,2))
 prp(ptm, extra=101, main="Pruned Tree, Weight (Male)",box.col=5)
 prp(tf, extra=101, main="Regression Tree, Weight (Female",box.col="pink")
 @
-\caption{Figure 2: a. Pruned regression tree for male weight. b. Regression tree for female weight.}
-\end{figure}
+\captionof{figure}{a. Pruned regression tree for male weight. b. Regression tree for female weight.}
+
+
 \subsubsection{Tree 3: Females} 
 The regression tree for the female subset (Figure 2b) does not reach a minimum relative error before the final node and therefore did not need pruning. The variables used to produce this tree vary significantly in number and type from the male tree. They are: hip girth, knee girth, calf girth, chest girth, and waist girth. In fact, the only variable the female tree and the pruned male tree have in common is shoulder girth.
 
