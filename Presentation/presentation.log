@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  28 APR 2014 22:38
+=======
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  29 APR 2014 09:39
+>>>>>>> FETCH_HEAD
 =======
 This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.3.13)  29 APR 2014 09:39
 >>>>>>> FETCH_HEAD
@@ -1230,6 +1234,9 @@ Package pdftex.def Info: figure/leverage.pdf used on input line 342.
 <use figure/leverage.pdf>
 Package pdftex.def Info: figure/leverage.pdf used on input line 343.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
@@ -1270,6 +1277,9 @@ Overfull \hbox (7.2916pt too wide) in paragraph at lines 418--418
 med-chunk-1.pdf>]
 Overfull \hbox (7.2916pt too wide) in paragraph at lines 419--419
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
@@ -1311,9 +1321,14 @@ Overfull \vbox (8.80635pt too high) detected at line 419
 File: rafiki.jpg Graphic file (type jpg)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <use rafiki.jpg>
 Package pdftex.def Info: rafiki.jpg used on input line 478.
+=======
+ <use rafiki.jpg>
+Package pdftex.def Info: rafiki.jpg used on input line 479.
+>>>>>>> FETCH_HEAD
 =======
  <use rafiki.jpg>
 Package pdftex.def Info: rafiki.jpg used on input line 479.
@@ -1556,6 +1571,9 @@ BIC_RESIDUALS.pdf> <D:/Users/Emily/Documents/School/Spring 14/Bio/Group3/Presen
 tation/figure/prdict_ability.pdf>]
 LaTeX Font Info:    Calculating math sizes for size <5.69046> on input line 752
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
@@ -1646,6 +1664,9 @@ Package pdftex.def Info: happy.jpg used on input line 929.
 <use happy.jpg>
 Package pdftex.def Info: happy.jpg used on input line 930.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
@@ -1662,6 +1683,7 @@ Package pdftex.def Info: happy.jpg used on input line 930.
 \tf@snm=\write8
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \openout8 = `presentation.snm'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 933.
@@ -1672,6 +1694,8 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 933.
 =======
 =======
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 934.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 934.
 
@@ -1680,6 +1704,9 @@ n.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 934.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 934.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
@@ -1748,6 +1775,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmtt8.pfb>
 Output written on presentation.pdf (25 pages, 908004 bytes).
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
