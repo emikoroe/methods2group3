@@ -228,23 +228,22 @@ print(qplot( as.factor(gender),weight, data=body, geom=c("boxplot"), main="Weigh
 \end{eqnarray*}
 \end{block}
 
-\\
 
-\texbf{R Output:}\\
+\textbf{R Output:}\\
 
-\\
+
 
 {\fontsize{0.275cm}{1em}\selectfont 
 \begin{tabular}{|r|r|r|r|r|r|r|r|}
 \hline
-    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height & R^2 \\ \hline
+    (Intercept) & chest.diam & chest.dep & bitro.diam & wrist.min & ankle.min & height & $R^2$ \\ \hline
    -109.89 & 1.34  & 1.54 & 1.20  & 1.11 & 1.15 & 0.18 & 0.8882 \\ \hline
 \end{tabular}
 
 \begin{itemize}
   \item This model was chosen by the authors of the dataset based on the idea that these measurements remain constant after physical maturation.
   \item It seems that, in our model, chest depth has the largest impact on weight.
-  \item The $R^2$ value implies that our initial model explains 88.8\% of the variation in weight.
+  \item The $R^2$ value implies that our initial model explains 88.8 \% of the variation in weight.
   \item Model seems like a good fit, but can we find a better one?
 \end{itemize}
 
@@ -371,7 +370,7 @@ Initial Model: \\
 \end{tabular}
 }
 
-\linebreak[4]
+
 
 New model with influential points removed:\\
 
@@ -426,6 +425,7 @@ These models were compared using: \\
 \end{itemize}
 \end{column}
 \end{columns}
+
 \end{frame}
 
 %------------------------------------------------
@@ -509,7 +509,7 @@ plot(leaps,scale="adjr2", main = "AdjR2")
 \begin{frame}{Summary (Emily)}
 
 {\fontsize{0.275cm}{1em}\selectfont 
-\caption{Criteria Summary for each model}\\
+Criteria Summary for each model\\
 
 \begin{center}
 \begin{tabular}{|r|c|c|c|c|r|}
@@ -522,12 +522,12 @@ i & 2970 & 3004 & 10405 & 0.8869 & \text{suggested by paper} \\ \hline
 2 & 2402 & 2441 & 3408 & 0.9632 & \text{my model}\\ \hline
 3 & 2206 & 2282 & 2329 & 0.9754 & \text{stepAIC} \\ \hline
 4 & 2195 & \textcolor{blue}{2271} & \textcolor{blue}{2281} & \textcolor{blue}{0.9759} & \text{stepAIC and adjustments} \\ \hline
-5 & 2207 & 2292 & 2335 & 0.9755 &\text{leaps (adj} R^2) \\ \hline
-6 & \textcolor{red}{2189} & 2278 & \textcolor{red}{2255} & \textcolor{red}{0.9764}  & \text{leaps(adj} R^2) \text{and adjustments}\\ \hline
+5 & 2207 & 2292 & 2335 & 0.9755 &\text{leaps (adj} $R^2$) \\ \hline
+6 & \textcolor{red}{2189} & 2278 & \textcolor{red}{2255} & \textcolor{red}{0.9764}  & \text{leaps(adj} $R^2$) \text{and adjustments}\\ \hline
 7 & 2213 & 2272 & 2353 & 0.9749 & \text{leaps(BIC)} \\ \hline
 8 & \textcolor{blue}{2205} & \textcolor{red}{2264} & 2316 & 0.9753 & \text{leaps(BIC) and adjustments}\\ \hline
 \end{tabular}\\
-\caption{\textit{\textcolor{red}{Red} corresponds to the best value for that criteria, \textcolor{blue}{blue} is the second best.}}
+\textit{\textcolor{red}{Red} corresponds to the best value for that criteria, \textcolor{blue}{blue} is the second best.}
 \end{center}
 
 \begin{itemize}
@@ -946,7 +946,7 @@ prp(tf, extra=101, main="Regression Tree, Weight (Female)",box.col="pink")
 @
 
 \begin{itemize}
-  \item Variables used in male tree: hip & shoulder girths
+  \item Variables used in male tree: hip \& shoulder girths
   \item Variable used in female tree: hip, knee, chest, waist and calf girths
 \end{itemize}
 
