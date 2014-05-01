@@ -122,7 +122,7 @@ The initial reason the data was collected was to determine how well weight could
 
 The initial model we are interested in fitting is of the form:\\
 
-weight$_i = \beta_0 + \beta_1$ chest.diam$_{i} + \beta_2$ chest.dep$_{i} + \beta_3$ bitro.diam$_{i} + \beta_4$ wrist.min$_{i}$ + \beta_5$ ankle.min$_{i} + \beta_6$ height$_{i}$ \\
+weight$_i = \beta_0 + \beta_1$ chest.diam$_{i} + \beta_2$ chest.dep$_{i} + \beta_3$ bitro.diam$_{i} + \beta_4$ wrist.min$_{i}$ + $\beta_5$ ankle.min$_{i} + \beta_6$ height$_{i}$ \\
 
 The paper attached with the dataset mentioned multiple models one could use, we chose this as our base model, due to the fact that the model had variables across the entire body, included measurements of depth, girth and diameter and contained a reasonable amount of variables. The variables are: chest diameter (at mid-expiration level), chest depth (between spine and sternum at mid-expiration), bitrochanteric diameter (distance between both trochanters),  wrist minimum girth (average of right and left girths), ankle minimum girth (average), and height.
 
@@ -199,8 +199,6 @@ There are multiple methods built into different packages in R for Model Selectio
 
 
 
-\\
-
 \textbf{stepAIC()}\\
 
 The R function found in the package ``MASS" called ``stepAIC()" performs stepwise model selection by AIC. This will output the initial model and the final model (model of best fit determined by this method), and the steps taken. In the output below we can see that this method suggests using a different model that doesn't contain wrist.diam.\\
@@ -217,7 +215,6 @@ Final Model: weight ~ height + ankle.diam + chest\\
 \end{tabular}
 }
 
-\\
 
 \textbf{leaps()}\\
 
@@ -253,8 +250,8 @@ i & 2970 & 3004 & 10405 & 0.8869 & \text{suggested by paper} \\ \hline
 2 & 2402 & 2441 & 3408 & 0.9632 & \text{my model}\\ \hline
 3 & 2206 & 2282 & 2329 & 0.9754 & \text{stepAIC} \\ \hline
 4 & 2195 & \textcolor{blue}{2271} & \textcolor{blue}{2281} & \textcolor{blue}{0.9759} & \text{stepAIC and adjustments} \\ \hline
-5 & 2207 & 2292 & 2335 & 0.9755 &\text{leaps (adj} R^2) \\ \hline
-6 & \textcolor{red}{2189} & 2278 & \textcolor{red}{2255} & \textcolor{red}{0.9764}  & \text{leaps(adj} R^2) \text{and adjustments}\\ \hline
+5 & 2207 & 2292 & 2335 & 0.9755 &\text{leaps (adj} $R^2$) \\ \hline
+6 & \textcolor{red}{2189} & 2278 & \textcolor{red}{2255} & \textcolor{red}{0.9764}  & \text{leaps(adj} $R^2$) \text{and adjustments}\\ \hline
 7 & 2213 & 2272 & 2353 & 0.9749 & \text{leaps(BIC)} \\ \hline
 8 & \textcolor{blue}{2205} & \textcolor{red}{2264} & 2316 & 0.9753 & \text{leaps(BIC) and adjustments}\\ \hline
 \end{tabular}
@@ -262,8 +259,8 @@ i & 2970 & 3004 & 10405 & 0.8869 & \text{suggested by paper} \\ \hline
 
 Base on Table 1, we can see that each criteria yields different results. It is up to our discretion to choose a model. \textcolor{red}{Red} corresponds to the best value, of all 10 models, for that criteria, \textcolor{blue}{blue} is the second best. Since AIC and PRESS are lowest in MLR6, the adjusted $R^2$ is the largest, and the BIC is close to the best and second best values, I would choose MLR6 as the model of best fit. MLR6 is of the form:\\ 
 
-weight$_i = \beta_0 + \beta_1$ pelvic.bredth$_{i} + \beta_2$ bitro.diam$_{i} + \beta_3$ chest.dep$_{i} + \beta_4$ chest$.diam_{i}$ + \beta_5$ elbow.diam$_{i} + \beta_6$ knee.diam$_{i}$ + 
-\beta_7$ shoulder$_{i}$ + \beta_7$ chest$_{i}$ + \beta_8$ waist$_{i}$ + \beta_9$ hip$_{i}$ + \beta_{10}$ thigh$_{i}$ + \beta_{11}$ bicep_{i} + \beta_{12}$ forearm_{i} + \beta_{13}$ knee_{i} + \beta_{14}$ calf_{i} +\beta_{15}$ age_{i} + \beta_{16}$ height_{i} + \beta_{17}$ gender_{i} + \beta_{18}$ height$^2_{i}$. \\
+weight$_i = \beta_0 + \beta_1$ pelvic.bredth$_{i} + \beta_2$ bitro.diam$_{i} + \beta_3$ chest.dep$_{i} + \beta_4$ chest$.diam_{i}$ + $\beta_5$ elbow.diam$_{i} + \beta_6$ knee.diam$_{i}$ + 
+$\beta_7$ shoulder$_{i}$ + $\beta_7$ chest$_{i}$ + $\beta_8$ waist$_{i}$ + $\beta_9$ hip$_{i}$ + $\beta_{10}$ thigh$_{i}$ + $\beta_{11}$ bicep$_{i} + \beta_{12}$ forearm$_{i} + \beta_{13}$ knee$_{i} + \beta_{14}$ calf$_{i} +\beta_{15}$ age$_{i} + \beta_{16}$ height$_{i} + \beta_{17}$ gender$_{i} + \beta_{18}$ height$^2_{i}$. \\
 
 Note in Table 1 the first and second lowest values for AIC, BIC and Press, and the first and second highest values for Adjusted $R^2$ were for stepAIC with adjustments and leaps with adjustments.
 
@@ -415,6 +412,7 @@ As we have shown in previous sections, males and females differ significantly in
 
 
 \begin{center}
+\begin{figure}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/wdt} 
@@ -423,6 +421,7 @@ As we have shown in previous sections, males and females differ significantly in
 
 \vspace{-10pt}
 \caption{Figure 1: Desnsity distribution of Weight for males and females}
+\end{figure}
 \end{center}
 
 \subsubsection{Tree 1: Males and Females} 
@@ -463,7 +462,7 @@ Even though the full dataset did not utilize gender to partition the data, it mi
 \end{kframe}
 \end{knitrout}
 
-
+\begin{figure}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/mtrees} 
@@ -471,7 +470,7 @@ Even though the full dataset did not utilize gender to partition the data, it mi
 \end{knitrout}
 
 \caption{Figure 2: a. Pruned regression tree for male weight. b. Regression tree for female weight.}
-
+\end{figure}
 \subsubsection{Tree 3: Females} 
 The regression tree for the female subset (Figure 2b) does not reach a minimum relative error before the final node and therefore did not need pruning. The variables used to produce this tree vary significantly in number and type from the male tree. They are: hip girth, knee girth, calf girth, chest girth, and waist girth. In fact, the only variable the female tree and the pruned male tree have in common is shoulder girth.
 
